@@ -1,0 +1,41 @@
+{
+  "name": "@wexio/messenger-widget-react",
+  "version": "1.0.0",
+  "description": "Native React component embed for the Wexio web messenger. Renders inside a Shadow DOM portal for style isolation.",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "main": "./dist/widget-react.js",
+  "module": "./dist/widget-react.js",
+  "types": "./dist/widget-react.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/widget-react.d.ts",
+      "import": "./dist/widget-react.js",
+      "default": "./dist/widget-react.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wexiohub/messenger-widget-react.git"
+  },
+  "homepage": "https://github.com/wexiohub/messenger-widget-react#readme",
+  "bugs": {
+    "url": "https://github.com/wexiohub/messenger-widget-react/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prepack": "node scripts/prepack.mjs"
+  }
+}
