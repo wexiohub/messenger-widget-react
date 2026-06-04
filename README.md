@@ -2,12 +2,12 @@
 
 [![Version](https://img.shields.io/npm/v/@wexio/messenger-widget-react.svg)](https://www.npmjs.com/package/@wexio/messenger-widget-react)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![Documentation](https://img.shields.io/badge/docs-wexio.io-blue.svg)](https://wexio.io/docs)
+[![Documentation](https://img.shields.io/badge/docs-wexio.io-blue.svg)](https://learn.wexio.io)
 
 Native React component for the [Wexio](https://wexio.io) web messenger. Renders inside a Shadow DOM portal for full style isolation — same `WidgetShell` runtime as the script-injected iframe and the `<wexio-widget>` web component. Same chat, same visitor identity, same backend; the only difference is **where the React tree mounts.**
 
 🏠 [Website](https://wexio.io)
-📚 [Developer Docs](https://wexio.io/docs)
+📚 [Developer Docs](https://learn.wexio.io)
 
 ## 📂 Description
 
@@ -86,11 +86,10 @@ For an **unverified pre-fill** (skip the prechat form when the visitor's email i
 | ------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `publicKey`         | `string`                                              | Wexio integration public key (`pk_live_...`). Omit to render in demo mode (bundled mock content for landing pages or Storybook).         |
 | `locale`            | `"en" \| "uk"`                                        | UI locale. Defaults to the visitor's browser language. Extend by contributing a new bundle to the source repo.                           |
-| `mode`              | `"production"`                                        | Always `"production"` on the public package. (Preview + demo modes are dashboard-only.)                                                  |
 | `user`              | [`VisitorIdentity`](#visitoridentity)                 | Verified identity. See [Identifying users](#identifying-users).                                                                          |
 | `prefill`           | [`VisitorPrefill`](#visitorprefill)                   | Unverified pre-fill for the prechat form.                                                                                                |
 | `config`            | [`InjectableWidgetConfig`](#injectablewidgetconfig)   | Pre-resolved widget config. Set this if you already have the config server-rendered or fetched app-wide — skips the bootstrap fetch.     |
-| `lightboxViewport`  | `boolean`                                             | Render the media lightbox (image / video gallery) as a viewport-fixed overlay. Set `true` when the widget's host box is very small.      |
+| `lightboxViewport`  | `boolean` (default `true`)                            | Render the media lightbox (image / video gallery) as a viewport-fixed overlay. Pass `false` to contain the gallery inside the widget's host box. |
 | `onResize`          | `(size: { width: number; height: number }) => void`   | Fired whenever the widget's intended dimensions change (open ↔ closed ↔ expanded). Use for host-side layout sync.                        |
 | `onClose`           | `() => void`                                          | Fired when the visitor taps the close chip.                                                                                              |
 | `className`         | `string`                                              | Pass-through class on the outer host `<div>`. Style this with normal layout CSS.                                                         |
@@ -250,7 +249,7 @@ interface VisitorPrefill {
 
 ### InjectableWidgetConfig
 
-The pre-resolved widget config shape (theme, features, blocks, prechat, messenger chrome, sounds, locale strategy). It deliberately excludes `status`, `branding`, and `security.allowedOrigins` — those are server-owned and not host-overridable. Pull the full type from the package:
+The pre-resolved widget config shape (theme, features, blocks, prechat, messenger chrome, sounds, locale strategy). Pull it from the package:
 
 ```ts
 import type { InjectableWidgetConfig } from "@wexio/messenger-widget-react";
@@ -296,7 +295,7 @@ Typed wrappers are on the roadmap:
 - `@wexio/messenger-widget-angular` — coming soon
 - `@wexio/messenger-widget-ember` — coming soon
 
-For plain HTML / script-injection setups, paste the loader snippet from https://wexio.io/docs.
+For plain HTML / script-injection setups, paste the loader snippet from https://learn.wexio.io.
 
 ## Author
 

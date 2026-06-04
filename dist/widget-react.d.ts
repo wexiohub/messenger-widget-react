@@ -1,9 +1,6 @@
 import type { CSSProperties } from "react";
 
 export type WexioWidgetLocale = "en" | "uk";
-/** Public surface — mode is always production. Preview + demo are
- *  private-only (dashboard embed) and not reachable from npm. */
-export type WexioWidgetMode = "production";
 
 export type WidgetTab = "home" | "messages" | "help" | "news" | "profile";
 
@@ -246,9 +243,6 @@ export interface VisitorPrefill {
 export interface WexioWidgetProps {
   publicKey?: string;
   locale?: WexioWidgetLocale;
-  /** Always `"production"` on the public package. `preview` and `demo`
-   *  modes are dashboard-only and not exposed here. */
-  mode?: WexioWidgetMode;
   /**
    * Log a known user into the widget (the React equivalent of
    * Intercom's `boot({ user_id, ... })`). Provide ONE proof:

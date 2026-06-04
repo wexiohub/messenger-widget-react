@@ -22226,7 +22226,7 @@ function gv({ publicKey: e, locale: t, user: n, prefill: r, mode: i, configOverr
 		embedded: !0,
 		visitorIdentity: n,
 		visitorPrefill: r,
-		lightboxViewport: l ?? !1,
+		lightboxViewport: l ?? !0,
 		themeRoot: h ?? void 0,
 		styleRoot: y ?? void 0,
 		onResize: (e, t) => {
