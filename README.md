@@ -15,6 +15,7 @@ Native React component for the [Wexio](https://wexio.io) web messenger. Renders 
 - [Quick start](#quick-start)
 - [Identifying users](#identifying-users)
 - [Props](#props)
+- [Bot protection (Cloudflare Turnstile)](#bot-protection-cloudflare-turnstile)
 - [Methods](#methods)
 - [Types](#types)
 - [SSR](#ssr)
@@ -72,153 +73,33 @@ Pass a verified `user` to log a known visitor in (the Wexio equivalent of Interc
 />
 ```
 
-For an **unverified pre-fill** (skip the prechat form when the visitor's email is already known but you can't sign it), use `prefill`:
-
-```tsx
-<WexioWidget publicKey="pk_live_..." prefill={{ email: "ada@example.com" }} />
-```
-
-> **Memoise `user` and `prefill`.** Fresh object literals every render churn the env (the handshake is internally guarded against re-firing unless the proof actually changes, but it's tidier to avoid).
+> **Memoise `user`.** Fresh object literals every render churn the env (the handshake is internally guarded against re-firing unless the proof actually changes, but it's tidier to avoid).
 
 ## Props
 
-| Prop                | Type                                                  | Description                                                                                                                              |
-| ------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `publicKey`         | `string`                                              | Wexio integration public key (`pk_live_...`). Omit to render in demo mode (bundled mock content for landing pages or Storybook).         |
-| `locale`            | `"en" \| "uk"`                                        | UI locale. Defaults to the visitor's browser language. Extend by contributing a new bundle to the source repo.                           |
-| `user`              | [`VisitorIdentity`](#visitoridentity)                 | Verified identity. See [Identifying users](#identifying-users).                                                                          |
-| `prefill`           | [`VisitorPrefill`](#visitorprefill)                   | Unverified pre-fill for the prechat form.                                                                                                |
-| `config`            | [`InjectableWidgetConfig`](#injectablewidgetconfig)   | Pre-resolved widget config. Set this if you already have the config server-rendered or fetched app-wide — skips the bootstrap fetch.     |
-| `lightboxViewport`  | `boolean` (default `true`)                            | Render the media lightbox (image / video gallery) as a viewport-fixed overlay. Pass `false` to contain the gallery inside the widget's host box. |
-| `onResize`          | `(size: { width: number; height: number }) => void`   | Fired whenever the widget's intended dimensions change (open ↔ closed ↔ expanded). Use for host-side layout sync.                        |
-| `onClose`           | `() => void`                                          | Fired when the visitor taps the close chip.                                                                                              |
-| `className`         | `string`                                              | Pass-through class on the outer host `<div>`. Style this with normal layout CSS.                                                         |
-| `style`             | `React.CSSProperties`                                 | Pass-through inline styles for the outer host `<div>`.                                                                                   |
+| Prop        | Type                                                | Description                                                                                                                                                                            |
+| ----------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `publicKey` | `string`                                            | Wexio integration public key (`pk_live_...`). Omit to render in demo mode (bundled mock content for landing pages or Storybook).                                                       |
+| `user`      | [`VisitorIdentity`](#visitoridentity)               | Verified identity. See [Identifying users](#identifying-users).                                                                                                                        |
+| `mode`      | `"production" \| "demo"`                            | Force a mode. Auto-resolves to `production` when `publicKey` is set, `demo` otherwise. Set `demo` explicitly to render bundled mock content even with a public key (landing previews). |
+| `config`    | [`InjectableWidgetConfig`](#injectablewidgetconfig) | Pre-resolved widget config. Set this if you already have the config server-rendered or fetched app-wide — skips the bootstrap fetch.                                                   |
+| `onResize`  | `(size: { width: number; height: number }) => void` | Fired whenever the widget's intended dimensions change (open ↔ closed ↔ expanded). Use for host-side layout sync.                                                                      |
+| `onOpen`    | `() => void`                                        | Fired when the visitor opens the panel (taps the launcher, peek bubble, etc.).                                                                                                         |
+| `onClose`   | `() => void`                                        | Fired when the visitor taps the close chip.                                                                                                                                            |
+| `className` | `string`                                            | Pass-through class on the outer host `<div>`. Style this with normal layout CSS.                                                                                                       |
+| `style`     | `React.CSSProperties`                               | Pass-through inline styles for the outer host `<div>`.                                                                                                                                 |
+
+> **UI locale is operator-controlled.** The widget ships **33 UI locales** (English, Ukrainian, German, Spanish — incl. `es-MX`, French, Italian, Dutch, Portuguese — incl. `pt-BR`, Swedish, Danish, Norwegian, Finnish, Polish, Czech, Slovak, Turkish, Romanian, Hungarian, Greek, Arabic, Hebrew, Hindi, Thai, Vietnamese, Indonesian, Japanese, Korean, Chinese — `zh` + `zh-TW`, plus regional English variants). The operator's `localeStrategy` (set in the Wexio dashboard) decides whether to follow the visitor's browser (`AUTO`), the host page's `<html lang>` (`WEBSITE`), or pin to a chosen language (`DEFAULT` + `defaultLocale`). The visitor can also override their language from the in-widget Profile tab.
+
+## Bot protection (Cloudflare Turnstile)
+
+When the operator enables [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) for the integration (Wexio dashboard → Security), the widget transparently runs an interaction-only challenge before the visitor handshake — no host wiring required. The launcher stays unclickable until the challenge resolves; on failure a small "couldn't verify you're human" popup appears anchored above the launcher with a retry button. The challenge token is attached to the prechat and identified-visitor handshake server-side, so operator-side rate-limiting / abuse rules apply automatically.
 
 ## Methods
 
-The visitor- and operator-facing imperative methods (`show`, `hide`, `update`, `shutdown`, `showSpace`, `showMessages`, `whoami`, `onUnreadCountChange`, etc.) live on `window.WexioWidget` once the component has mounted, mirroring the script loader's surface. A typed React hook (`useWexioWidget()`) ships in a future minor — until then, reach for the global from `useEffect`.
+The component's open / close lifecycle is driven via the `onOpen` / `onClose` callbacks plus the visitor's tap on the launcher — no host-side imperative call is needed for normal use.
 
-### show / hide / toggle
-
-Open or close the messenger panel.
-
-```ts
-window.WexioWidget?.show();
-window.WexioWidget?.hide();
-window.WexioWidget?.toggle();
-```
-
-### update
-
-Patch live config (swap identity, switch theme, change locale).
-
-```ts
-window.WexioWidget?.update({ locale: "uk" });
-```
-
-### shutdown / boot
-
-Wipe session (token, sticky visitor id, prechat flags); `boot` re-initialises. Use on logout / shared devices.
-
-```ts
-window.WexioWidget?.shutdown();
-window.WexioWidget?.boot({ publicKey: "pk_live_..." });
-```
-
-### showSpace
-
-Open the messenger and route to a specific tab.
-
-```ts
-window.WexioWidget?.showSpace("home");
-window.WexioWidget?.showSpace("messages");
-window.WexioWidget?.showSpace("help");
-window.WexioWidget?.showSpace("news");
-window.WexioWidget?.showSpace("profile");
-```
-
-### showMessages
-
-Alias for `showSpace("messages")`.
-
-```ts
-window.WexioWidget?.showMessages();
-```
-
-### showNewMessage
-
-Open ready-to-compose. Optional prefill for the composer.
-
-```ts
-window.WexioWidget?.showNewMessage();
-window.WexioWidget?.showNewMessage("Hi, I have a question about...");
-```
-
-### showArticle / showNews
-
-Deep-link into a help article or news post.
-
-```ts
-window.WexioWidget?.showArticle(articleId);
-window.WexioWidget?.showNews(newsItemId);
-```
-
-### onShow / onHide
-
-Fire a callback when the messenger opens/closes.
-
-```ts
-window.WexioWidget?.onShow(() => {
-  console.log("messenger opened");
-});
-window.WexioWidget?.onHide(() => {
-  console.log("messenger closed");
-});
-```
-
-### onUnreadCountChange
-
-Fires immediately with the current count, then on every change. Common use: badge the host tab title.
-
-```tsx
-useEffect(() => {
-  return window.WexioWidget?.onUnreadCountChange?.((count) => {
-    document.title = count > 0 ? `(${count}) Inbox` : "Inbox";
-  });
-}, []);
-```
-
-### hideNotifications
-
-Suppress launcher peek bubbles on new operator messages.
-
-```ts
-window.WexioWidget?.hideNotifications(true);  // suppress
-window.WexioWidget?.hideNotifications(false); // restore
-```
-
-### whoami / getVisitorId
-
-Read the current session.
-
-```ts
-const me = window.WexioWidget?.whoami();
-// → { visitorId, peopleId, displayName, verified } | null
-const visitorId = window.WexioWidget?.getVisitorId();
-```
-
-### setLocale
-
-Programmatic language switch.
-
-```ts
-window.WexioWidget?.setLocale("uk");
-```
-
-### Future / reserved
-
-The following names are reserved on the public surface for upcoming features and are no-ops today (with a `console.warn` in dev builds): `trackEvent`, `startTour`, `startSurvey`, `startChecklist`, `showTicket`. They'll light up when the corresponding backend features ship.
+An imperative `window.WexioWidget` surface (`show`, `hide`, `showSpace`, `setLocale`, `onUnreadCountChange`, …) is on the roadmap to mirror the script loader's API, but doesn't ship in the current React package. For deep-link / programmatic control today, mount the widget conditionally from your own host state.
 
 ## Types
 
@@ -237,23 +118,15 @@ interface VisitorIdentity {
 }
 ```
 
-### VisitorPrefill
-
-```ts
-interface VisitorPrefill {
-  name?: string;
-  email?: string;
-  phone?: string;
-}
-```
-
 ### InjectableWidgetConfig
 
-The pre-resolved widget config shape (theme, features, blocks, prechat, messenger chrome, sounds, locale strategy). Pull it from the package:
+The pre-resolved widget config shape (theme, features, blocks, prechat, messenger chrome, sounds, locale strategy, bot protection). Pull it from the package:
 
 ```ts
 import type { InjectableWidgetConfig } from "@wexio/messenger-widget-react";
 ```
+
+The integration's [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) bot-protection check (when the operator enables it in the Wexio dashboard) is wired automatically — the widget loads the CF script, runs the challenge before the visitor handshake, and shows a retry popup above the launcher if the challenge fails. Hosts don't need to wire anything extra.
 
 ## SSR
 
@@ -278,7 +151,7 @@ Modern evergreen browsers — anything that supports Shadow DOM and ES2020. Inte
 
 ### TypeScript errors after upgrade
 
-The public type surface is locked to `entries/public.ts` in the source repo. If you previously relied on undocumented props (`mode: "preview"`, `configOverride`, `useDummyData`, `previewData`), they are no longer exposed — they were dashboard-only and never meant to ship. Remove them and the build will pass.
+The public type surface is locked to `entries/public.ts` in the source repo. If you previously relied on undocumented props (`locale`, `prefill`, `lightboxViewport`, `mode: "preview"`, `configOverride`, `useDummyData`, `previewData`), they are no longer exposed — they were either dashboard-only or moved to operator-side config. Remove them and the build will pass. UI locale is now controlled by the operator's `localeStrategy` config and the visitor's Profile-tab language switcher.
 
 ## Use with other frameworks
 

@@ -1,7 +1,5 @@
 import type { CSSProperties } from "react";
 
-export type WexioWidgetLocale = "en" | "uk";
-
 export type WidgetTab = "home" | "messages" | "help" | "news" | "profile";
 
 export interface WidgetFeatures {
@@ -234,15 +232,8 @@ export interface VisitorIdentity {
   attributes?: Record<string, unknown>;
 }
 
-export interface VisitorPrefill {
-  name?: string;
-  email?: string;
-  phone?: string;
-}
-
 export interface WexioWidgetProps {
   publicKey?: string;
-  locale?: WexioWidgetLocale;
   /**
    * Log a known user into the widget (the React equivalent of
    * Intercom's `boot({ user_id, ... })`). Provide ONE proof:
@@ -256,12 +247,14 @@ export interface WexioWidgetProps {
    */
   user?: VisitorIdentity;
   /**
-   * Default profile values to PRE-FILL the prechat form — the lighter,
-   * unverified cousin of `user` (no `userHash`). When they cover every
-   * required prechat field the widget attaches them + skips the form;
-   * otherwise it pre-fills what it can.
+   * Override the resolved widget mode. Leave undefined for normal use —
+   * auto-resolves to `"production"` when a `publicKey` is set and
+   * `"demo"` otherwise. Set `"demo"` explicitly to render bundled mock
+   * content even when a `publicKey` is present (useful for marketing
+   * pages / landing-site previews where the chat shouldn't reach a
+   * real operator).
    */
-  prefill?: VisitorPrefill;
+  mode?: "production" | "demo";
   /**
    * Full, pre-resolved widget config. When provided, the widget boots
    * from it directly and SKIPS the `GET /api/web/config/:pk` bootstrap
@@ -271,13 +264,11 @@ export interface WexioWidgetProps {
    * skipped. Memoise this.
    */
   config?: InjectableWidgetConfig;
-  /**
-   * Render the media lightbox as a viewport-`fixed` overlay instead of
-   * one contained to this widget's host box. Set `true` when the widget
-   * is rendered very small (e.g. a floating mobile preview).
-   */
-  lightboxViewport?: boolean;
   onResize?: (size: { width: number; height: number }) => void;
+  /**
+   * Fired when the visitor opens the panel. Pairs with `onClose`.
+   */
+  onOpen?: () => void;
   onClose?: () => void;
   className?: string;
   style?: CSSProperties;
