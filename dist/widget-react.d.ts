@@ -247,15 +247,6 @@ export interface WexioWidgetProps {
    */
   user?: VisitorIdentity;
   /**
-   * Override the resolved widget mode. Leave undefined for normal use —
-   * auto-resolves to `"production"` when a `publicKey` is set and
-   * `"demo"` otherwise. Set `"demo"` explicitly to render bundled mock
-   * content even when a `publicKey` is present (useful for marketing
-   * pages / landing-site previews where the chat shouldn't reach a
-   * real operator).
-   */
-  mode?: "production" | "demo";
-  /**
    * Full, pre-resolved widget config. When provided, the widget boots
    * from it directly and SKIPS the `GET /api/web/config/:pk` bootstrap
    * request — for a host that already has the config server-rendered

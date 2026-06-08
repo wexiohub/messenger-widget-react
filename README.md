@@ -81,7 +81,6 @@ Pass a verified `user` to log a known visitor in (the Wexio equivalent of Interc
 | ----------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `publicKey` | `string`                                            | Wexio integration public key (`pk_live_...`). Omit to render in demo mode (bundled mock content for landing pages or Storybook).                                                       |
 | `user`      | [`VisitorIdentity`](#visitoridentity)               | Verified identity. See [Identifying users](#identifying-users).                                                                                                                        |
-| `mode`      | `"production" \| "demo"`                            | Force a mode. Auto-resolves to `production` when `publicKey` is set, `demo` otherwise. Set `demo` explicitly to render bundled mock content even with a public key (landing previews). |
 | `config`    | [`InjectableWidgetConfig`](#injectablewidgetconfig) | Pre-resolved widget config. Set this if you already have the config server-rendered or fetched app-wide — skips the bootstrap fetch.                                                   |
 | `onResize`  | `(size: { width: number; height: number }) => void` | Fired whenever the widget's intended dimensions change (open ↔ closed ↔ expanded). Use for host-side layout sync.                                                                      |
 | `onOpen`    | `() => void`                                        | Fired when the visitor opens the panel (taps the launcher, peek bubble, etc.).                                                                                                         |
@@ -151,7 +150,7 @@ Modern evergreen browsers — anything that supports Shadow DOM and ES2020. Inte
 
 ### TypeScript errors after upgrade
 
-The public type surface is locked to `entries/public.ts` in the source repo. If you previously relied on undocumented props (`locale`, `prefill`, `lightboxViewport`, `mode: "preview"`, `configOverride`, `useDummyData`, `previewData`), they are no longer exposed — they were either dashboard-only or moved to operator-side config. Remove them and the build will pass. UI locale is now controlled by the operator's `localeStrategy` config and the visitor's Profile-tab language switcher.
+The public type surface is locked to `entries/public.ts` in the source repo. If you previously relied on undocumented props (`locale`, `prefill`, `lightboxViewport`, `mode`, `configOverride`, `useDummyData`, `previewData`), they are no longer exposed — they were either dashboard-only or moved to operator-side config. Remove them and the build will pass. The widget auto-resolves to `production` when `publicKey` is set and `demo` (bundled mock content) otherwise; UI locale is controlled by the operator's `localeStrategy` config and the visitor's Profile-tab language switcher.
 
 ## Use with other frameworks
 
