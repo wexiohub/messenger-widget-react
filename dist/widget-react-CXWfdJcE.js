@@ -5656,43 +5656,43 @@ function xc({ className: e, orientation: t = "vertical", ...n }) {
 //#endregion
 //#region components/widget/tabs/messages-tab/message/media-lightbox.tsx
 function Sc({ items: e, initialIndex: t, open: r, onClose: i }) {
-	let a = d("lightbox"), [o, s] = C(t), c = Ao(), l = c.embedded ?? !1, u = !l || (c.lightboxViewport ?? !0);
+	let a = d("lightbox"), [o, s] = C(t), c = Ao(), l = !(c.embedded ?? !1) || (c.lightboxViewport ?? !0);
 	b(() => {
 		r && s(t);
 	}, [r, t]);
-	let p = e.length, m = e[o], h = y(() => {
-		s((e) => (e + 1) % p);
-	}, [p]), g = y(() => {
-		s((e) => (e - 1 + p) % p);
-	}, [p]);
+	let u = e.length, p = e[o], m = y(() => {
+		s((e) => (e + 1) % u);
+	}, [u]), h = y(() => {
+		s((e) => (e - 1 + u) % u);
+	}, [u]);
 	b(() => {
 		if (!r) return;
 		let e = (e) => {
-			e.key === "Escape" ? i() : e.key === "ArrowRight" ? h() : e.key === "ArrowLeft" && g();
+			e.key === "Escape" ? i() : e.key === "ArrowRight" ? m() : e.key === "ArrowLeft" && h();
 		};
 		document.addEventListener("keydown", e);
 		let t = document.body.style.overflow;
-		return u && (document.body.style.overflow = "hidden"), () => {
-			document.removeEventListener("keydown", e), u && (document.body.style.overflow = t);
+		return l && (document.body.style.overflow = "hidden"), () => {
+			document.removeEventListener("keydown", e), l && (document.body.style.overflow = t);
 		};
 	}, [
 		r,
 		i,
+		m,
 		h,
-		g,
-		u
+		l
 	]);
-	let _ = l ? c.themeRoot ?? null : typeof document < "u" ? document.body : null;
-	return _ ? oe(/* @__PURE__ */ w(wo, { children: r && m && /* @__PURE__ */ T(n.div, {
+	let g = c.themeRoot ?? (typeof document < "u" ? document.body : null);
+	return g ? oe(/* @__PURE__ */ w(wo, { children: r && p && /* @__PURE__ */ T(n.div, {
 		initial: { opacity: 0 },
 		animate: { opacity: 1 },
 		exit: { opacity: 0 },
 		transition: { duration: .15 },
 		onClick: i,
-		className: f(u ? "fixed" : "absolute", "inset-0 z-[2147483647] flex items-center justify-center", "bg-black/85 backdrop-blur-sm"),
+		className: f(l ? "fixed" : "absolute", "inset-0 z-2147483647 flex items-center justify-center", "bg-black/85 backdrop-blur-sm"),
 		role: "dialog",
 		"aria-modal": "true",
-		"aria-label": m.alt || a("mediaPreview"),
+		"aria-label": p.alt || a("mediaPreview"),
 		children: [
 			/* @__PURE__ */ w("button", {
 				type: "button",
@@ -5703,10 +5703,10 @@ function Sc({ items: e, initialIndex: t, open: r, onClose: i }) {
 				className: f("absolute top-4 right-4 z-10 flex h-9 w-9 items-center justify-center rounded-full", "bg-white/10 text-white transition-colors hover:bg-white/20"),
 				children: /* @__PURE__ */ w(cs, { size: 18 })
 			}),
-			p > 1 && /* @__PURE__ */ T(ie, { children: [/* @__PURE__ */ w("button", {
+			u > 1 && /* @__PURE__ */ T(ie, { children: [/* @__PURE__ */ w("button", {
 				type: "button",
 				onClick: (e) => {
-					e.stopPropagation(), g();
+					e.stopPropagation(), h();
 				},
 				"aria-label": a("previous"),
 				className: f("absolute left-4 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full", "bg-white/10 text-white transition-colors hover:bg-white/20"),
@@ -5714,7 +5714,7 @@ function Sc({ items: e, initialIndex: t, open: r, onClose: i }) {
 			}), /* @__PURE__ */ w("button", {
 				type: "button",
 				onClick: (e) => {
-					e.stopPropagation(), h();
+					e.stopPropagation(), m();
 				},
 				"aria-label": a("next"),
 				className: f("absolute right-4 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full", "bg-white/10 text-white transition-colors hover:bg-white/20"),
@@ -5737,24 +5737,24 @@ function Sc({ items: e, initialIndex: t, open: r, onClose: i }) {
 					duration: .18,
 					ease: "easeOut"
 				},
-				className: f("pointer-events-none flex items-center justify-center", u ? "max-h-[90vh] max-w-[90vw]" : "absolute inset-0 p-6"),
-				children: m.mimetype.startsWith("video/") ? /* @__PURE__ */ w("video", {
-					src: m.url,
+				className: f("pointer-events-none flex items-center justify-center", l ? "max-h-[90vh] max-w-[90vw]" : "absolute inset-0 p-6"),
+				children: p.mimetype.startsWith("video/") ? /* @__PURE__ */ w("video", {
+					src: p.url,
 					controls: !0,
 					autoPlay: !0,
 					onClick: (e) => e.stopPropagation(),
-					className: f("pointer-events-auto rounded-wx-lg", u ? "max-h-[90vh] max-w-[90vw]" : "max-h-full max-w-full")
-				}) : m.mimetype === "application/pdf" ? /* @__PURE__ */ w("iframe", {
-					src: m.url,
-					title: m.alt || "PDF preview",
+					className: f("pointer-events-auto rounded-wx-lg", l ? "max-h-[90vh] max-w-[90vw]" : "max-h-full max-w-full")
+				}) : p.mimetype === "application/pdf" ? /* @__PURE__ */ w("iframe", {
+					src: p.url,
+					title: p.alt || "PDF preview",
 					onClick: (e) => e.stopPropagation(),
-					className: f("pointer-events-auto rounded-wx-lg border-0 bg-white", u ? "h-[90vh] w-[90vw]" : "h-full w-full")
+					className: f("pointer-events-auto rounded-wx-lg border-0 bg-white", l ? "h-[90vh] w-[90vw]" : "h-full w-full")
 				}) : /* @__PURE__ */ w(n.img, {
-					src: m.url,
-					alt: m.alt,
+					src: p.url,
+					alt: p.alt,
 					onClick: (e) => e.stopPropagation(),
 					draggable: !1,
-					drag: p > 1 ? "x" : !1,
+					drag: u > 1 ? "x" : !1,
 					dragConstraints: {
 						left: 0,
 						right: 0
@@ -5762,21 +5762,21 @@ function Sc({ items: e, initialIndex: t, open: r, onClose: i }) {
 					dragElastic: .18,
 					dragMomentum: !1,
 					onDragEnd: (e, t) => {
-						t.offset.x <= -60 ? h() : t.offset.x >= 60 && g();
+						t.offset.x <= -60 ? m() : t.offset.x >= 60 && h();
 					},
-					className: f("pointer-events-auto rounded-wx-lg object-contain", p > 1 && "cursor-grab active:cursor-grabbing", u ? "max-h-[90vh] max-w-[90vw]" : "max-h-full max-w-full")
+					className: f("pointer-events-auto rounded-wx-lg object-contain", u > 1 && "cursor-grab active:cursor-grabbing", l ? "max-h-[90vh] max-w-[90vw]" : "max-h-full max-w-full")
 				})
-			}, `${o}-${m.url}`),
-			p > 1 && /* @__PURE__ */ T("div", {
+			}, `${o}-${p.url}`),
+			u > 1 && /* @__PURE__ */ T("div", {
 				className: "absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white",
 				children: [
 					o + 1,
 					" / ",
-					p
+					u
 				]
 			})
 		]
-	}, "media-lightbox") }), _) : null;
+	}, "media-lightbox") }), g) : null;
 }
 //#endregion
 //#region lib/content-languages.ts
@@ -5923,4 +5923,4 @@ function wc(e) {
 //#endregion
 export { H as $, Lt as $t, mo as A, tr as At, ba as B, ln as Bt, Jo as C, sr as Ct, Ao as D, Un as Dt, ko as E, lr as Et, Ja as F, Tn as Ft, fa as G, Qt as Gt, G as H, un as Ht, Za as I, wn as It, ua as J, Wt as Jt, ca as K, $t as Kt, J as L, Sn as Lt, oo as M, On as Mt, no as N, En as Nt, Eo as O, Hn as Ot, co as P, Dn as Pt, V as Q, It as Qt, Ha as R, yn as Rt, Yo as S, ir as St, No as T, cr as Tt, _a as U, on as Ut, Sa as V, sn as Vt, pa as W, tn as Wt, Ji as X, Bt as Xt, W as Y, Vt as Yt, qi as Z, zt as Zt, Y as _, gr as _t, Is as a, Ce as an, Fi as at, as as b, mr as bt, Ms as c, ye as cn, ri as ct, Ts as d, ce as dn, Qr as dt, tt as en, Gi as et, ds as f, de as fn, wr as ft, us as g, pr as gt, ms as h, hr as ht, Z as i, Te as in, Ii as it, to as j, Rn as jt, wo as k, or as kt, Es as l, E as ln, ii as lt, hs as m, D as mn, _r as mt, Sc as n, Ae as nn, Ri as nt, Fs as o, Se as on, ji as ot, gs as p, le as pn, ur as pt, la as q, Yt as qt, bc as r, A as rn, Li as rt, X as s, k as sn, Oi as st, wc as t, N as tn, zi as tt, ws as u, ue as un, ni as ut, cs as v, dr as vt, Wo as w, Wn as wt, is as x, ar as xt, ss as y, fr as yt, Na as z, cn as zt };
 
-//# sourceMappingURL=widget-react-Xe5iO4UM.js.map
+//# sourceMappingURL=widget-react-CXWfdJcE.js.map
