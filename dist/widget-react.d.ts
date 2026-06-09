@@ -100,6 +100,12 @@ export type HomeNamedIcon =
   | "messenger"
   | "discord"
   | "slack"
+  | "line"
+  | "facebook"
+  | "twitter"
+  | "linkedin"
+  | "reddit"
+  | "tiktok"
   | "chat"
   | "email"
   | "phone"
@@ -117,7 +123,7 @@ export type HomeNamedIcon =
   | "users";
 
 export type HomeQuickActionIcon =
-  | { kind: "named"; name: HomeNamedIcon }
+  | { kind: "named"; name: HomeNamedIcon; colored?: boolean }
   | { kind: "media"; url: string };
 
 export interface HomeQuickActionButton {
