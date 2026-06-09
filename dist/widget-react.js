@@ -3594,7 +3594,7 @@ function Wa({ block: e, onOpenTab: t }) {
 		}
 	};
 	if (e.layout === "inline") {
-		let t = e.buttons.slice(0, 4);
+		let t = e.buttons.slice(0, 8);
 		return /* @__PURE__ */ Q("div", {
 			className: U("grid gap-2", t.length === 1 && "grid-cols-1", t.length === 2 && "grid-cols-2", t.length === 3 && "grid-cols-3", t.length >= 4 && "grid-cols-4"),
 			children: t.map((e, t) => /* @__PURE__ */ Q(Ga, {
@@ -3627,7 +3627,7 @@ function Ga({ btn: e, onClick: t }) {
 			damping: 24
 		},
 		title: e.label,
-		className: "group flex aspect-square flex-col items-center justify-center gap-1.5 rounded-wx-lg bg-wx-bg-elevated px-2 py-3 text-wx-fg transition-colors hover:bg-wx-bg-elevated-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wx-primary",
+		className: "group flex h-24 flex-col items-center justify-center gap-1.5 rounded-wx-lg bg-wx-bg-elevated px-2 py-3 text-wx-fg transition-colors hover:bg-wx-bg-elevated-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wx-primary",
 		children: [/* @__PURE__ */ Q("span", {
 			className: "flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-wx-bg transition-transform group-hover:scale-110",
 			children: e.icon?.kind === "media" ? /* @__PURE__ */ Q("img", {
