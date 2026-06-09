@@ -3145,7 +3145,7 @@ function Ca({ title: e, slug: t, onOpenArticle: n, onOpenTab: r }) {
 	});
 }
 function wa({ block: e, onOpenTab: t, onOpenArticle: n, isDummy: r }) {
-	let i = H("home"), a = H("demo"), o = p(), s = je(), c = e.suggestions, l = c ? Math.max(0, Math.min(c.maxItems ?? 0, 10)) : 0, u = o.previewData?.helpArticles, d = !r && !!u && l > 0, f = c?.mode === "popular" ? Ee.Popular : c?.mode === "recent" ? Ee.Recent : void 0, m = c?.mode === "category" ? c.categoryId : void 0, h = r || d || l === 0 || !c || !(c.mode === "popular" || c.mode === "recent" || c.mode === "category") || c.mode === "category" && !m, { data: g, loading: _ } = _e({
+	let i = H("home"), a = H("demo"), o = p(), s = je(), c = e.suggestions, l = c ? c.mode === "manual" ? Math.min((c.articleIds ?? []).length, 10) : Math.max(0, Math.min(c.maxItems ?? 0, 10)) : 0, u = o.previewData?.helpArticles, d = !r && !!u && l > 0, f = c?.mode === "popular" ? Ee.Popular : c?.mode === "recent" ? Ee.Recent : void 0, m = c?.mode === "category" ? c.categoryId : void 0, h = r || d || l === 0 || !c || !(c.mode === "popular" || c.mode === "recent" || c.mode === "category") || c.mode === "category" && !m, { data: g, loading: _ } = _e({
 		variables: { args: {
 			limit: l,
 			locale: s,
@@ -3242,7 +3242,7 @@ function Ta({ title: e, onOpenAll: t, children: n }) {
 //#endregion
 //#region components/widget/home-blocks/blocks/news-preview.tsx
 function Ea({ block: e, onOpenTab: t, isDummy: n }) {
-	let r = H("home"), i = H("demo"), a = je(), o = p(), s = pa(), c = Math.max(1, Math.min(6, e.maxItems ?? 3)), l = n ? void 0 : o.previewData?.newsPosts, u = Array.isArray(l) && l.length > 0, { data: d, error: f, loading: m } = Re({
+	let r = H("home"), i = H("demo"), a = je(), o = p(), s = pa(), c = Math.max(1, Math.min(10, e.maxItems ?? 3)), l = n ? void 0 : o.previewData?.newsPosts, u = Array.isArray(l) && l.length > 0, { data: d, error: f, loading: m } = Re({
 		variables: { args: {
 			locale: a,
 			limit: c
@@ -3279,7 +3279,7 @@ function Ea({ block: e, onOpenTab: t, isDummy: n }) {
 //#endregion
 //#region components/widget/home-blocks/blocks/pinned-articles.tsx
 function Da({ block: e, onOpenTab: t, onOpenArticle: n, isDummy: r }) {
-	let i = H("home"), a = H("demo"), o = p(), s = je(), c = pa(), l = (e.articleIds ?? []).slice(0, 5), u = l.length, d = r ? null : o.previewData?.helpArticlesById, f = !!d, { data: m } = xe({
+	let i = H("home"), a = H("demo"), o = p(), s = je(), c = pa(), l = (e.articleIds ?? []).slice(0, 10), u = l.length, d = r ? null : o.previewData?.helpArticlesById, f = !!d, { data: m } = xe({
 		variables: {
 			ids: l,
 			locale: s
