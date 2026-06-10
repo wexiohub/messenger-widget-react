@@ -158,7 +158,7 @@ The underlying widget runtime is a Web Component, so it works in any modern fram
 
 ```html
 <wexio-widget public-key="pk_live_..."></wexio-widget>
-<script type="module" src="https://cdn.wexio.io/widget.js"></script>
+<script type="module" src="https://cdn.wexio.io/widget/widget.js"></script>
 ```
 
 Typed wrappers are on the roadmap:
