@@ -12,9 +12,9 @@ import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
 import { D as e, S as t, r as n } from "./widget-react-CxCHz0ip.js";
-import { a as r, c as i, i as a, l as o, n as s, o as c, r as l, t as u } from "./widget-react-BLwmvey4.js";
+import { a as r, c as i, i as a, l as o, n as s, o as c, r as l, t as u } from "./widget-react-BzzQPFS4.js";
 import { i as d, n as f, o as p } from "./widget-react-CQ0DMi7b.js";
-import { h as m, n as h, o as g, r as _, s as v } from "./widget-react-t3CWNww2.js";
+import { h as m, n as h, o as g, r as _, s as v } from "./widget-react-BYrOtI3f.js";
 import { t as y } from "./widget-react-DP-dfZKt.js";
 import { useState as b } from "react";
 import { jsx as x, jsxs as S } from "react/jsx-runtime";
@@ -340,4 +340,4 @@ function E() {
 //#endregion
 export { T as NewsArticleView };
 
-//# sourceMappingURL=widget-react-MtCEhSSO2.js.map
+//# sourceMappingURL=widget-react-CnPQO1vi2.js.map

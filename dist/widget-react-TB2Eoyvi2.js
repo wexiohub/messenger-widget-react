@@ -100,7 +100,7 @@ var e = {
 		"demo-article-install": {
 			title: "Install the Wexio widget on your site",
 			excerpt: "A 30-second snippet you paste before the closing </body> tag.",
-			body: "## Add the loader script\n\nPaste this snippet into every page where you want the widget to appear:\n\n```html\n<script\n  src=\"https://cdn.wexio.io/loader.js\"\n  data-public-key=\"pk_live_YOUR_KEY\"\n><\/script>\n```\n\nThe loader injects a floating launcher in the bottom-right corner. Click it to open the chat panel.\n\n## Verify the install\n\n- Visit a page that includes the snippet.\n- Open the browser console.\n- You should see `[wexio] widget mounted`.\n\n## Customise the look\n\nThe widget reads brand colours from your dashboard. Update them in **Settings → Brand**.\n\n> Need a hand? Tap \"Still need help? Message us\" below and we'll walk you through it."
+			body: "## Add the loader script\n\nPaste this snippet into every page where you want the widget to appear:\n\n```html\n<script\n  src=\"https://cdn.wexio.io/widget/loader.js\"\n  data-public-key=\"pk_live_YOUR_KEY\"\n><\/script>\n```\n\nThe loader injects a floating launcher in the bottom-right corner. Click it to open the chat panel.\n\n## Verify the install\n\n- Visit a page that includes the snippet.\n- Open the browser console.\n- You should see `[wexio] widget mounted`.\n\n## Customise the look\n\nThe widget reads brand colours from your dashboard. Update them in **Settings → Brand**.\n\n> Need a hand? Tap \"Still need help? Message us\" below and we'll walk you through it."
 		},
 		"demo-article-flows": {
 			title: "Build your first automation flow",
@@ -260,4 +260,4 @@ var e = {
 //#endregion
 export { r as conversation, a as default, n as help, i as messenger, t as news, e as recentMessage };
 
-//# sourceMappingURL=widget-react-mrFdArna2.js.map
+//# sourceMappingURL=widget-react-TB2Eoyvi2.js.map

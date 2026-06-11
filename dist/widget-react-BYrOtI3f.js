@@ -175,16 +175,16 @@ function D({ authors: e, max: t = 3, className: n }) {
 //#region components/widget/sticky-search-header.tsx
 function O({ value: t, onChange: n, placeholder: r, className: i }) {
 	return /* @__PURE__ */ b("div", {
-		className: u("sticky top-0 z-10 border-wx-border border-b bg-wx-bg", i),
-		children: [/* @__PURE__ */ y("span", {
-			className: "-translate-y-1/2 pointer-events-none absolute top-1/2 left-4 text-wx-fg-muted",
-			children: /* @__PURE__ */ y(e, { size: 16 })
+		className: u("sticky top-0 z-10 flex items-center gap-2.5 border-wx-border border-b bg-wx-bg px-4", i),
+		children: [/* @__PURE__ */ y(e, {
+			size: 16,
+			className: "shrink-0 text-wx-fg-muted"
 		}), /* @__PURE__ */ y("input", {
 			type: "search",
 			value: t,
 			onChange: (e) => n(e.target.value),
 			placeholder: r,
-			className: u("block w-full border-0 bg-transparent px-4 py-3 pl-10 text-sm text-wx-fg", "placeholder:text-wx-fg-muted focus:outline-none focus:ring-0", "[&::-webkit-search-cancel-button]:appearance-none")
+			className: u("block w-full min-w-0 flex-1 border-0 bg-transparent py-3 text-sm text-wx-fg", "placeholder:text-wx-fg-muted focus:outline-none focus:ring-0", "[&::-webkit-search-cancel-button]:appearance-none")
 		})]
 	});
 }
@@ -652,4 +652,4 @@ function Y({ item: e, locale: n, delay: r, onClick: o }) {
 //#endregion
 export { F as a, A as c, E as d, T as f, S as h, V as i, O as l, C as m, U as n, L as o, w as p, H as r, z as s, K as t, D as u };
 
-//# sourceMappingURL=widget-react-t3CWNww2.js.map
+//# sourceMappingURL=widget-react-BYrOtI3f.js.map

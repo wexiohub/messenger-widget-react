@@ -105,8 +105,8 @@ function oe(e, t) {
 var se = ["en", "uk"];
 async function ce(e) {
 	switch (e) {
-		case "uk": return (await import("./widget-react-2C9mqM922.js")).default;
-		default: return (await import("./widget-react-mrFdArna2.js")).default;
+		case "uk": return (await import("./widget-react-CeQaem4N2.js")).default;
+		default: return (await import("./widget-react-TB2Eoyvi2.js")).default;
 	}
 }
 function le(e) {
@@ -11681,4 +11681,4 @@ function Vu({ surface: e, itemId: t, reactionCounts: n, viewerReaction: i, group
 //#endregion
 export { ue as a, ae as c, se as i, re as l, Mu as n, oe as o, ju as r, ie as s, Vu as t };
 
-//# sourceMappingURL=widget-react-BLwmvey4.js.map
+//# sourceMappingURL=widget-react-BzzQPFS4.js.map
