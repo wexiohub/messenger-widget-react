@@ -1,0 +1,346 @@
+globalThis.process === void 0 && (globalThis.process = {
+	env: {},
+	nextTick: function(e) {
+		setTimeout(e, 0);
+	},
+	emit: function() {
+		return !1;
+	}
+});
+import "react";
+import "react-dom";
+import "react/jsx-runtime";
+import "react-dom/client";
+import { x as e } from "./widget-react-B9XrHKqv.js";
+//#region messages/zh-TW.json
+var t = /* @__PURE__ */ e({
+	article: () => m,
+	authError: () => _,
+	branding: () => f,
+	default: () => y,
+	header: () => r,
+	help: () => c,
+	home: () => a,
+	languageSelector: () => d,
+	launcher: () => i,
+	lightbox: () => g,
+	messages: () => o,
+	news: () => l,
+	peek: () => h,
+	prechat: () => s,
+	profile: () => v,
+	reactions: () => u,
+	sound: () => p,
+	tabs: () => n
+}), n = {
+	home: "首頁",
+	messages: "訊息",
+	help: "說明",
+	news: "最新消息",
+	profile: "個人資料"
+}, r = {
+	close: "關閉",
+	back: "返回",
+	conversationSubtitle: "我們的團隊也能提供協助",
+	helpTitle: "說明",
+	newsTitle: "最新消息",
+	expand: "展開小工具",
+	collapse: "收合小工具"
+}, i = {
+	open: "開啟聊天",
+	close: "關閉聊天",
+	loading: "連線中…"
+}, a = {
+	greetingHeadline: "您好 👋",
+	greetingSubheadline: "我們能為您做些什麼?",
+	askTitle: "提出問題",
+	askSubtitle: "我們的機器人和團隊可以提供協助",
+	recentMessageLabel: "最近訊息",
+	recentMessageTitle: "最近訊息",
+	recentMessageFromFallback: "Gaia",
+	recentMessageAgo: "4 小時前",
+	recentMessageSample: "您好 👋 感謝您的聯絡 - 我們會盡快回覆您。",
+	featuredArticleLoading: "精選文章",
+	featuredArticleTap: "點擊閱讀",
+	featuredArticleEmpty: "選擇一篇文章",
+	featuredArticleSetUp: "在儀表板中設定此區塊",
+	featuredArticleDemoEyebrow: "Pioneer · 請記下日期",
+	featuredArticleDemoHeadline: "2026 年 10 月 8 日",
+	featuredArticleDemoSubline: "舊金山 · 現場 + 線上",
+	featuredArticleDemoCta: "查看發表議程",
+	seeAgenda: "查看發表議程",
+	browseHelp: "瀏覽說明",
+	whatsNew: "最新動態",
+	searchPlaceholder: "搜尋說明",
+	pinnedArticlesTitle: "請先閱讀這些",
+	popularArticlesTitle: "熱門文章",
+	pinnedArticleRow: "釘選文章 {n}",
+	newsPreviewTitle: "最新消息",
+	newsPreviewRow: "消息更新 {n}",
+	myConversationsTitle: "您的對話",
+	myConversationsEmpty: "查看您的對話",
+	teamStatusOnline: "我們在線上",
+	teamStatusReplyTime: "通常數分鐘內回覆"
+}, o = {
+	today: "今天",
+	yesterday: "昨天",
+	unreadMessages: "未讀訊息",
+	emptyTitle: "尚無訊息",
+	emptyBody: "開始對話,我們的團隊會在這裡回覆您。",
+	sendCta: "傳送訊息給我們",
+	attach: "附加檔案",
+	commands: "快速指令",
+	record: "錄製語音訊息",
+	stopRecording: "停止錄音",
+	recording: "錄音中…",
+	uploading: "上傳中…",
+	uploadFailed: "上傳失敗",
+	voiceDenied: "麥克風存取已遭拒",
+	voiceUnsupported: "此瀏覽器不支援語音錄製",
+	fileTooLarge: "檔案過大(最大 10MB)",
+	fileMimeNotAllowed: "不支援此檔案類型",
+	emoji: "插入表情符號",
+	cancelRecording: "取消錄音",
+	pauseRecording: "暫停錄音",
+	resumeRecording: "繼續錄音",
+	playPreview: "播放錄音",
+	emojiPicker: "表情符號選擇器",
+	emojiSearch: "搜尋…",
+	playAudio: "播放",
+	pauseAudio: "暫停",
+	openAudio: "開啟音訊",
+	removeAttachment: "移除",
+	aiAssistant: "AI 助理",
+	operator: "客服",
+	openImage: "開啟圖片",
+	openPreview: "開啟預覽",
+	play: "播放",
+	pause: "暫停",
+	typing: "輸入中…",
+	aiThinking: "思考中…",
+	aiSearching: "瀏覽中…",
+	typingSomeone: "有人",
+	signInToChat: "請登入以開始對話。",
+	signInUnavailable: "目前無法登入。",
+	googleSignIn: "使用 Google 登入",
+	passkeySignIn: "使用通行金鑰登入",
+	passkeyRegister: "第一次嗎? 設定通行金鑰",
+	passkeyError: "無法登入。請再試一次。",
+	passkeyNoCredential: "此裝置上尚無通行金鑰 — 點擊「設定通行金鑰」來建立一個。",
+	googleSignInDemo: "使用 Google 繼續"
+}, s = {
+	title: "開始之前",
+	subtitle: "請提供一些資訊,讓我們的團隊能更快協助您。",
+	labelName: "姓名",
+	labelEmail: "電子郵件",
+	labelPhone: "電話",
+	labelCustom: "詳細資訊",
+	required: "必填",
+	invalidEmail: "請輸入有效的電子郵件",
+	invalidPhone: "請輸入有效的電話號碼",
+	submit: "繼續",
+	submitFailed: "無法送出 - 請再試一次。"
+}, c = {
+	searchPlaceholder: "搜尋說明",
+	emptyTitle: "尚無文章",
+	emptyBody: "客服尚未發布任何內容。",
+	back: "返回",
+	helpful: "這篇文章對您有幫助嗎?",
+	yes: "有",
+	no: "沒有",
+	thanks: "感謝您的回饋。",
+	unresolvedCta: "仍需協助? 傳送訊息給我們",
+	noResults: "沒有結果",
+	articleNotFound: "找不到文章",
+	articleNotTranslated: "本文章尚未提供您所用語言的版本。",
+	writtenBy: "作者:{names}",
+	relatedTitle: "相關文章",
+	collectionsCount: "{count, plural, =0 {無合集} other {# 個合集}}",
+	articlesCount: "{count, plural, =0 {無文章} other {文章: #}}",
+	authorsByline: "作者 {first}{remaining, plural, =0 {} other { 及其他 # 人}}"
+}, l = {
+	emptyTitle: "尚無更新",
+	emptyBody: "請回到此處查看產品消息與公告。",
+	helpful: "這篇文章對您有幫助嗎?",
+	yes: "有",
+	no: "沒有",
+	thanks: "感謝您的回饋。",
+	searchPlaceholder: "搜尋消息",
+	noResults: "沒有相符的內容",
+	editedAt: "於 {when} 編輯",
+	articleNotFound: "找不到文章。",
+	articleNotTranslated: "本貼文尚未提供您所用語言的版本。",
+	readOriginal: "閱讀原文",
+	relatedTitle: "相關",
+	writtenBy: "作者:{names}"
+}, u = {
+	ariaLabel: "回應",
+	tapAria: "用 {emoji} 回應"
+}, d = {
+	title: "以其他語言閱讀",
+	ariaLabel: "文章語言"
+}, f = {
+	poweredBy: "技術支援:",
+	wexio: "Wexio"
+}, p = {
+	mute: "靜音通知聲響",
+	unmute: "取消靜音通知聲響"
+}, m = {
+	tableOfContents: "目錄",
+	tabFallback: "分頁 {n}"
+}, h = {
+	newMessage: "新訊息",
+	dismiss: "關閉",
+	aiAssistant: "AI 助理",
+	operator: "客服"
+}, g = {
+	mediaPreview: "媒體預覽",
+	close: "關閉預覽",
+	previous: "上一個",
+	next: "下一個"
+}, _ = {
+	turnstileTitle: "無法驗證您的瀏覽器",
+	turnstileBody: "我們無法完成安全檢查。有時這是網路或廣告封鎖工具的問題 — 請重試或重新載入頁面。",
+	genericTitle: "無法連線",
+	genericBody: "登入時發生問題。請稍候再試。",
+	retry: "再試一次",
+	dismiss: "關閉"
+}, v = {
+	title: "您的個人資料",
+	subtitle: "更新您的資訊及小工具的行為。",
+	uploadAvatar: "更換照片",
+	removeAvatar: "移除照片",
+	avatarUploading: "上傳中…",
+	preferencesHeading: "偏好設定",
+	preferenceLanguage: "語言",
+	preferenceDesktopNotifications: "桌面通知",
+	preferenceDesktopNotificationsHint: "當小工具未獲焦點時接收系統通知。",
+	preferenceThemeMode: "主題",
+	themeAuto: "跟隨系統",
+	themeLight: "淺色",
+	themeDark: "深色",
+	themeLocked: "主題由客服設定。",
+	pinnedHint: "由客服設定 — 不可編輯。",
+	requiredHint: "必填",
+	invalidEmail: "請輸入有效的電子郵件地址。",
+	invalidPhone: "請使用國際格式,例如 +14155552671。",
+	noFields: "目前此處沒有可編輯的項目。",
+	save: "儲存變更",
+	saving: "儲存中…",
+	cancel: "捨棄",
+	saved: "變更已儲存。",
+	loading: "載入個人資料中…",
+	loadError: "無法載入您的個人資料。請再試一次。",
+	retry: "重試",
+	errorFieldNotAllowed: "此欄位在本小工具中無法編輯。請嘗試重新整理。",
+	errorFieldPinned: "此欄位已被您的帳戶鎖定。",
+	errorFieldInvalid: "部分值無效。請檢查標示的欄位。",
+	errorThemeLocked: "主題已由客服鎖定。",
+	errorFeatureDisabled: "客服已停用個人資料編輯。",
+	errorGeneric: "無法儲存您的變更。請再試一次。",
+	notificationsBlocked: "瀏覽器已封鎖通知。請更新網站權限以啟用。",
+	notificationsRequest: "請在出現提示時允許通知以啟用此功能。",
+	systemFields: {
+		avatar: "照片",
+		wexioId: "Wexio ID",
+		telegramId: "Telegram ID",
+		whatsappId: "WhatsApp ID",
+		viberId: "Viber ID",
+		instagramId: "Instagram ID",
+		optInWhatsapp: "WhatsApp 訂閱",
+		webVerified: "已驗證訪客",
+		firstName: "名字",
+		lastName: "姓氏",
+		username: "使用者名稱",
+		language: "語言",
+		email: "電子郵件",
+		phone: "電話",
+		company: "公司",
+		location: "位置",
+		isValid: "帳戶有效",
+		chatStatus: "對話狀態",
+		chatCategory: "對話類別",
+		priority: "優先順序",
+		leadSource: "潛在客戶來源",
+		leadStatus: "潛在客戶狀態",
+		interestLevel: "興趣程度",
+		productInterest: "產品興趣",
+		budgetRange: "預算",
+		purchaseTimeline: "採購時程",
+		lastMessageSentAt: "最後傳送",
+		lastMessageReceivedAt: "最後收到",
+		lastSeenAt: "最後上線",
+		firstMessageReceivedAt: "首次聯絡",
+		isBlocked: "已封鎖",
+		registrationDate: "註冊日期",
+		aiAvailable: "AI 協助",
+		totalMessagesSent: "已傳送訊息",
+		totalMessagesReceived: "已收到訊息",
+		totalAiMessagesSent: "AI 傳送訊息",
+		totalBotMessagesSent: "機器人傳送訊息",
+		totalUserMessagesSent: "客服傳送訊息",
+		flowCompletionRate: "流程完成率",
+		lastFlowCompleted: "最後完成的流程",
+		totalFlowsStarted: "已開始的流程",
+		totalFlowsCompleted: "已完成的流程"
+	},
+	systemFieldOptions: {
+		chatStatus: {
+			ISSUE: "問題",
+			RESOLVED: "已解決",
+			PENDING: "待處理",
+			IN_PROGRESS: "進行中",
+			CLOSED: "已關閉"
+		},
+		chatCategory: {
+			SALES: "業務",
+			SUPPORT: "支援",
+			BILLING: "帳單",
+			FEEDBACK: "意見回饋",
+			GENERAL: "一般",
+			OTHER: "其他"
+		},
+		priority: {
+			LOW: "低",
+			MEDIUM: "中",
+			HIGH: "高",
+			URGENT: "緊急"
+		},
+		leadStatus: {
+			NEW: "新建",
+			CONTACTED: "已聯絡",
+			QUALIFIED: "已認證",
+			NEGOTIATING: "協商中",
+			WON: "成交",
+			LOST: "流失"
+		},
+		interestLevel: {
+			LOW: "低",
+			MEDIUM: "中",
+			HIGH: "高",
+			VERY_HIGH: "非常高"
+		}
+	}
+}, y = {
+	tabs: n,
+	header: r,
+	launcher: i,
+	home: a,
+	messages: o,
+	prechat: s,
+	help: c,
+	news: l,
+	reactions: u,
+	languageSelector: d,
+	branding: f,
+	sound: p,
+	article: m,
+	peek: h,
+	lightbox: g,
+	authError: _,
+	profile: v
+};
+//#endregion
+export { t as n, y as t };
+
+//# sourceMappingURL=widget-react-BD4KAXKy2.js.map

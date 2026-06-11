@@ -1,0 +1,346 @@
+globalThis.process === void 0 && (globalThis.process = {
+	env: {},
+	nextTick: function(e) {
+		setTimeout(e, 0);
+	},
+	emit: function() {
+		return !1;
+	}
+});
+import "react";
+import "react-dom";
+import "react/jsx-runtime";
+import "react-dom/client";
+import { x as e } from "./widget-react-B9XrHKqv.js";
+//#region messages/es.json
+var t = /* @__PURE__ */ e({
+	article: () => m,
+	authError: () => _,
+	branding: () => f,
+	default: () => y,
+	header: () => r,
+	help: () => c,
+	home: () => a,
+	languageSelector: () => d,
+	launcher: () => i,
+	lightbox: () => g,
+	messages: () => o,
+	news: () => l,
+	peek: () => h,
+	prechat: () => s,
+	profile: () => v,
+	reactions: () => u,
+	sound: () => p,
+	tabs: () => n
+}), n = {
+	home: "Inicio",
+	messages: "Mensajes",
+	help: "Ayuda",
+	news: "Novedades",
+	profile: "Perfil"
+}, r = {
+	close: "Cerrar",
+	back: "Atrás",
+	conversationSubtitle: "Nuestro equipo también puede ayudarte",
+	helpTitle: "Ayuda",
+	newsTitle: "Novedades",
+	expand: "Ampliar widget",
+	collapse: "Contraer widget"
+}, i = {
+	open: "Abrir chat",
+	close: "Cerrar chat",
+	loading: "Conectando…"
+}, a = {
+	greetingHeadline: "¡Hola! 👋",
+	greetingSubheadline: "¿En qué podemos ayudarte?",
+	askTitle: "Haz una pregunta",
+	askSubtitle: "Nuestro bot y nuestro equipo pueden ayudarte",
+	recentMessageLabel: "Mensaje reciente",
+	recentMessageTitle: "Mensaje reciente",
+	recentMessageFromFallback: "Gaia",
+	recentMessageAgo: "4 h",
+	recentMessageSample: "Hola 👋 Gracias por contactarnos: enseguida te respondemos.",
+	featuredArticleLoading: "Artículo destacado",
+	featuredArticleTap: "Toca para leer",
+	featuredArticleEmpty: "Elige un artículo",
+	featuredArticleSetUp: "Configura este bloque en tu panel",
+	featuredArticleDemoEyebrow: "Pioneer · Save the date",
+	featuredArticleDemoHeadline: "8 de octubre de 2026",
+	featuredArticleDemoSubline: "San Francisco · presencial + virtual",
+	featuredArticleDemoCta: "Ver la agenda del evento",
+	seeAgenda: "Ver la agenda del evento",
+	browseHelp: "Explorar la ayuda",
+	whatsNew: "Novedades",
+	searchPlaceholder: "Buscar en la ayuda",
+	pinnedArticlesTitle: "Lee esto primero",
+	popularArticlesTitle: "Artículos populares",
+	pinnedArticleRow: "Artículo fijado {n}",
+	newsPreviewTitle: "Últimas novedades",
+	newsPreviewRow: "Novedad {n}",
+	myConversationsTitle: "Tus conversaciones",
+	myConversationsEmpty: "Ver tus conversaciones",
+	teamStatusOnline: "Estamos en línea",
+	teamStatusReplyTime: "Normalmente respondemos en unos minutos"
+}, o = {
+	today: "Hoy",
+	yesterday: "Ayer",
+	unreadMessages: "Mensajes sin leer",
+	emptyTitle: "Aún no hay mensajes",
+	emptyBody: "Empieza una conversación y nuestro equipo te responderá aquí.",
+	sendCta: "Envíanos un mensaje",
+	attach: "Adjuntar un archivo",
+	commands: "Comandos rápidos",
+	record: "Grabar un mensaje de voz",
+	stopRecording: "Detener grabación",
+	recording: "Grabando…",
+	uploading: "Subiendo…",
+	uploadFailed: "Error al subir",
+	voiceDenied: "Acceso al micrófono denegado",
+	voiceUnsupported: "Este navegador no admite grabación de voz",
+	fileTooLarge: "El archivo es demasiado grande (máx. 10 MB)",
+	fileMimeNotAllowed: "Este tipo de archivo no es compatible",
+	emoji: "Insertar emoji",
+	cancelRecording: "Cancelar grabación",
+	pauseRecording: "Pausar grabación",
+	resumeRecording: "Reanudar grabación",
+	playPreview: "Reproducir grabación",
+	emojiPicker: "Selector de emojis",
+	emojiSearch: "Buscar…",
+	playAudio: "Reproducir",
+	pauseAudio: "Pausar",
+	openAudio: "Abrir audio",
+	removeAttachment: "Eliminar",
+	aiAssistant: "Asistente de IA",
+	operator: "Agente",
+	openImage: "Abrir imagen",
+	openPreview: "Abrir vista previa",
+	play: "Reproducir",
+	pause: "Pausar",
+	typing: "escribiendo…",
+	aiThinking: "pensando…",
+	aiSearching: "buscando…",
+	typingSomeone: "Alguien",
+	signInToChat: "Inicia sesión para empezar la conversación.",
+	signInUnavailable: "El inicio de sesión no está disponible ahora mismo.",
+	googleSignIn: "Iniciar sesión con Google",
+	passkeySignIn: "Iniciar sesión con una passkey",
+	passkeyRegister: "¿Primera vez? Configurar una passkey",
+	passkeyError: "No se pudo iniciar sesión. Inténtalo de nuevo.",
+	passkeyNoCredential: "Aún no hay ninguna passkey en este dispositivo: toca «Configurar una passkey» para crear una.",
+	googleSignInDemo: "Continuar con Google"
+}, s = {
+	title: "Antes de empezar",
+	subtitle: "Unos datos rápidos para que nuestro equipo te ayude antes.",
+	labelName: "Nombre",
+	labelEmail: "Correo electrónico",
+	labelPhone: "Teléfono",
+	labelCustom: "Detalles",
+	required: "Obligatorio",
+	invalidEmail: "Introduce un correo electrónico válido",
+	invalidPhone: "Introduce un número de teléfono válido",
+	submit: "Continuar",
+	submitFailed: "No se pudo enviar: inténtalo de nuevo."
+}, c = {
+	searchPlaceholder: "Buscar en la ayuda",
+	emptyTitle: "Aún no hay artículos",
+	emptyBody: "Tu operador todavía no ha publicado nada.",
+	back: "Atrás",
+	helpful: "¿Te ha resultado útil?",
+	yes: "Sí",
+	no: "No",
+	thanks: "Gracias por tu opinión.",
+	unresolvedCta: "¿Sigues necesitando ayuda? Escríbenos",
+	noResults: "Sin resultados",
+	articleNotFound: "Artículo no encontrado",
+	articleNotTranslated: "Este artículo aún no está disponible en tu idioma.",
+	writtenBy: "Escrito por {names}",
+	relatedTitle: "Artículos relacionados",
+	collectionsCount: "{count, plural, =0 {Sin colecciones} one {# colección} other {# colecciones}}",
+	articlesCount: "{count, plural, =0 {Sin artículos} one {Artículos: #} other {Artículos: #}}",
+	authorsByline: "Autores {first}{remaining, plural, =0 {} one { y # más} other { y # más}}"
+}, l = {
+	emptyTitle: "Aún no hay novedades",
+	emptyBody: "Vuelve aquí para ver noticias del producto y anuncios.",
+	helpful: "¿Te ha resultado útil este artículo?",
+	yes: "Sí",
+	no: "No",
+	thanks: "Gracias por tu opinión.",
+	searchPlaceholder: "Buscar novedades",
+	noResults: "Sin publicaciones coincidentes",
+	editedAt: "editado {when}",
+	articleNotFound: "Artículo no encontrado.",
+	articleNotTranslated: "Esta publicación aún no está disponible en tu idioma.",
+	readOriginal: "Leer el original",
+	relatedTitle: "Relacionados",
+	writtenBy: "Escrito por {names}"
+}, u = {
+	ariaLabel: "Reacciones",
+	tapAria: "Reaccionar con {emoji}"
+}, d = {
+	title: "Leer en otro idioma",
+	ariaLabel: "Idiomas del artículo"
+}, f = {
+	poweredBy: "Con tecnología de",
+	wexio: "Wexio"
+}, p = {
+	mute: "Silenciar sonidos de notificación",
+	unmute: "Activar sonidos de notificación"
+}, m = {
+	tableOfContents: "Tabla de contenidos",
+	tabFallback: "Pestaña {n}"
+}, h = {
+	newMessage: "Nuevo mensaje",
+	dismiss: "Descartar",
+	aiAssistant: "Asistente de IA",
+	operator: "Agente"
+}, g = {
+	mediaPreview: "Vista previa del medio",
+	close: "Cerrar vista previa",
+	previous: "Anterior",
+	next: "Siguiente"
+}, _ = {
+	turnstileTitle: "No se pudo verificar tu navegador",
+	turnstileBody: "No hemos podido completar la comprobación de seguridad. A veces se debe a la red o a un bloqueador de anuncios: inténtalo de nuevo o recarga la página.",
+	genericTitle: "No se pudo conectar",
+	genericBody: "Algo ha fallado al iniciar tu sesión. Vuelve a intentarlo en un momento.",
+	retry: "Reintentar",
+	dismiss: "Descartar"
+}, v = {
+	title: "Tu perfil",
+	subtitle: "Actualiza tus datos y la forma en que se comporta el widget.",
+	uploadAvatar: "Cambiar foto",
+	removeAvatar: "Quitar foto",
+	avatarUploading: "Subiendo…",
+	preferencesHeading: "Preferencias",
+	preferenceLanguage: "Idioma",
+	preferenceDesktopNotifications: "Notificaciones de escritorio",
+	preferenceDesktopNotificationsHint: "Recibe una notificación del sistema cuando el widget no esté en primer plano.",
+	preferenceThemeMode: "Tema",
+	themeAuto: "Como el sistema",
+	themeLight: "Claro",
+	themeDark: "Oscuro",
+	themeLocked: "El tema lo establece el operador.",
+	pinnedHint: "Establecido por el operador: no se puede editar.",
+	requiredHint: "Obligatorio",
+	invalidEmail: "Introduce una dirección de correo válida.",
+	invalidPhone: "Usa el formato internacional, p. ej. +34911234567.",
+	noFields: "Aún no hay nada que editar aquí.",
+	save: "Guardar cambios",
+	saving: "Guardando…",
+	cancel: "Descartar",
+	saved: "Cambios guardados.",
+	loading: "Cargando perfil…",
+	loadError: "No se pudo cargar tu perfil. Inténtalo de nuevo.",
+	retry: "Reintentar",
+	errorFieldNotAllowed: "Este campo no es editable en este widget. Prueba a refrescar.",
+	errorFieldPinned: "Este campo está bloqueado por tu cuenta.",
+	errorFieldInvalid: "Algunos valores no son válidos. Revisa los campos marcados.",
+	errorThemeLocked: "El tema está bloqueado por el operador.",
+	errorFeatureDisabled: "El operador ha desactivado la edición del perfil.",
+	errorGeneric: "No se pudieron guardar los cambios. Inténtalo de nuevo.",
+	notificationsBlocked: "El navegador bloquea las notificaciones. Actualiza los permisos del sitio para activarlas.",
+	notificationsRequest: "Permite las notificaciones cuando se te pida para activarlas.",
+	systemFields: {
+		avatar: "Foto",
+		wexioId: "ID de Wexio",
+		telegramId: "ID de Telegram",
+		whatsappId: "ID de WhatsApp",
+		viberId: "ID de Viber",
+		instagramId: "ID de Instagram",
+		optInWhatsapp: "Consentimiento de WhatsApp",
+		webVerified: "Visitante verificado",
+		firstName: "Nombre",
+		lastName: "Apellidos",
+		username: "Nombre de usuario",
+		language: "Idioma",
+		email: "Correo electrónico",
+		phone: "Teléfono",
+		company: "Empresa",
+		location: "Ubicación",
+		isValid: "Cuenta válida",
+		chatStatus: "Estado del chat",
+		chatCategory: "Categoría del chat",
+		priority: "Prioridad",
+		leadSource: "Origen del lead",
+		leadStatus: "Estado del lead",
+		interestLevel: "Nivel de interés",
+		productInterest: "Interés en el producto",
+		budgetRange: "Presupuesto",
+		purchaseTimeline: "Plazo de compra",
+		lastMessageSentAt: "Último mensaje enviado",
+		lastMessageReceivedAt: "Último mensaje recibido",
+		lastSeenAt: "Última conexión",
+		firstMessageReceivedAt: "Primer contacto",
+		isBlocked: "Bloqueado",
+		registrationDate: "Registrado",
+		aiAvailable: "Asistencia de IA",
+		totalMessagesSent: "Mensajes enviados",
+		totalMessagesReceived: "Mensajes recibidos",
+		totalAiMessagesSent: "Mensajes enviados por IA",
+		totalBotMessagesSent: "Mensajes enviados por el bot",
+		totalUserMessagesSent: "Mensajes enviados por el agente",
+		flowCompletionRate: "Tasa de finalización de flujos",
+		lastFlowCompleted: "Último flujo completado",
+		totalFlowsStarted: "Flujos iniciados",
+		totalFlowsCompleted: "Flujos completados"
+	},
+	systemFieldOptions: {
+		chatStatus: {
+			ISSUE: "Incidencia",
+			RESOLVED: "Resuelto",
+			PENDING: "Pendiente",
+			IN_PROGRESS: "En curso",
+			CLOSED: "Cerrado"
+		},
+		chatCategory: {
+			SALES: "Ventas",
+			SUPPORT: "Soporte",
+			BILLING: "Facturación",
+			FEEDBACK: "Opiniones",
+			GENERAL: "General",
+			OTHER: "Otro"
+		},
+		priority: {
+			LOW: "Baja",
+			MEDIUM: "Media",
+			HIGH: "Alta",
+			URGENT: "Urgente"
+		},
+		leadStatus: {
+			NEW: "Nuevo",
+			CONTACTED: "Contactado",
+			QUALIFIED: "Cualificado",
+			NEGOTIATING: "En negociación",
+			WON: "Ganado",
+			LOST: "Perdido"
+		},
+		interestLevel: {
+			LOW: "Bajo",
+			MEDIUM: "Medio",
+			HIGH: "Alto",
+			VERY_HIGH: "Muy alto"
+		}
+	}
+}, y = {
+	tabs: n,
+	header: r,
+	launcher: i,
+	home: a,
+	messages: o,
+	prechat: s,
+	help: c,
+	news: l,
+	reactions: u,
+	languageSelector: d,
+	branding: f,
+	sound: p,
+	article: m,
+	peek: h,
+	lightbox: g,
+	authError: _,
+	profile: v
+};
+//#endregion
+export { t as n, y as t };
+
+//# sourceMappingURL=widget-react-CPUNK9nH.js.map

@@ -1,6 +1,6 @@
 {
   "name": "@wexio/messenger-widget-react",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Native React component embed for the Wexio web messenger. Renders inside a Shadow DOM portal for style isolation.",
   "license": "MIT",
   "private": false,

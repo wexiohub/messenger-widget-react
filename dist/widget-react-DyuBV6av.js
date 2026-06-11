@@ -1,0 +1,346 @@
+globalThis.process === void 0 && (globalThis.process = {
+	env: {},
+	nextTick: function(e) {
+		setTimeout(e, 0);
+	},
+	emit: function() {
+		return !1;
+	}
+});
+import "react";
+import "react-dom";
+import "react/jsx-runtime";
+import "react-dom/client";
+import { x as e } from "./widget-react-B9XrHKqv.js";
+//#region messages/da.json
+var t = /* @__PURE__ */ e({
+	article: () => m,
+	authError: () => _,
+	branding: () => f,
+	default: () => y,
+	header: () => r,
+	help: () => c,
+	home: () => a,
+	languageSelector: () => d,
+	launcher: () => i,
+	lightbox: () => g,
+	messages: () => o,
+	news: () => l,
+	peek: () => h,
+	prechat: () => s,
+	profile: () => v,
+	reactions: () => u,
+	sound: () => p,
+	tabs: () => n
+}), n = {
+	home: "Hjem",
+	messages: "Beskeder",
+	help: "Hjælp",
+	news: "Nyheder",
+	profile: "Profil"
+}, r = {
+	close: "Luk",
+	back: "Tilbage",
+	conversationSubtitle: "Vores team kan også hjælpe",
+	helpTitle: "Hjælp",
+	newsTitle: "Nyheder",
+	expand: "Udvid widget",
+	collapse: "Skjul widget"
+}, i = {
+	open: "Åbn chat",
+	close: "Luk chat",
+	loading: "Forbinder…"
+}, a = {
+	greetingHeadline: "Hej der 👋",
+	greetingSubheadline: "Hvordan kan vi hjælpe?",
+	askTitle: "Stil et spørgsmål",
+	askSubtitle: "Vores bot og team kan hjælpe",
+	recentMessageLabel: "Seneste besked",
+	recentMessageTitle: "Seneste besked",
+	recentMessageFromFallback: "Gaia",
+	recentMessageAgo: "4t",
+	recentMessageSample: "Hej der 👋 Tak fordi du skrev - vi vender hurtigt tilbage.",
+	featuredArticleLoading: "Fremhævet artikel",
+	featuredArticleTap: "Tryk for at læse",
+	featuredArticleEmpty: "Vælg en artikel",
+	featuredArticleSetUp: "Konfigurer denne blok i dit dashboard",
+	featuredArticleDemoEyebrow: "Pioneer · Sæt kryds i kalenderen",
+	featuredArticleDemoHeadline: "8. oktober 2026",
+	featuredArticleDemoSubline: "San Francisco · Fysisk + virtuel",
+	featuredArticleDemoCta: "Se programmet",
+	seeAgenda: "Se programmet",
+	browseHelp: "Gennemse hjælp",
+	whatsNew: "Nyheder",
+	searchPlaceholder: "Søg i hjælpen",
+	pinnedArticlesTitle: "Læs disse først",
+	popularArticlesTitle: "Populære artikler",
+	pinnedArticleRow: "Fastgjort artikel {n}",
+	newsPreviewTitle: "Seneste nyt",
+	newsPreviewRow: "Nyhedsopdatering {n}",
+	myConversationsTitle: "Dine samtaler",
+	myConversationsEmpty: "Se dine samtaler",
+	teamStatusOnline: "Vi er online",
+	teamStatusReplyTime: "Svarer som regel inden for få minutter"
+}, o = {
+	today: "I dag",
+	yesterday: "I går",
+	unreadMessages: "Ulæste beskeder",
+	emptyTitle: "Ingen beskeder endnu",
+	emptyBody: "Start en samtale, så vender vores team tilbage her.",
+	sendCta: "Send os en besked",
+	attach: "Vedhæft en fil",
+	commands: "Hurtige kommandoer",
+	record: "Optag en talebesked",
+	stopRecording: "Stop optagelse",
+	recording: "Optager…",
+	uploading: "Uploader…",
+	uploadFailed: "Upload mislykkedes",
+	voiceDenied: "Adgang til mikrofon er nægtet",
+	voiceUnsupported: "Stemmeoptagelse understøttes ikke i denne browser",
+	fileTooLarge: "Filen er for stor (maks. 10 MB)",
+	fileMimeNotAllowed: "Denne filtype understøttes ikke",
+	emoji: "Indsæt emoji",
+	cancelRecording: "Annuller optagelse",
+	pauseRecording: "Pause optagelse",
+	resumeRecording: "Genoptag optagelse",
+	playPreview: "Afspil optagelse",
+	emojiPicker: "Emoji-vælger",
+	emojiSearch: "Søg…",
+	playAudio: "Afspil",
+	pauseAudio: "Pause",
+	openAudio: "Åbn lyd",
+	removeAttachment: "Fjern",
+	aiAssistant: "AI-assistent",
+	operator: "Operatør",
+	openImage: "Åbn billede",
+	openPreview: "Åbn forhåndsvisning",
+	play: "Afspil",
+	pause: "Pause",
+	typing: "skriver…",
+	aiThinking: "tænker…",
+	aiSearching: "søger…",
+	typingSomeone: "Nogen",
+	signInToChat: "Log ind for at starte samtalen.",
+	signInUnavailable: "Login er ikke tilgængeligt lige nu.",
+	googleSignIn: "Log ind med Google",
+	passkeySignIn: "Log ind med en passkey",
+	passkeyRegister: "Første gang? Opret en passkey",
+	passkeyError: "Kunne ikke logge ind. Prøv igen.",
+	passkeyNoCredential: "Ingen passkey på denne enhed endnu — tryk på ”Opret en passkey” for at oprette en.",
+	googleSignInDemo: "Fortsæt med Google"
+}, s = {
+	title: "Før vi starter",
+	subtitle: "Et par hurtige detaljer, så vores team kan hjælpe dig hurtigere.",
+	labelName: "Navn",
+	labelEmail: "E-mail",
+	labelPhone: "Telefon",
+	labelCustom: "Detaljer",
+	required: "Påkrævet",
+	invalidEmail: "Indtast en gyldig e-mail",
+	invalidPhone: "Indtast et gyldigt telefonnummer",
+	submit: "Fortsæt",
+	submitFailed: "Kunne ikke sende - prøv igen."
+}, c = {
+	searchPlaceholder: "Søg i hjælpen",
+	emptyTitle: "Ingen artikler endnu",
+	emptyBody: "Din operatør har endnu ikke udgivet noget.",
+	back: "Tilbage",
+	helpful: "Var dette nyttigt?",
+	yes: "Ja",
+	no: "Nej",
+	thanks: "Tak for din feedback.",
+	unresolvedCta: "Har du stadig brug for hjælp? Skriv til os",
+	noResults: "Ingen resultater",
+	articleNotFound: "Artikel ikke fundet",
+	articleNotTranslated: "Denne artikel er endnu ikke tilgængelig på dit sprog.",
+	writtenBy: "Skrevet af {names}",
+	relatedTitle: "Relaterede artikler",
+	collectionsCount: "{count, plural, =0 {Ingen samlinger} one {# samling} other {# samlinger}}",
+	articlesCount: "{count, plural, =0 {Ingen artikler} one {Artikler: #} other {Artikler: #}}",
+	authorsByline: "Forfattere {first}{remaining, plural, =0 {} one { og # mere} other { og # mere}}"
+}, l = {
+	emptyTitle: "Ingen opdateringer endnu",
+	emptyBody: "Kig forbi her for produktnyt og meddelelser.",
+	helpful: "Var denne artikel nyttig?",
+	yes: "Ja",
+	no: "Nej",
+	thanks: "Tak for din feedback.",
+	searchPlaceholder: "Søg i nyheder",
+	noResults: "Ingen matchende opslag",
+	editedAt: "redigeret {when}",
+	articleNotFound: "Artikel ikke fundet.",
+	articleNotTranslated: "Dette opslag er endnu ikke tilgængeligt på dit sprog.",
+	readOriginal: "Læs originalen",
+	relatedTitle: "Relateret",
+	writtenBy: "Skrevet af {names}"
+}, u = {
+	ariaLabel: "Reaktioner",
+	tapAria: "Reager med {emoji}"
+}, d = {
+	title: "Læs på et andet sprog",
+	ariaLabel: "Artiklens sprog"
+}, f = {
+	poweredBy: "Drevet af",
+	wexio: "Wexio"
+}, p = {
+	mute: "Slå notifikationslyde fra",
+	unmute: "Slå notifikationslyde til"
+}, m = {
+	tableOfContents: "Indholdsfortegnelse",
+	tabFallback: "Fane {n}"
+}, h = {
+	newMessage: "Ny besked",
+	dismiss: "Afvis",
+	aiAssistant: "AI-assistent",
+	operator: "Operatør"
+}, g = {
+	mediaPreview: "Forhåndsvisning af medie",
+	close: "Luk forhåndsvisning",
+	previous: "Forrige",
+	next: "Næste"
+}, _ = {
+	turnstileTitle: "Kunne ikke verificere din browser",
+	turnstileBody: "Vi kunne ikke gennemføre sikkerhedstjekket. Det kan skyldes netværk eller en annonceblokering — prøv igen, eller genindlæs siden.",
+	genericTitle: "Kunne ikke forbinde",
+	genericBody: "Noget gik galt under login. Prøv igen om et øjeblik.",
+	retry: "Prøv igen",
+	dismiss: "Afvis"
+}, v = {
+	title: "Din profil",
+	subtitle: "Opdater dine oplysninger, og hvordan widgeten opfører sig.",
+	uploadAvatar: "Skift foto",
+	removeAvatar: "Fjern foto",
+	avatarUploading: "Uploader…",
+	preferencesHeading: "Indstillinger",
+	preferenceLanguage: "Sprog",
+	preferenceDesktopNotifications: "Notifikationer på skrivebordet",
+	preferenceDesktopNotificationsHint: "Få en systemnotifikation, når widgeten ikke er i fokus.",
+	preferenceThemeMode: "Tema",
+	themeAuto: "Følg systemet",
+	themeLight: "Lyst",
+	themeDark: "Mørkt",
+	themeLocked: "Temaet er sat af operatøren.",
+	pinnedHint: "Sat af operatøren — kan ikke redigeres.",
+	requiredHint: "Påkrævet",
+	invalidEmail: "Indtast en gyldig e-mailadresse.",
+	invalidPhone: "Brug internationalt format, f.eks. +14155552671.",
+	noFields: "Der er intet at redigere her endnu.",
+	save: "Gem ændringer",
+	saving: "Gemmer…",
+	cancel: "Annuller",
+	saved: "Ændringerne er gemt.",
+	loading: "Indlæser profil…",
+	loadError: "Kunne ikke indlæse din profil. Prøv igen.",
+	retry: "Prøv igen",
+	errorFieldNotAllowed: "Dette felt kan ikke redigeres i denne widget. Prøv at opdatere.",
+	errorFieldPinned: "Dette felt er låst af din konto.",
+	errorFieldInvalid: "Nogle værdier er ikke gyldige. Tjek de markerede felter.",
+	errorThemeLocked: "Temaet er låst af operatøren.",
+	errorFeatureDisabled: "Profilredigering er slået fra af operatøren.",
+	errorGeneric: "Kunne ikke gemme dine ændringer. Prøv igen.",
+	notificationsBlocked: "Notifikationer er blokeret af browseren. Opdater sidens tilladelser for at slå dem til.",
+	notificationsRequest: "Tillad notifikationer, når du bliver spurgt, for at aktivere dette.",
+	systemFields: {
+		avatar: "Foto",
+		wexioId: "Wexio ID",
+		telegramId: "Telegram ID",
+		whatsappId: "WhatsApp ID",
+		viberId: "Viber ID",
+		instagramId: "Instagram ID",
+		optInWhatsapp: "WhatsApp-samtykke",
+		webVerified: "Verificeret besøgende",
+		firstName: "Fornavn",
+		lastName: "Efternavn",
+		username: "Brugernavn",
+		language: "Sprog",
+		email: "E-mail",
+		phone: "Telefon",
+		company: "Virksomhed",
+		location: "Placering",
+		isValid: "Gyldig konto",
+		chatStatus: "Chatstatus",
+		chatCategory: "Chatkategori",
+		priority: "Prioritet",
+		leadSource: "Leadkilde",
+		leadStatus: "Leadstatus",
+		interestLevel: "Interesseniveau",
+		productInterest: "Produktinteresse",
+		budgetRange: "Budget",
+		purchaseTimeline: "Tidsplan for køb",
+		lastMessageSentAt: "Senest sendt",
+		lastMessageReceivedAt: "Senest modtaget",
+		lastSeenAt: "Senest set",
+		firstMessageReceivedAt: "Første kontakt",
+		isBlocked: "Blokeret",
+		registrationDate: "Registreret",
+		aiAvailable: "AI-assistance",
+		totalMessagesSent: "Sendte beskeder",
+		totalMessagesReceived: "Modtagne beskeder",
+		totalAiMessagesSent: "Sendte AI-beskeder",
+		totalBotMessagesSent: "Sendte bot-beskeder",
+		totalUserMessagesSent: "Sendte operatørbeskeder",
+		flowCompletionRate: "Gennemførelsesgrad for flows",
+		lastFlowCompleted: "Senest gennemførte flow",
+		totalFlowsStarted: "Startede flows",
+		totalFlowsCompleted: "Gennemførte flows"
+	},
+	systemFieldOptions: {
+		chatStatus: {
+			ISSUE: "Problem",
+			RESOLVED: "Løst",
+			PENDING: "Afventer",
+			IN_PROGRESS: "I gang",
+			CLOSED: "Lukket"
+		},
+		chatCategory: {
+			SALES: "Salg",
+			SUPPORT: "Support",
+			BILLING: "Fakturering",
+			FEEDBACK: "Feedback",
+			GENERAL: "Generelt",
+			OTHER: "Andet"
+		},
+		priority: {
+			LOW: "Lav",
+			MEDIUM: "Mellem",
+			HIGH: "Høj",
+			URGENT: "Haster"
+		},
+		leadStatus: {
+			NEW: "Ny",
+			CONTACTED: "Kontaktet",
+			QUALIFIED: "Kvalificeret",
+			NEGOTIATING: "Forhandler",
+			WON: "Vundet",
+			LOST: "Tabt"
+		},
+		interestLevel: {
+			LOW: "Lav",
+			MEDIUM: "Mellem",
+			HIGH: "Høj",
+			VERY_HIGH: "Meget høj"
+		}
+	}
+}, y = {
+	tabs: n,
+	header: r,
+	launcher: i,
+	home: a,
+	messages: o,
+	prechat: s,
+	help: c,
+	news: l,
+	reactions: u,
+	languageSelector: d,
+	branding: f,
+	sound: p,
+	article: m,
+	peek: h,
+	lightbox: g,
+	authError: _,
+	profile: v
+};
+//#endregion
+export { t as n, y as t };
+
+//# sourceMappingURL=widget-react-DyuBV6av.js.map

@@ -1,49 +1,57 @@
-"use client";
+globalThis.process === void 0 && (globalThis.process = {
+	env: {},
+	nextTick: function(e) {
+		setTimeout(e, 0);
+	},
+	emit: function() {
+		return !1;
+	}
+});
 import "react";
 import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
-import { S as e, a as t, d as n, i as r, l as i, n as a, r as o, t as s, u as c, w as l, y as u } from "./widget-react-DE7AVrCo.js";
-import { A as d, C as f, D as p, E as m, F as h, I as g, L as _, M as v, N as y, O as b, P as x, R as S, S as C, T as w, X as T, Z as E, _ as D, a as O, b as k, c as A, d as j, et as M, f as N, g as ee, i as P, j as te, k as F, l as I, ln as L, mn as ne, n as re, nn as ie, o as ae, p as oe, pn as se, r as ce, rn as le, s as R, t as z, tt as ue, u as B, v as de, x as fe, y as pe, z as V } from "./widget-react-CQ4e_16G.js";
-import { _ as me, a as he, b as ge, c as _e, d as ve, f as ye, h as be, i as xe, m as Se, o as Ce, p as we, s as Te, t as Ee, u as De, v as Oe, y as ke } from "./widget-react-BxWwGQRD.js";
-import { a as Ae, i as H, n as U, o as je, s as Me, t as W } from "./widget-react-BxvW64LH.js";
-import { a as Ne, c as Pe, d as Fe, f as Ie, h as Le, i as Re, l as ze, m as Be, p as Ve, t as He, u as Ue } from "./widget-react-DDQvg3DT.js";
-import { n as We, r as Ge, t as Ke } from "./widget-react-DOX6j7_Q.js";
-import { t as qe } from "./widget-react-Dew7YaLU.js";
-import { t as Je } from "./widget-react-D8TPnM9r.js";
-import { t as Ye } from "./widget-react-Cfgp7JeP.js";
-import { t as Xe } from "./widget-react-DiF8_rWm.js";
-import { t as Ze } from "./widget-react-DhC6mv1r.js";
-import { t as Qe } from "./widget-react-CLRkytx8.js";
-import { t as $e } from "./widget-react-C2h754jb.js";
-import { t as et } from "./widget-react-CN955pmW.js";
-import { t as tt } from "./widget-react-BLbPtY4n.js";
-import { t as nt } from "./widget-react-BW4f2hyQ.js";
-import { t as rt } from "./widget-react-B14doc54.js";
-import { t as it } from "./widget-react-Dc38nBay.js";
-import { t as at } from "./widget-react-DLB8LpcU.js";
-import { t as ot } from "./widget-react-ZbSPMF4X.js";
-import { t as st } from "./widget-react-UIygjxAo.js";
-import { t as ct } from "./widget-react-CDpm8Qiy.js";
-import { t as lt } from "./widget-react-10zkwt23.js";
-import { t as ut } from "./widget-react-BzxR9o5E.js";
-import { t as dt } from "./widget-react-B_V8Bjqq.js";
-import { t as ft } from "./widget-react-QjUZbMRE.js";
-import { t as pt } from "./widget-react-DbI8DSfF.js";
-import { t as mt } from "./widget-react-BlnCj8XF.js";
-import { t as ht } from "./widget-react-E883EDuM.js";
-import { t as gt } from "./widget-react-DhhMnP4R.js";
-import { t as _t } from "./widget-react-CH1QOeqD.js";
-import { t as vt } from "./widget-react-B8CnDdPY.js";
-import { t as yt } from "./widget-react-65mgSbHP.js";
-import { t as bt } from "./widget-react-H7OLByWo.js";
-import { t as xt } from "./widget-react-B9q1oBPc2.js";
-import { t as St } from "./widget-react-CY9oP5AG2.js";
-import { t as G } from "./widget-react-x11Xofc32.js";
-import { t as Ct } from "./widget-react-BLAJPg-52.js";
-import { t as wt } from "./widget-react-CcKvvhzc2.js";
-import { t as Tt } from "./widget-react-CABTEjlZ2.js";
-import { t as Et } from "./widget-react-CDi5LkDy2.js";
+import { S as e, a as t, d as n, i as r, l as i, n as a, r as o, t as s, u as c, w as l, y as u } from "./widget-react-B9XrHKqv.js";
+import { A as d, C as f, D as p, E as m, F as h, I as g, L as _, M as v, N as y, O as b, P as x, R as S, S as C, T as w, X as T, Z as E, _ as D, a as O, b as k, c as A, d as j, et as M, f as N, g as ee, i as P, j as te, k as F, l as I, ln as L, mn as ne, n as re, nn as ie, o as ae, p as oe, pn as se, r as ce, rn as le, s as R, t as z, tt as ue, u as B, v as de, x as fe, y as pe, z as V } from "./widget-react-CxCHz0ip.js";
+import { _ as me, a as he, b as ge, c as _e, d as ve, f as ye, h as be, i as xe, m as Se, o as Ce, p as we, s as Te, t as Ee, u as De, v as Oe, y as ke } from "./widget-react-DyCyhde3.js";
+import { a as Ae, i as H, n as U, o as je, s as Me, t as W } from "./widget-react-CQ0DMi7b.js";
+import { a as Ne, c as Pe, d as Fe, f as Ie, h as Le, i as Re, l as ze, m as Be, p as Ve, t as He, u as Ue } from "./widget-react-t3CWNww2.js";
+import { n as We, r as Ge, t as Ke } from "./widget-react-TZUXHkN3.js";
+import { t as qe } from "./widget-react-BTMh-VbZ.js";
+import { t as Je } from "./widget-react-GkCAcRz0.js";
+import { t as Ye } from "./widget-react-Cwn_Gz4N.js";
+import { t as Xe } from "./widget-react-CpCijjXq.js";
+import { t as Ze } from "./widget-react-DyuBV6av.js";
+import { t as Qe } from "./widget-react-D2j_XvHF.js";
+import { t as $e } from "./widget-react-DkmenoyB.js";
+import { t as et } from "./widget-react-B6UhqBJd.js";
+import { t as tt } from "./widget-react-CPQgBGlB.js";
+import { t as nt } from "./widget-react-CWjaunNP.js";
+import { t as rt } from "./widget-react-CPUNK9nH.js";
+import { t as it } from "./widget-react-Bj9TL4Kb.js";
+import { t as at } from "./widget-react-DEf9HRCg.js";
+import { t as ot } from "./widget-react-HdCmkcuG.js";
+import { t as st } from "./widget-react--j_oeaHy.js";
+import { t as ct } from "./widget-react-3FsNLmkN.js";
+import { t as lt } from "./widget-react-D3g52DyI.js";
+import { t as ut } from "./widget-react-DyMH0fHM.js";
+import { t as dt } from "./widget-react-BfYqRknT.js";
+import { t as ft } from "./widget-react-BaROuJiw.js";
+import { t as pt } from "./widget-react-D6Pydbhg.js";
+import { t as mt } from "./widget-react-od9e0Ugq.js";
+import { t as ht } from "./widget-react-CRhaCC5f.js";
+import { t as gt } from "./widget-react-EUJcOcjS.js";
+import { t as _t } from "./widget-react-CEQ-cZAm.js";
+import { t as vt } from "./widget-react-T1KxsYpy.js";
+import { t as yt } from "./widget-react-CwYIlZc0.js";
+import { t as bt } from "./widget-react-C90ZurSx.js";
+import { t as xt } from "./widget-react-D5-vMxtR2.js";
+import { t as St } from "./widget-react-C68tIjqi2.js";
+import { t as G } from "./widget-react-DyfWPmJL2.js";
+import { t as Ct } from "./widget-react-BE-hnNxO2.js";
+import { t as wt } from "./widget-react-ecrdUwW-2.js";
+import { t as Tt } from "./widget-react-BeCDy-n82.js";
+import { t as Et } from "./widget-react-BD4KAXKy2.js";
 import * as K from "react";
 import Dt, { Suspense as Ot, forwardRef as kt, lazy as At, startTransition as jt, useCallback as q, useEffect as J, useLayoutEffect as Mt, useMemo as Nt, useRef as Y, useState as X } from "react";
 import { Fragment as Pt, jsx as Z, jsxs as Q } from "react/jsx-runtime";
@@ -2022,8 +2030,8 @@ function gi({ children: e }) {
 }
 async function _i(e) {
 	switch (e) {
-		case "uk": return (await import("./widget-react-BwUzvSqg2.js")).default;
-		default: return (await import("./widget-react-CS89ytHf2.js")).default;
+		case "uk": return (await import("./widget-react-2C9mqM922.js")).default;
+		default: return (await import("./widget-react-mrFdArna2.js")).default;
 	}
 }
 //#endregion
@@ -4653,7 +4661,7 @@ function Lo({ children: e, uploading: t, onRemove: n, removeLabel: r, title: i }
 }
 //#endregion
 //#region components/widget/tabs/messages-tab/composer/emoji-picker.tsx
-var Ro = At(() => import("./widget-react-wTlmXnex2.js")), zo = "native", Bo = {
+var Ro = At(() => import("./widget-react-BhdM1EXE2.js")), zo = "native", Bo = {
 	"--epr-bg-color": "var(--wx-bg)",
 	"--epr-category-label-bg-color": "var(--wx-bg)",
 	"--epr-reactions-bg-color": "var(--wx-bg-elevated)",
@@ -4947,7 +4955,7 @@ function qo(e) {
 }
 //#endregion
 //#region components/widget/tabs/messages-tab/message/message-bubble.tsx
-var Jo = At(() => import("./widget-react-DujxpPAm2.js").then((e) => ({ default: e.AudioBubblePlayer })));
+var Jo = At(() => import("./widget-react-BKH1V5yP2.js").then((e) => ({ default: e.AudioBubblePlayer })));
 function Yo({ message: e, organizationLogoUrl: t, organizationName: r, aiAssistantAvatarUrl: i, buttonsActive: a, onButtonClick: o, onOpenLightbox: s, onInternalLink: c }) {
 	let l = H("messages"), u = e.direction === "OUTBOUND", d = e.sender.kind === "ai" || e.sender.kind === "bot" ? Yt : e.sender.name?.trim() || "", f = d ? null : e.sender.kind === "operator" ? l("operator") : null;
 	return /* @__PURE__ */ Q(n.div, {
@@ -5489,7 +5497,7 @@ var Ts = {
 	required: "r",
 	invalidEmail: "e",
 	invalidPhone: "p"
-}, Es = At(() => import("./widget-react-Bf61JvS12.js").then((e) => ({ default: e.VoiceRecorderBar })));
+}, Es = At(() => import("./widget-react-B3JUsNG42.js").then((e) => ({ default: e.VoiceRecorderBar })));
 function Ds({ isDummy: e, chatId: t, token: r, prechatForm: i, messenger: a, organizationLogoUrl: o, organizationName: s, isOpen: c = !0, onInbound: l, onOutbound: u, registerRealtimeHandler: d, unreadCount: f = 0, clearUnread: p, liveMessages: m, appendLiveMessage: h, replaceLiveMessage: g, initialVisitorMessage: _, onInitialVisitorMessageSent: v, visitorIdentity: y, visitorPrefill: b, security: x, verified: S = !1, onGoogleCredential: C, onPasskeySession: w, onInternalLink: T, getTurnstileToken: E }) {
 	let D = H("messages"), O = H("demo"), k = H("prechat"), A = je(), j = be() ?? "", [M, N] = X(null);
 	J(() => {
@@ -19812,7 +19820,7 @@ var bv = {
 		x: e > 0 ? -28 : e < 0 ? 28 : 0,
 		opacity: 0
 	})
-}, xv = At(() => import("./widget-react-brIi2vMI2.js").then((e) => ({ default: e.HelpArticleView }))), Sv = At(() => import("./widget-react-BSMmfqW72.js").then((e) => ({ default: e.NewsArticleView }))), Cv = "wexio:panel-expanded", wv = 32, Tv = 112;
+}, xv = At(() => import("./widget-react-_3PBiXn-2.js").then((e) => ({ default: e.HelpArticleView }))), Sv = At(() => import("./widget-react-MtCEhSSO2.js").then((e) => ({ default: e.NewsArticleView }))), Cv = "wexio:panel-expanded", wv = 32, Tv = 112;
 function Ev() {
 	if (typeof window > "u") return !1;
 	try {
@@ -22718,44 +22726,44 @@ function fy(e) {
 }
 uy(async ({ requestLocale: e }) => {
 	let t = await py(e), [n, r] = await Promise.all([jv(/* @__PURE__ */ Object.assign({
-		"../messages/ar.json": () => import("./widget-react-Cfgp7JeP.js").then((e) => e.n),
-		"../messages/cs.json": () => import("./widget-react-DiF8_rWm.js").then((e) => e.n),
-		"../messages/da.json": () => import("./widget-react-DhC6mv1r.js").then((e) => e.n),
-		"../messages/de.json": () => import("./widget-react-CLRkytx8.js").then((e) => e.n),
-		"../messages/demo.en.json": () => import("./widget-react-CS89ytHf2.js"),
-		"../messages/demo.uk.json": () => import("./widget-react-BwUzvSqg2.js"),
-		"../messages/el.json": () => import("./widget-react-C2h754jb.js").then((e) => e.n),
-		"../messages/en-GB.json": () => import("./widget-react-BLbPtY4n.js").then((e) => e.n),
-		"../messages/en-US.json": () => import("./widget-react-BW4f2hyQ.js").then((e) => e.n),
-		"../messages/en.json": () => import("./widget-react-CN955pmW.js").then((e) => e.n),
-		"../messages/es-MX.json": () => import("./widget-react-Dc38nBay.js").then((e) => e.n),
-		"../messages/es.json": () => import("./widget-react-B14doc54.js").then((e) => e.n),
-		"../messages/fi.json": () => import("./widget-react-DLB8LpcU.js").then((e) => e.n),
-		"../messages/fr.json": () => import("./widget-react-ZbSPMF4X.js").then((e) => e.n),
-		"../messages/he.json": () => import("./widget-react-UIygjxAo.js").then((e) => e.n),
-		"../messages/hi.json": () => import("./widget-react-CDpm8Qiy.js").then((e) => e.n),
-		"../messages/hu.json": () => import("./widget-react-10zkwt23.js").then((e) => e.n),
-		"../messages/id.json": () => import("./widget-react-BzxR9o5E.js").then((e) => e.n),
-		"../messages/it.json": () => import("./widget-react-B_V8Bjqq.js").then((e) => e.n),
-		"../messages/ja.json": () => import("./widget-react-QjUZbMRE.js").then((e) => e.n),
-		"../messages/ko.json": () => import("./widget-react-DbI8DSfF.js").then((e) => e.n),
-		"../messages/nl.json": () => import("./widget-react-BlnCj8XF.js").then((e) => e.n),
-		"../messages/no.json": () => import("./widget-react-E883EDuM.js").then((e) => e.n),
-		"../messages/pl.json": () => import("./widget-react-DhhMnP4R.js").then((e) => e.n),
-		"../messages/pt-BR.json": () => import("./widget-react-B8CnDdPY.js").then((e) => e.n),
-		"../messages/pt.json": () => import("./widget-react-CH1QOeqD.js").then((e) => e.n),
-		"../messages/ro.json": () => import("./widget-react-65mgSbHP.js").then((e) => e.n),
-		"../messages/sk.json": () => import("./widget-react-H7OLByWo.js").then((e) => e.n),
-		"../messages/sv.json": () => import("./widget-react-B9q1oBPc2.js").then((e) => e.n),
-		"../messages/th.json": () => import("./widget-react-CY9oP5AG2.js").then((e) => e.n),
-		"../messages/tr.json": () => import("./widget-react-x11Xofc32.js").then((e) => e.n),
-		"../messages/uk.json": () => import("./widget-react-BLAJPg-52.js").then((e) => e.n),
-		"../messages/vi.json": () => import("./widget-react-CcKvvhzc2.js").then((e) => e.n),
-		"../messages/zh-TW.json": () => import("./widget-react-CDi5LkDy2.js").then((e) => e.n),
-		"../messages/zh.json": () => import("./widget-react-CABTEjlZ2.js").then((e) => e.n)
+		"../messages/ar.json": () => import("./widget-react-Cwn_Gz4N.js").then((e) => e.n),
+		"../messages/cs.json": () => import("./widget-react-CpCijjXq.js").then((e) => e.n),
+		"../messages/da.json": () => import("./widget-react-DyuBV6av.js").then((e) => e.n),
+		"../messages/de.json": () => import("./widget-react-D2j_XvHF.js").then((e) => e.n),
+		"../messages/demo.en.json": () => import("./widget-react-mrFdArna2.js"),
+		"../messages/demo.uk.json": () => import("./widget-react-2C9mqM922.js"),
+		"../messages/el.json": () => import("./widget-react-DkmenoyB.js").then((e) => e.n),
+		"../messages/en-GB.json": () => import("./widget-react-CPQgBGlB.js").then((e) => e.n),
+		"../messages/en-US.json": () => import("./widget-react-CWjaunNP.js").then((e) => e.n),
+		"../messages/en.json": () => import("./widget-react-B6UhqBJd.js").then((e) => e.n),
+		"../messages/es-MX.json": () => import("./widget-react-Bj9TL4Kb.js").then((e) => e.n),
+		"../messages/es.json": () => import("./widget-react-CPUNK9nH.js").then((e) => e.n),
+		"../messages/fi.json": () => import("./widget-react-DEf9HRCg.js").then((e) => e.n),
+		"../messages/fr.json": () => import("./widget-react-HdCmkcuG.js").then((e) => e.n),
+		"../messages/he.json": () => import("./widget-react--j_oeaHy.js").then((e) => e.n),
+		"../messages/hi.json": () => import("./widget-react-3FsNLmkN.js").then((e) => e.n),
+		"../messages/hu.json": () => import("./widget-react-D3g52DyI.js").then((e) => e.n),
+		"../messages/id.json": () => import("./widget-react-DyMH0fHM.js").then((e) => e.n),
+		"../messages/it.json": () => import("./widget-react-BfYqRknT.js").then((e) => e.n),
+		"../messages/ja.json": () => import("./widget-react-BaROuJiw.js").then((e) => e.n),
+		"../messages/ko.json": () => import("./widget-react-D6Pydbhg.js").then((e) => e.n),
+		"../messages/nl.json": () => import("./widget-react-od9e0Ugq.js").then((e) => e.n),
+		"../messages/no.json": () => import("./widget-react-CRhaCC5f.js").then((e) => e.n),
+		"../messages/pl.json": () => import("./widget-react-EUJcOcjS.js").then((e) => e.n),
+		"../messages/pt-BR.json": () => import("./widget-react-T1KxsYpy.js").then((e) => e.n),
+		"../messages/pt.json": () => import("./widget-react-CEQ-cZAm.js").then((e) => e.n),
+		"../messages/ro.json": () => import("./widget-react-CwYIlZc0.js").then((e) => e.n),
+		"../messages/sk.json": () => import("./widget-react-C90ZurSx.js").then((e) => e.n),
+		"../messages/sv.json": () => import("./widget-react-D5-vMxtR2.js").then((e) => e.n),
+		"../messages/th.json": () => import("./widget-react-C68tIjqi2.js").then((e) => e.n),
+		"../messages/tr.json": () => import("./widget-react-DyfWPmJL2.js").then((e) => e.n),
+		"../messages/uk.json": () => import("./widget-react-BE-hnNxO2.js").then((e) => e.n),
+		"../messages/vi.json": () => import("./widget-react-ecrdUwW-2.js").then((e) => e.n),
+		"../messages/zh-TW.json": () => import("./widget-react-BD4KAXKy2.js").then((e) => e.n),
+		"../messages/zh.json": () => import("./widget-react-BeCDy-n82.js").then((e) => e.n)
 	}), `../messages/${t}.json`, 3), jv(/* @__PURE__ */ Object.assign({
-		"../messages/demo.en.json": () => import("./widget-react-CS89ytHf2.js"),
-		"../messages/demo.uk.json": () => import("./widget-react-BwUzvSqg2.js")
+		"../messages/demo.en.json": () => import("./widget-react-mrFdArna2.js"),
+		"../messages/demo.uk.json": () => import("./widget-react-2C9mqM922.js")
 	}), `../messages/demo.${t}.json`, 3)]);
 	return {
 		locale: t,

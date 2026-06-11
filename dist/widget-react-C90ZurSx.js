@@ -1,0 +1,346 @@
+globalThis.process === void 0 && (globalThis.process = {
+	env: {},
+	nextTick: function(e) {
+		setTimeout(e, 0);
+	},
+	emit: function() {
+		return !1;
+	}
+});
+import "react";
+import "react-dom";
+import "react/jsx-runtime";
+import "react-dom/client";
+import { x as e } from "./widget-react-B9XrHKqv.js";
+//#region messages/sk.json
+var t = /* @__PURE__ */ e({
+	article: () => m,
+	authError: () => _,
+	branding: () => f,
+	default: () => y,
+	header: () => r,
+	help: () => c,
+	home: () => a,
+	languageSelector: () => d,
+	launcher: () => i,
+	lightbox: () => g,
+	messages: () => o,
+	news: () => l,
+	peek: () => h,
+	prechat: () => s,
+	profile: () => v,
+	reactions: () => u,
+	sound: () => p,
+	tabs: () => n
+}), n = {
+	home: "Domov",
+	messages: "Správy",
+	help: "Pomocník",
+	news: "Novinky",
+	profile: "Profil"
+}, r = {
+	close: "Zavrieť",
+	back: "Späť",
+	conversationSubtitle: "Pomôže vám aj náš tím",
+	helpTitle: "Pomocník",
+	newsTitle: "Novinky",
+	expand: "Rozbaliť widget",
+	collapse: "Zbaliť widget"
+}, i = {
+	open: "Otvoriť chat",
+	close: "Zavrieť chat",
+	loading: "Pripájanie…"
+}, a = {
+	greetingHeadline: "Ahoj 👋",
+	greetingSubheadline: "Ako vám môžeme pomôcť?",
+	askTitle: "Položiť otázku",
+	askSubtitle: "Pomôže náš bot a tím",
+	recentMessageLabel: "Posledná správa",
+	recentMessageTitle: "Posledná správa",
+	recentMessageFromFallback: "Gaia",
+	recentMessageAgo: "4 h",
+	recentMessageSample: "Ahoj 👋 Ďakujeme za správu - čoskoro sa vám ozveme.",
+	featuredArticleLoading: "Odporúčaný článok",
+	featuredArticleTap: "Klepnutím čítate",
+	featuredArticleEmpty: "Vyberte článok",
+	featuredArticleSetUp: "Nakonfigurujte tento blok v paneli",
+	featuredArticleDemoEyebrow: "Pioneer · Rezervujte si dátum",
+	featuredArticleDemoHeadline: "8. októbra 2026",
+	featuredArticleDemoSubline: "San Francisco · Osobne + online",
+	featuredArticleDemoCta: "Zobraziť program",
+	seeAgenda: "Zobraziť program",
+	browseHelp: "Prehliadať pomocník",
+	whatsNew: "Čo je nové",
+	searchPlaceholder: "Hľadať v pomocníkovi",
+	pinnedArticlesTitle: "Začnite týmto",
+	popularArticlesTitle: "Populárne články",
+	pinnedArticleRow: "Pripnutý článok {n}",
+	newsPreviewTitle: "Najnovšie správy",
+	newsPreviewRow: "Aktualizácia {n}",
+	myConversationsTitle: "Vaše konverzácie",
+	myConversationsEmpty: "Zobraziť vaše konverzácie",
+	teamStatusOnline: "Sme online",
+	teamStatusReplyTime: "Zvyčajne odpovedáme v priebehu pár minút"
+}, o = {
+	today: "Dnes",
+	yesterday: "Včera",
+	unreadMessages: "Neprečítané správy",
+	emptyTitle: "Zatiaľ žiadne správy",
+	emptyBody: "Začnite konverzáciu a náš tím vám odpovie tu.",
+	sendCta: "Pošlite nám správu",
+	attach: "Pripojiť súbor",
+	commands: "Rýchle príkazy",
+	record: "Nahrať hlasovú správu",
+	stopRecording: "Zastaviť nahrávanie",
+	recording: "Nahráva sa…",
+	uploading: "Nahráva sa…",
+	uploadFailed: "Nahrávanie zlyhalo",
+	voiceDenied: "Prístup k mikrofónu bol zamietnutý",
+	voiceUnsupported: "Tento prehliadač nepodporuje nahrávanie hlasu",
+	fileTooLarge: "Súbor je príliš veľký (max. 10 MB)",
+	fileMimeNotAllowed: "Tento typ súboru nie je podporovaný",
+	emoji: "Vložiť emoji",
+	cancelRecording: "Zrušiť nahrávanie",
+	pauseRecording: "Pozastaviť nahrávanie",
+	resumeRecording: "Pokračovať v nahrávaní",
+	playPreview: "Prehrať nahrávku",
+	emojiPicker: "Výber emoji",
+	emojiSearch: "Hľadať…",
+	playAudio: "Prehrať",
+	pauseAudio: "Pozastaviť",
+	openAudio: "Otvoriť zvuk",
+	removeAttachment: "Odstrániť",
+	aiAssistant: "AI asistent",
+	operator: "Operátor",
+	openImage: "Otvoriť obrázok",
+	openPreview: "Otvoriť náhľad",
+	play: "Prehrať",
+	pause: "Pozastaviť",
+	typing: "píše…",
+	aiThinking: "premýšľa…",
+	aiSearching: "prehľadáva…",
+	typingSomeone: "Niekto",
+	signInToChat: "Prihláste sa, aby ste mohli začať konverzáciu.",
+	signInUnavailable: "Prihlásenie momentálne nie je dostupné.",
+	googleSignIn: "Prihlásiť sa cez Google",
+	passkeySignIn: "Prihlásiť sa pomocou passkey",
+	passkeyRegister: "Prvýkrát? Nastavte si passkey",
+	passkeyError: "Prihlásenie sa nepodarilo. Skúste to znova.",
+	passkeyNoCredential: "Na tomto zariadení ešte nie je žiadny passkey — klepnutím na „Nastavte si passkey“ ho vytvoríte.",
+	googleSignInDemo: "Pokračovať s Google"
+}, s = {
+	title: "Skôr ako začneme",
+	subtitle: "Pár údajov, aby vám náš tím mohol pomôcť rýchlejšie.",
+	labelName: "Meno",
+	labelEmail: "E-mail",
+	labelPhone: "Telefón",
+	labelCustom: "Podrobnosti",
+	required: "Povinné",
+	invalidEmail: "Zadajte platnú e-mailovú adresu",
+	invalidPhone: "Zadajte platné telefónne číslo",
+	submit: "Pokračovať",
+	submitFailed: "Odoslanie sa nepodarilo - skúste to znova."
+}, c = {
+	searchPlaceholder: "Hľadať v pomocníkovi",
+	emptyTitle: "Zatiaľ žiadne články",
+	emptyBody: "Váš operátor zatiaľ nič nezverejnil.",
+	back: "Späť",
+	helpful: "Pomohlo to?",
+	yes: "Áno",
+	no: "Nie",
+	thanks: "Ďakujeme za spätnú väzbu.",
+	unresolvedCta: "Potrebujete ďalšiu pomoc? Napíšte nám",
+	noResults: "Žiadne výsledky",
+	articleNotFound: "Článok sa nenašiel",
+	articleNotTranslated: "Tento článok zatiaľ nie je dostupný vo vašom jazyku.",
+	writtenBy: "Autor: {names}",
+	relatedTitle: "Súvisiace články",
+	collectionsCount: "{count, plural, =0 {Žiadne kolekcie} one {# kolekcia} few {# kolekcie} many {# kolekcie} other {# kolekcií}}",
+	articlesCount: "{count, plural, =0 {Žiadne články} one {Články: #} few {Články: #} many {Články: #} other {Články: #}}",
+	authorsByline: "Autori {first}{remaining, plural, =0 {} one { a # ďalší} few { a # ďalší} many { a # ďalších} other { a # ďalších}}"
+}, l = {
+	emptyTitle: "Zatiaľ žiadne novinky",
+	emptyBody: "Pozrite sa sem pre novinky o produkte a oznámenia.",
+	helpful: "Bol tento článok užitočný?",
+	yes: "Áno",
+	no: "Nie",
+	thanks: "Ďakujeme za spätnú väzbu.",
+	searchPlaceholder: "Hľadať v novinkách",
+	noResults: "Žiadne zhodné príspevky",
+	editedAt: "upravené {when}",
+	articleNotFound: "Článok sa nenašiel.",
+	articleNotTranslated: "Tento príspevok zatiaľ nie je dostupný vo vašom jazyku.",
+	readOriginal: "Čítať originál",
+	relatedTitle: "Súvisiace",
+	writtenBy: "Autor: {names}"
+}, u = {
+	ariaLabel: "Reakcie",
+	tapAria: "Reagovať: {emoji}"
+}, d = {
+	title: "Čítať v inom jazyku",
+	ariaLabel: "Jazyky článku"
+}, f = {
+	poweredBy: "Pohán",
+	wexio: "Wexio"
+}, p = {
+	mute: "Vypnúť zvuky upozornení",
+	unmute: "Zapnúť zvuky upozornení"
+}, m = {
+	tableOfContents: "Obsah",
+	tabFallback: "Karta {n}"
+}, h = {
+	newMessage: "Nová správa",
+	dismiss: "Zavrieť",
+	aiAssistant: "AI asistent",
+	operator: "Operátor"
+}, g = {
+	mediaPreview: "Náhľad média",
+	close: "Zavrieť náhľad",
+	previous: "Predchádzajúce",
+	next: "Ďalšie"
+}, _ = {
+	turnstileTitle: "Nepodarilo sa overiť prehliadač",
+	turnstileBody: "Nepodarilo sa dokončiť bezpečnostnú kontrolu. Niekedy je dôvodom sieť alebo blokovač reklám — skúste to znova alebo načítajte stránku.",
+	genericTitle: "Nepodarilo sa pripojiť",
+	genericBody: "Pri prihlásení sa niečo pokazilo. Skúste to o chvíľu znova.",
+	retry: "Skúsiť znova",
+	dismiss: "Zavrieť"
+}, v = {
+	title: "Váš profil",
+	subtitle: "Aktualizujte svoje údaje a správanie widgetu.",
+	uploadAvatar: "Zmeniť fotku",
+	removeAvatar: "Odstrániť fotku",
+	avatarUploading: "Nahráva sa…",
+	preferencesHeading: "Predvoľby",
+	preferenceLanguage: "Jazyk",
+	preferenceDesktopNotifications: "Upozornenia na ploche",
+	preferenceDesktopNotificationsHint: "Získajte systémové upozornenie, keď widget nie je aktívny.",
+	preferenceThemeMode: "Motív",
+	themeAuto: "Podľa systému",
+	themeLight: "Svetlý",
+	themeDark: "Tmavý",
+	themeLocked: "Motív nastavil operátor.",
+	pinnedHint: "Nastavil operátor — nedá sa upraviť.",
+	requiredHint: "Povinné",
+	invalidEmail: "Zadajte platnú e-mailovú adresu.",
+	invalidPhone: "Použite medzinárodný formát, napr. +14155552671.",
+	noFields: "Zatiaľ tu nie je čo upravovať.",
+	save: "Uložiť zmeny",
+	saving: "Ukladá sa…",
+	cancel: "Zahodiť",
+	saved: "Zmeny uložené.",
+	loading: "Načítava sa profil…",
+	loadError: "Profil sa nepodarilo načítať. Skúste to znova.",
+	retry: "Opakovať",
+	errorFieldNotAllowed: "Toto pole sa v tomto widgete nedá upraviť. Skúste obnoviť stránku.",
+	errorFieldPinned: "Toto pole je uzamknuté vaším účtom.",
+	errorFieldInvalid: "Niektoré hodnoty sú neplatné. Skontrolujte zvýraznené polia.",
+	errorThemeLocked: "Motív uzamkol operátor.",
+	errorFeatureDisabled: "Úpravy profilu vypol operátor.",
+	errorGeneric: "Zmeny sa nepodarilo uložiť. Skúste to znova.",
+	notificationsBlocked: "Upozornenia sú blokované prehliadačom. Aktualizujte povolenia stránky, aby ste ich povolili.",
+	notificationsRequest: "Keď sa objaví výzva, povoľte upozornenia, aby ste toto aktivovali.",
+	systemFields: {
+		avatar: "Fotka",
+		wexioId: "Wexio ID",
+		telegramId: "Telegram ID",
+		whatsappId: "WhatsApp ID",
+		viberId: "Viber ID",
+		instagramId: "Instagram ID",
+		optInWhatsapp: "Súhlas s WhatsApp",
+		webVerified: "Overený návštevník",
+		firstName: "Meno",
+		lastName: "Priezvisko",
+		username: "Používateľské meno",
+		language: "Jazyk",
+		email: "E-mail",
+		phone: "Telefón",
+		company: "Spoločnosť",
+		location: "Lokalita",
+		isValid: "Platný účet",
+		chatStatus: "Stav chatu",
+		chatCategory: "Kategória chatu",
+		priority: "Priorita",
+		leadSource: "Zdroj leadu",
+		leadStatus: "Stav leadu",
+		interestLevel: "Úroveň záujmu",
+		productInterest: "Záujem o produkt",
+		budgetRange: "Rozpočet",
+		purchaseTimeline: "Časový plán nákupu",
+		lastMessageSentAt: "Naposledy odoslané",
+		lastMessageReceivedAt: "Naposledy prijaté",
+		lastSeenAt: "Naposledy videný",
+		firstMessageReceivedAt: "Prvý kontakt",
+		isBlocked: "Zablokovaný",
+		registrationDate: "Registrácia",
+		aiAvailable: "Pomoc AI",
+		totalMessagesSent: "Odoslané správy",
+		totalMessagesReceived: "Prijaté správy",
+		totalAiMessagesSent: "Odoslané AI správy",
+		totalBotMessagesSent: "Odoslané bot správy",
+		totalUserMessagesSent: "Odoslané správy operátora",
+		flowCompletionRate: "Miera dokončenia flow",
+		lastFlowCompleted: "Posledný dokončený flow",
+		totalFlowsStarted: "Spustené flow",
+		totalFlowsCompleted: "Dokončené flow"
+	},
+	systemFieldOptions: {
+		chatStatus: {
+			ISSUE: "Problém",
+			RESOLVED: "Vyriešené",
+			PENDING: "Čaká",
+			IN_PROGRESS: "Prebieha",
+			CLOSED: "Uzavreté"
+		},
+		chatCategory: {
+			SALES: "Predaj",
+			SUPPORT: "Podpora",
+			BILLING: "Fakturácia",
+			FEEDBACK: "Spätná väzba",
+			GENERAL: "Všeobecné",
+			OTHER: "Iné"
+		},
+		priority: {
+			LOW: "Nízka",
+			MEDIUM: "Stredná",
+			HIGH: "Vysoká",
+			URGENT: "Naliehavá"
+		},
+		leadStatus: {
+			NEW: "Nový",
+			CONTACTED: "Kontaktovaný",
+			QUALIFIED: "Kvalifikovaný",
+			NEGOTIATING: "Rokovania",
+			WON: "Získaný",
+			LOST: "Stratený"
+		},
+		interestLevel: {
+			LOW: "Nízka",
+			MEDIUM: "Stredná",
+			HIGH: "Vysoká",
+			VERY_HIGH: "Veľmi vysoká"
+		}
+	}
+}, y = {
+	tabs: n,
+	header: r,
+	launcher: i,
+	home: a,
+	messages: o,
+	prechat: s,
+	help: c,
+	news: l,
+	reactions: u,
+	languageSelector: d,
+	branding: f,
+	sound: p,
+	article: m,
+	peek: h,
+	lightbox: g,
+	authError: _,
+	profile: v
+};
+//#endregion
+export { t as n, y as t };
+
+//# sourceMappingURL=widget-react-C90ZurSx.js.map

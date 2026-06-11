@@ -1,0 +1,346 @@
+globalThis.process === void 0 && (globalThis.process = {
+	env: {},
+	nextTick: function(e) {
+		setTimeout(e, 0);
+	},
+	emit: function() {
+		return !1;
+	}
+});
+import "react";
+import "react-dom";
+import "react/jsx-runtime";
+import "react-dom/client";
+import { x as e } from "./widget-react-B9XrHKqv.js";
+//#region messages/th.json
+var t = /* @__PURE__ */ e({
+	article: () => m,
+	authError: () => _,
+	branding: () => f,
+	default: () => y,
+	header: () => r,
+	help: () => c,
+	home: () => a,
+	languageSelector: () => d,
+	launcher: () => i,
+	lightbox: () => g,
+	messages: () => o,
+	news: () => l,
+	peek: () => h,
+	prechat: () => s,
+	profile: () => v,
+	reactions: () => u,
+	sound: () => p,
+	tabs: () => n
+}), n = {
+	home: "หน้าหลัก",
+	messages: "ข้อความ",
+	help: "ช่วยเหลือ",
+	news: "ข่าวสาร",
+	profile: "โปรไฟล์"
+}, r = {
+	close: "ปิด",
+	back: "ย้อนกลับ",
+	conversationSubtitle: "ทีมงานของเราพร้อมช่วยเหลือเช่นกัน",
+	helpTitle: "ช่วยเหลือ",
+	newsTitle: "ข่าวสาร",
+	expand: "ขยายวิดเจ็ต",
+	collapse: "ย่อวิดเจ็ต"
+}, i = {
+	open: "เปิดแชท",
+	close: "ปิดแชท",
+	loading: "กำลังเชื่อมต่อ…"
+}, a = {
+	greetingHeadline: "สวัสดี 👋",
+	greetingSubheadline: "เราช่วยอะไรคุณได้บ้าง?",
+	askTitle: "ถามคำถาม",
+	askSubtitle: "บอทและทีมของเราพร้อมช่วยเหลือ",
+	recentMessageLabel: "ข้อความล่าสุด",
+	recentMessageTitle: "ข้อความล่าสุด",
+	recentMessageFromFallback: "Gaia",
+	recentMessageAgo: "4 ชม.",
+	recentMessageSample: "สวัสดี 👋 ขอบคุณที่ติดต่อมา - เราจะกลับมาหาคุณเร็ว ๆ นี้",
+	featuredArticleLoading: "บทความเด่น",
+	featuredArticleTap: "แตะเพื่ออ่าน",
+	featuredArticleEmpty: "เลือกบทความ",
+	featuredArticleSetUp: "กำหนดค่าบล็อกนี้ในแดชบอร์ดของคุณ",
+	featuredArticleDemoEyebrow: "Pioneer · บันทึกวันนี้ไว้",
+	featuredArticleDemoHeadline: "8 ตุลาคม 2026",
+	featuredArticleDemoSubline: "ซานฟรานซิสโก · พบหน้า + ออนไลน์",
+	featuredArticleDemoCta: "ดูกำหนดการเปิดตัว",
+	seeAgenda: "ดูกำหนดการเปิดตัว",
+	browseHelp: "เรียกดูความช่วยเหลือ",
+	whatsNew: "มีอะไรใหม่",
+	searchPlaceholder: "ค้นหาความช่วยเหลือ",
+	pinnedArticlesTitle: "อ่านสิ่งเหล่านี้ก่อน",
+	popularArticlesTitle: "บทความยอดนิยม",
+	pinnedArticleRow: "บทความปักหมุด {n}",
+	newsPreviewTitle: "ข่าวล่าสุด",
+	newsPreviewRow: "ข่าวอัปเดต {n}",
+	myConversationsTitle: "บทสนทนาของคุณ",
+	myConversationsEmpty: "ดูบทสนทนาของคุณ",
+	teamStatusOnline: "เราออนไลน์อยู่",
+	teamStatusReplyTime: "ปกติตอบกลับภายในไม่กี่นาที"
+}, o = {
+	today: "วันนี้",
+	yesterday: "เมื่อวาน",
+	unreadMessages: "ข้อความที่ยังไม่ได้อ่าน",
+	emptyTitle: "ยังไม่มีข้อความ",
+	emptyBody: "เริ่มการสนทนาแล้วทีมของเราจะตอบกลับคุณที่นี่",
+	sendCta: "ส่งข้อความถึงเรา",
+	attach: "แนบไฟล์",
+	commands: "คำสั่งด่วน",
+	record: "บันทึกข้อความเสียง",
+	stopRecording: "หยุดบันทึก",
+	recording: "กำลังบันทึก…",
+	uploading: "กำลังอัปโหลด…",
+	uploadFailed: "อัปโหลดไม่สำเร็จ",
+	voiceDenied: "ปฏิเสธการเข้าถึงไมโครโฟน",
+	voiceUnsupported: "เบราว์เซอร์นี้ไม่รองรับการบันทึกเสียง",
+	fileTooLarge: "ไฟล์ใหญ่เกินไป (สูงสุด 10MB)",
+	fileMimeNotAllowed: "ไม่รองรับไฟล์ประเภทนี้",
+	emoji: "ใส่อีโมจิ",
+	cancelRecording: "ยกเลิกการบันทึก",
+	pauseRecording: "หยุดบันทึกชั่วคราว",
+	resumeRecording: "บันทึกต่อ",
+	playPreview: "เล่นที่บันทึกไว้",
+	emojiPicker: "ตัวเลือกอีโมจิ",
+	emojiSearch: "ค้นหา…",
+	playAudio: "เล่น",
+	pauseAudio: "หยุดชั่วคราว",
+	openAudio: "เปิดเสียง",
+	removeAttachment: "ลบ",
+	aiAssistant: "ผู้ช่วย AI",
+	operator: "เจ้าหน้าที่",
+	openImage: "เปิดรูปภาพ",
+	openPreview: "เปิดดูตัวอย่าง",
+	play: "เล่น",
+	pause: "หยุดชั่วคราว",
+	typing: "กำลังพิมพ์…",
+	aiThinking: "กำลังคิด…",
+	aiSearching: "กำลังค้นหา…",
+	typingSomeone: "ใครบางคน",
+	signInToChat: "กรุณาเข้าสู่ระบบเพื่อเริ่มการสนทนา",
+	signInUnavailable: "ยังไม่สามารถเข้าสู่ระบบได้ในขณะนี้",
+	googleSignIn: "เข้าสู่ระบบด้วย Google",
+	passkeySignIn: "เข้าสู่ระบบด้วยพาสคีย์",
+	passkeyRegister: "ครั้งแรก? ตั้งค่าพาสคีย์",
+	passkeyError: "เข้าสู่ระบบไม่สำเร็จ กรุณาลองอีกครั้ง",
+	passkeyNoCredential: "ยังไม่มีพาสคีย์ในอุปกรณ์นี้ — แตะ \"ตั้งค่าพาสคีย์\" เพื่อสร้าง",
+	googleSignInDemo: "ดำเนินการต่อด้วย Google"
+}, s = {
+	title: "ก่อนที่เราจะเริ่ม",
+	subtitle: "รายละเอียดเล็กน้อยเพื่อให้ทีมของเราช่วยคุณได้เร็วขึ้น",
+	labelName: "ชื่อ",
+	labelEmail: "อีเมล",
+	labelPhone: "โทรศัพท์",
+	labelCustom: "รายละเอียด",
+	required: "จำเป็น",
+	invalidEmail: "กรุณากรอกอีเมลที่ถูกต้อง",
+	invalidPhone: "กรุณากรอกหมายเลขโทรศัพท์ที่ถูกต้อง",
+	submit: "ดำเนินการต่อ",
+	submitFailed: "ส่งไม่สำเร็จ - กรุณาลองอีกครั้ง"
+}, c = {
+	searchPlaceholder: "ค้นหาความช่วยเหลือ",
+	emptyTitle: "ยังไม่มีบทความ",
+	emptyBody: "เจ้าหน้าที่ของคุณยังไม่ได้เผยแพร่บทความใด ๆ",
+	back: "ย้อนกลับ",
+	helpful: "บทความนี้มีประโยชน์ไหม?",
+	yes: "ใช่",
+	no: "ไม่",
+	thanks: "ขอบคุณสำหรับความคิดเห็น",
+	unresolvedCta: "ยังต้องการความช่วยเหลือ? ส่งข้อความหาเรา",
+	noResults: "ไม่พบผลลัพธ์",
+	articleNotFound: "ไม่พบบทความ",
+	articleNotTranslated: "บทความนี้ยังไม่มีในภาษาของคุณ",
+	writtenBy: "เขียนโดย {names}",
+	relatedTitle: "บทความที่เกี่ยวข้อง",
+	collectionsCount: "{count, plural, other {# ชุด}}",
+	articlesCount: "{count, plural, other {บทความ: #}}",
+	authorsByline: "ผู้เขียน {first}{remaining, plural, =0 {} other { และอีก #}}"
+}, l = {
+	emptyTitle: "ยังไม่มีอัปเดต",
+	emptyBody: "กลับมาที่นี่เพื่อดูข่าวผลิตภัณฑ์และประกาศ",
+	helpful: "บทความนี้มีประโยชน์ไหม?",
+	yes: "ใช่",
+	no: "ไม่",
+	thanks: "ขอบคุณสำหรับความคิดเห็น",
+	searchPlaceholder: "ค้นหาข่าว",
+	noResults: "ไม่พบโพสต์ที่ตรงกัน",
+	editedAt: "แก้ไขเมื่อ {when}",
+	articleNotFound: "ไม่พบบทความ",
+	articleNotTranslated: "โพสต์นี้ยังไม่มีในภาษาของคุณ",
+	readOriginal: "อ่านต้นฉบับ",
+	relatedTitle: "ที่เกี่ยวข้อง",
+	writtenBy: "เขียนโดย {names}"
+}, u = {
+	ariaLabel: "ปฏิกิริยา",
+	tapAria: "แสดงปฏิกิริยาด้วย {emoji}"
+}, d = {
+	title: "อ่านในภาษาอื่น",
+	ariaLabel: "ภาษาของบทความ"
+}, f = {
+	poweredBy: "ขับเคลื่อนโดย",
+	wexio: "Wexio"
+}, p = {
+	mute: "ปิดเสียงการแจ้งเตือน",
+	unmute: "เปิดเสียงการแจ้งเตือน"
+}, m = {
+	tableOfContents: "สารบัญ",
+	tabFallback: "แท็บ {n}"
+}, h = {
+	newMessage: "ข้อความใหม่",
+	dismiss: "ปิด",
+	aiAssistant: "ผู้ช่วย AI",
+	operator: "เจ้าหน้าที่"
+}, g = {
+	mediaPreview: "ดูตัวอย่างสื่อ",
+	close: "ปิดตัวอย่าง",
+	previous: "ก่อนหน้า",
+	next: "ถัดไป"
+}, _ = {
+	turnstileTitle: "ยืนยันเบราว์เซอร์ของคุณไม่ได้",
+	turnstileBody: "เราไม่สามารถดำเนินการตรวจสอบความปลอดภัยให้เสร็จสมบูรณ์ บางครั้งเกิดจากปัญหาเครือข่ายหรือตัวบล็อกโฆษณา — ลองอีกครั้งหรือโหลดหน้าใหม่",
+	genericTitle: "เชื่อมต่อไม่ได้",
+	genericBody: "เกิดข้อผิดพลาดขณะเข้าสู่ระบบ กรุณาลองอีกครั้งในอีกสักครู่",
+	retry: "ลองอีกครั้ง",
+	dismiss: "ปิด"
+}, v = {
+	title: "โปรไฟล์ของคุณ",
+	subtitle: "อัปเดตข้อมูลและการทำงานของวิดเจ็ต",
+	uploadAvatar: "เปลี่ยนรูป",
+	removeAvatar: "ลบรูป",
+	avatarUploading: "กำลังอัปโหลด…",
+	preferencesHeading: "การตั้งค่า",
+	preferenceLanguage: "ภาษา",
+	preferenceDesktopNotifications: "การแจ้งเตือนเดสก์ท็อป",
+	preferenceDesktopNotificationsHint: "รับการแจ้งเตือนจากระบบเมื่อวิดเจ็ตไม่ได้โฟกัส",
+	preferenceThemeMode: "ธีม",
+	themeAuto: "ตามระบบ",
+	themeLight: "สว่าง",
+	themeDark: "มืด",
+	themeLocked: "ธีมถูกกำหนดโดยเจ้าหน้าที่",
+	pinnedHint: "กำหนดโดยเจ้าหน้าที่ — แก้ไขไม่ได้",
+	requiredHint: "จำเป็น",
+	invalidEmail: "กรุณากรอกอีเมลที่ถูกต้อง",
+	invalidPhone: "ใช้รูปแบบสากล เช่น +14155552671",
+	noFields: "ยังไม่มีอะไรให้แก้ไขที่นี่",
+	save: "บันทึกการเปลี่ยนแปลง",
+	saving: "กำลังบันทึก…",
+	cancel: "ยกเลิก",
+	saved: "บันทึกการเปลี่ยนแปลงแล้ว",
+	loading: "กำลังโหลดโปรไฟล์…",
+	loadError: "โหลดโปรไฟล์ของคุณไม่ได้ กรุณาลองอีกครั้ง",
+	retry: "ลองใหม่",
+	errorFieldNotAllowed: "ช่องนี้แก้ไขไม่ได้ในวิดเจ็ตนี้ ลองรีเฟรชหน้า",
+	errorFieldPinned: "ช่องนี้ถูกล็อกโดยบัญชีของคุณ",
+	errorFieldInvalid: "บางค่าไม่ถูกต้อง ตรวจสอบช่องที่ถูกไฮไลต์",
+	errorThemeLocked: "ธีมถูกล็อกโดยเจ้าหน้าที่",
+	errorFeatureDisabled: "การแก้ไขโปรไฟล์ถูกปิดโดยเจ้าหน้าที่",
+	errorGeneric: "บันทึกการเปลี่ยนแปลงไม่ได้ กรุณาลองอีกครั้ง",
+	notificationsBlocked: "การแจ้งเตือนถูกบล็อกโดยเบราว์เซอร์ อัปเดตสิทธิ์ของไซต์เพื่อเปิดใช้งาน",
+	notificationsRequest: "อนุญาตการแจ้งเตือนเมื่อมีการแจ้งเพื่อเปิดใช้งาน",
+	systemFields: {
+		avatar: "รูปภาพ",
+		wexioId: "Wexio ID",
+		telegramId: "Telegram ID",
+		whatsappId: "WhatsApp ID",
+		viberId: "Viber ID",
+		instagramId: "Instagram ID",
+		optInWhatsapp: "ยอมรับ WhatsApp",
+		webVerified: "ผู้เยี่ยมชมที่ยืนยันแล้ว",
+		firstName: "ชื่อ",
+		lastName: "นามสกุล",
+		username: "ชื่อผู้ใช้",
+		language: "ภาษา",
+		email: "อีเมล",
+		phone: "โทรศัพท์",
+		company: "บริษัท",
+		location: "ที่อยู่",
+		isValid: "บัญชีใช้งานได้",
+		chatStatus: "สถานะแชท",
+		chatCategory: "หมวดหมู่แชท",
+		priority: "ความสำคัญ",
+		leadSource: "ที่มาของลีด",
+		leadStatus: "สถานะลีด",
+		interestLevel: "ระดับความสนใจ",
+		productInterest: "ความสนใจในผลิตภัณฑ์",
+		budgetRange: "งบประมาณ",
+		purchaseTimeline: "กรอบเวลาการซื้อ",
+		lastMessageSentAt: "ส่งข้อความล่าสุด",
+		lastMessageReceivedAt: "รับข้อความล่าสุด",
+		lastSeenAt: "เห็นล่าสุด",
+		firstMessageReceivedAt: "การติดต่อครั้งแรก",
+		isBlocked: "ถูกบล็อก",
+		registrationDate: "ลงทะเบียน",
+		aiAvailable: "ความช่วยเหลือ AI",
+		totalMessagesSent: "ข้อความที่ส่ง",
+		totalMessagesReceived: "ข้อความที่รับ",
+		totalAiMessagesSent: "ข้อความ AI ที่ส่ง",
+		totalBotMessagesSent: "ข้อความบอทที่ส่ง",
+		totalUserMessagesSent: "ข้อความเจ้าหน้าที่ที่ส่ง",
+		flowCompletionRate: "อัตราการทำโฟลว์สำเร็จ",
+		lastFlowCompleted: "โฟลว์ที่ทำสำเร็จล่าสุด",
+		totalFlowsStarted: "โฟลว์ที่เริ่ม",
+		totalFlowsCompleted: "โฟลว์ที่สำเร็จ"
+	},
+	systemFieldOptions: {
+		chatStatus: {
+			ISSUE: "ปัญหา",
+			RESOLVED: "แก้ไขแล้ว",
+			PENDING: "รอดำเนินการ",
+			IN_PROGRESS: "กำลังดำเนินการ",
+			CLOSED: "ปิดแล้ว"
+		},
+		chatCategory: {
+			SALES: "การขาย",
+			SUPPORT: "การสนับสนุน",
+			BILLING: "การชำระเงิน",
+			FEEDBACK: "ความคิดเห็น",
+			GENERAL: "ทั่วไป",
+			OTHER: "อื่น ๆ"
+		},
+		priority: {
+			LOW: "ต่ำ",
+			MEDIUM: "ปานกลาง",
+			HIGH: "สูง",
+			URGENT: "เร่งด่วน"
+		},
+		leadStatus: {
+			NEW: "ใหม่",
+			CONTACTED: "ติดต่อแล้ว",
+			QUALIFIED: "ผ่านเกณฑ์",
+			NEGOTIATING: "กำลังเจรจา",
+			WON: "ชนะ",
+			LOST: "แพ้"
+		},
+		interestLevel: {
+			LOW: "ต่ำ",
+			MEDIUM: "ปานกลาง",
+			HIGH: "สูง",
+			VERY_HIGH: "สูงมาก"
+		}
+	}
+}, y = {
+	tabs: n,
+	header: r,
+	launcher: i,
+	home: a,
+	messages: o,
+	prechat: s,
+	help: c,
+	news: l,
+	reactions: u,
+	languageSelector: d,
+	branding: f,
+	sound: p,
+	article: m,
+	peek: h,
+	lightbox: g,
+	authError: _,
+	profile: v
+};
+//#endregion
+export { t as n, y as t };
+
+//# sourceMappingURL=widget-react-C68tIjqi2.js.map

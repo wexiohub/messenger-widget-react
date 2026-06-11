@@ -1,0 +1,346 @@
+globalThis.process === void 0 && (globalThis.process = {
+	env: {},
+	nextTick: function(e) {
+		setTimeout(e, 0);
+	},
+	emit: function() {
+		return !1;
+	}
+});
+import "react";
+import "react-dom";
+import "react/jsx-runtime";
+import "react-dom/client";
+import { x as e } from "./widget-react-B9XrHKqv.js";
+//#region messages/vi.json
+var t = /* @__PURE__ */ e({
+	article: () => m,
+	authError: () => _,
+	branding: () => f,
+	default: () => y,
+	header: () => r,
+	help: () => c,
+	home: () => a,
+	languageSelector: () => d,
+	launcher: () => i,
+	lightbox: () => g,
+	messages: () => o,
+	news: () => l,
+	peek: () => h,
+	prechat: () => s,
+	profile: () => v,
+	reactions: () => u,
+	sound: () => p,
+	tabs: () => n
+}), n = {
+	home: "Trang chủ",
+	messages: "Tin nhắn",
+	help: "Trợ giúp",
+	news: "Tin tức",
+	profile: "Hồ sơ"
+}, r = {
+	close: "Đóng",
+	back: "Quay lại",
+	conversationSubtitle: "Đội ngũ của chúng tôi cũng có thể hỗ trợ",
+	helpTitle: "Trợ giúp",
+	newsTitle: "Tin tức",
+	expand: "Mở rộng widget",
+	collapse: "Thu gọn widget"
+}, i = {
+	open: "Mở chat",
+	close: "Đóng chat",
+	loading: "Đang kết nối…"
+}, a = {
+	greetingHeadline: "Xin chào 👋",
+	greetingSubheadline: "Chúng tôi có thể giúp gì cho bạn?",
+	askTitle: "Đặt câu hỏi",
+	askSubtitle: "Bot và đội ngũ của chúng tôi có thể giúp bạn",
+	recentMessageLabel: "Tin nhắn gần đây",
+	recentMessageTitle: "Tin nhắn gần đây",
+	recentMessageFromFallback: "Gaia",
+	recentMessageAgo: "4 giờ",
+	recentMessageSample: "Xin chào 👋 Cảm ơn bạn đã liên hệ - chúng tôi sẽ phản hồi ngay.",
+	featuredArticleLoading: "Bài viết nổi bật",
+	featuredArticleTap: "Nhấn để đọc",
+	featuredArticleEmpty: "Chọn một bài viết",
+	featuredArticleSetUp: "Cấu hình khối này trong bảng điều khiển",
+	featuredArticleDemoEyebrow: "Pioneer · Ghi nhớ ngày",
+	featuredArticleDemoHeadline: "Ngày 8 tháng 10, 2026",
+	featuredArticleDemoSubline: "San Francisco · Trực tiếp + trực tuyến",
+	featuredArticleDemoCta: "Xem chương trình ra mắt",
+	seeAgenda: "Xem chương trình ra mắt",
+	browseHelp: "Duyệt trợ giúp",
+	whatsNew: "Có gì mới",
+	searchPlaceholder: "Tìm kiếm trợ giúp",
+	pinnedArticlesTitle: "Đọc trước những bài này",
+	popularArticlesTitle: "Bài viết phổ biến",
+	pinnedArticleRow: "Bài viết đã ghim {n}",
+	newsPreviewTitle: "Tin mới nhất",
+	newsPreviewRow: "Cập nhật tin tức {n}",
+	myConversationsTitle: "Cuộc trò chuyện của bạn",
+	myConversationsEmpty: "Xem các cuộc trò chuyện của bạn",
+	teamStatusOnline: "Chúng tôi đang trực tuyến",
+	teamStatusReplyTime: "Thường phản hồi trong vài phút"
+}, o = {
+	today: "Hôm nay",
+	yesterday: "Hôm qua",
+	unreadMessages: "Tin nhắn chưa đọc",
+	emptyTitle: "Chưa có tin nhắn",
+	emptyBody: "Bắt đầu cuộc trò chuyện và đội ngũ của chúng tôi sẽ phản hồi tại đây.",
+	sendCta: "Gửi tin nhắn cho chúng tôi",
+	attach: "Đính kèm tệp",
+	commands: "Lệnh nhanh",
+	record: "Ghi tin nhắn thoại",
+	stopRecording: "Dừng ghi",
+	recording: "Đang ghi…",
+	uploading: "Đang tải lên…",
+	uploadFailed: "Tải lên thất bại",
+	voiceDenied: "Quyền truy cập micro bị từ chối",
+	voiceUnsupported: "Trình duyệt này không hỗ trợ ghi âm",
+	fileTooLarge: "Tệp quá lớn (tối đa 10MB)",
+	fileMimeNotAllowed: "Loại tệp này không được hỗ trợ",
+	emoji: "Chèn emoji",
+	cancelRecording: "Hủy ghi âm",
+	pauseRecording: "Tạm dừng ghi",
+	resumeRecording: "Tiếp tục ghi",
+	playPreview: "Phát bản ghi",
+	emojiPicker: "Bộ chọn emoji",
+	emojiSearch: "Tìm kiếm…",
+	playAudio: "Phát",
+	pauseAudio: "Tạm dừng",
+	openAudio: "Mở âm thanh",
+	removeAttachment: "Xóa",
+	aiAssistant: "Trợ lý AI",
+	operator: "Nhân viên",
+	openImage: "Mở hình ảnh",
+	openPreview: "Mở xem trước",
+	play: "Phát",
+	pause: "Tạm dừng",
+	typing: "đang nhập…",
+	aiThinking: "đang suy nghĩ…",
+	aiSearching: "đang duyệt…",
+	typingSomeone: "Ai đó",
+	signInToChat: "Vui lòng đăng nhập để bắt đầu cuộc trò chuyện.",
+	signInUnavailable: "Đăng nhập hiện không khả dụng.",
+	googleSignIn: "Đăng nhập bằng Google",
+	passkeySignIn: "Đăng nhập bằng passkey",
+	passkeyRegister: "Lần đầu? Thiết lập passkey",
+	passkeyError: "Không thể đăng nhập. Vui lòng thử lại.",
+	passkeyNoCredential: "Chưa có passkey trên thiết bị này — nhấn \"Thiết lập passkey\" để tạo.",
+	googleSignInDemo: "Tiếp tục với Google"
+}, s = {
+	title: "Trước khi bắt đầu",
+	subtitle: "Vài thông tin nhanh để đội ngũ của chúng tôi hỗ trợ bạn nhanh hơn.",
+	labelName: "Tên",
+	labelEmail: "Email",
+	labelPhone: "Điện thoại",
+	labelCustom: "Chi tiết",
+	required: "Bắt buộc",
+	invalidEmail: "Vui lòng nhập email hợp lệ",
+	invalidPhone: "Vui lòng nhập số điện thoại hợp lệ",
+	submit: "Tiếp tục",
+	submitFailed: "Không thể gửi - vui lòng thử lại."
+}, c = {
+	searchPlaceholder: "Tìm kiếm trợ giúp",
+	emptyTitle: "Chưa có bài viết nào",
+	emptyBody: "Quản trị viên chưa xuất bản nội dung nào.",
+	back: "Quay lại",
+	helpful: "Bài viết có hữu ích không?",
+	yes: "Có",
+	no: "Không",
+	thanks: "Cảm ơn phản hồi của bạn.",
+	unresolvedCta: "Vẫn cần trợ giúp? Hãy nhắn cho chúng tôi",
+	noResults: "Không có kết quả",
+	articleNotFound: "Không tìm thấy bài viết",
+	articleNotTranslated: "Bài viết này chưa có bằng ngôn ngữ của bạn.",
+	writtenBy: "Viết bởi {names}",
+	relatedTitle: "Bài viết liên quan",
+	collectionsCount: "{count, plural, =0 {Không có bộ sưu tập} other {# bộ sưu tập}}",
+	articlesCount: "{count, plural, =0 {Không có bài viết} other {Bài viết: #}}",
+	authorsByline: "Tác giả {first}{remaining, plural, =0 {} other { và # khác}}"
+}, l = {
+	emptyTitle: "Chưa có cập nhật nào",
+	emptyBody: "Hãy quay lại đây để xem tin tức và thông báo về sản phẩm.",
+	helpful: "Bài viết có hữu ích không?",
+	yes: "Có",
+	no: "Không",
+	thanks: "Cảm ơn phản hồi của bạn.",
+	searchPlaceholder: "Tìm kiếm tin tức",
+	noResults: "Không tìm thấy bài đăng phù hợp",
+	editedAt: "đã chỉnh sửa {when}",
+	articleNotFound: "Không tìm thấy bài viết.",
+	articleNotTranslated: "Bài đăng này chưa có bằng ngôn ngữ của bạn.",
+	readOriginal: "Đọc bản gốc",
+	relatedTitle: "Liên quan",
+	writtenBy: "Viết bởi {names}"
+}, u = {
+	ariaLabel: "Phản hồi",
+	tapAria: "Phản hồi với {emoji}"
+}, d = {
+	title: "Đọc bằng ngôn ngữ khác",
+	ariaLabel: "Ngôn ngữ bài viết"
+}, f = {
+	poweredBy: "Vận hành bởi",
+	wexio: "Wexio"
+}, p = {
+	mute: "Tắt âm thông báo",
+	unmute: "Bật âm thông báo"
+}, m = {
+	tableOfContents: "Mục lục",
+	tabFallback: "Tab {n}"
+}, h = {
+	newMessage: "Tin nhắn mới",
+	dismiss: "Bỏ qua",
+	aiAssistant: "Trợ lý AI",
+	operator: "Nhân viên"
+}, g = {
+	mediaPreview: "Xem trước media",
+	close: "Đóng xem trước",
+	previous: "Trước",
+	next: "Tiếp"
+}, _ = {
+	turnstileTitle: "Không xác minh được trình duyệt",
+	turnstileBody: "Chúng tôi không thể hoàn thành kiểm tra bảo mật. Đôi khi là vấn đề mạng hoặc trình chặn quảng cáo — thử lại, hoặc tải lại trang.",
+	genericTitle: "Không thể kết nối",
+	genericBody: "Đã xảy ra lỗi khi đăng nhập. Vui lòng thử lại sau giây lát.",
+	retry: "Thử lại",
+	dismiss: "Bỏ qua"
+}, v = {
+	title: "Hồ sơ của bạn",
+	subtitle: "Cập nhật thông tin và cách widget hoạt động.",
+	uploadAvatar: "Đổi ảnh",
+	removeAvatar: "Xóa ảnh",
+	avatarUploading: "Đang tải lên…",
+	preferencesHeading: "Tùy chọn",
+	preferenceLanguage: "Ngôn ngữ",
+	preferenceDesktopNotifications: "Thông báo trên máy tính",
+	preferenceDesktopNotificationsHint: "Nhận thông báo hệ thống khi widget không được tập trung.",
+	preferenceThemeMode: "Giao diện",
+	themeAuto: "Theo hệ thống",
+	themeLight: "Sáng",
+	themeDark: "Tối",
+	themeLocked: "Giao diện được đặt bởi nhân viên.",
+	pinnedHint: "Được đặt bởi nhân viên — không thể chỉnh sửa.",
+	requiredHint: "Bắt buộc",
+	invalidEmail: "Vui lòng nhập địa chỉ email hợp lệ.",
+	invalidPhone: "Sử dụng định dạng quốc tế, ví dụ +14155552671.",
+	noFields: "Chưa có gì để chỉnh sửa ở đây.",
+	save: "Lưu thay đổi",
+	saving: "Đang lưu…",
+	cancel: "Hủy",
+	saved: "Đã lưu thay đổi.",
+	loading: "Đang tải hồ sơ…",
+	loadError: "Không tải được hồ sơ. Vui lòng thử lại.",
+	retry: "Thử lại",
+	errorFieldNotAllowed: "Trường này không chỉnh sửa được trong widget này. Thử làm mới trang.",
+	errorFieldPinned: "Trường này bị khóa bởi tài khoản của bạn.",
+	errorFieldInvalid: "Một số giá trị không hợp lệ. Kiểm tra các trường được đánh dấu.",
+	errorThemeLocked: "Giao diện bị khóa bởi nhân viên.",
+	errorFeatureDisabled: "Việc chỉnh sửa hồ sơ đã bị tắt bởi nhân viên.",
+	errorGeneric: "Không lưu được thay đổi. Vui lòng thử lại.",
+	notificationsBlocked: "Thông báo bị trình duyệt chặn. Cập nhật quyền của trang để bật.",
+	notificationsRequest: "Cho phép thông báo khi được hỏi để bật tính năng này.",
+	systemFields: {
+		avatar: "Ảnh",
+		wexioId: "Wexio ID",
+		telegramId: "Telegram ID",
+		whatsappId: "WhatsApp ID",
+		viberId: "Viber ID",
+		instagramId: "Instagram ID",
+		optInWhatsapp: "Đồng ý WhatsApp",
+		webVerified: "Khách đã xác minh",
+		firstName: "Tên",
+		lastName: "Họ",
+		username: "Tên người dùng",
+		language: "Ngôn ngữ",
+		email: "Email",
+		phone: "Điện thoại",
+		company: "Công ty",
+		location: "Vị trí",
+		isValid: "Tài khoản hợp lệ",
+		chatStatus: "Trạng thái chat",
+		chatCategory: "Danh mục chat",
+		priority: "Mức độ ưu tiên",
+		leadSource: "Nguồn lead",
+		leadStatus: "Trạng thái lead",
+		interestLevel: "Mức độ quan tâm",
+		productInterest: "Sản phẩm quan tâm",
+		budgetRange: "Ngân sách",
+		purchaseTimeline: "Thời gian mua",
+		lastMessageSentAt: "Tin gửi gần nhất",
+		lastMessageReceivedAt: "Tin nhận gần nhất",
+		lastSeenAt: "Lần xem gần nhất",
+		firstMessageReceivedAt: "Liên hệ đầu tiên",
+		isBlocked: "Bị chặn",
+		registrationDate: "Đã đăng ký",
+		aiAvailable: "Hỗ trợ AI",
+		totalMessagesSent: "Tin nhắn đã gửi",
+		totalMessagesReceived: "Tin nhắn đã nhận",
+		totalAiMessagesSent: "Tin nhắn AI đã gửi",
+		totalBotMessagesSent: "Tin nhắn bot đã gửi",
+		totalUserMessagesSent: "Tin nhắn nhân viên đã gửi",
+		flowCompletionRate: "Tỷ lệ hoàn thành flow",
+		lastFlowCompleted: "Flow hoàn thành gần nhất",
+		totalFlowsStarted: "Flow đã bắt đầu",
+		totalFlowsCompleted: "Flow đã hoàn thành"
+	},
+	systemFieldOptions: {
+		chatStatus: {
+			ISSUE: "Sự cố",
+			RESOLVED: "Đã giải quyết",
+			PENDING: "Đang chờ",
+			IN_PROGRESS: "Đang xử lý",
+			CLOSED: "Đã đóng"
+		},
+		chatCategory: {
+			SALES: "Bán hàng",
+			SUPPORT: "Hỗ trợ",
+			BILLING: "Thanh toán",
+			FEEDBACK: "Phản hồi",
+			GENERAL: "Chung",
+			OTHER: "Khác"
+		},
+		priority: {
+			LOW: "Thấp",
+			MEDIUM: "Trung bình",
+			HIGH: "Cao",
+			URGENT: "Khẩn cấp"
+		},
+		leadStatus: {
+			NEW: "Mới",
+			CONTACTED: "Đã liên hệ",
+			QUALIFIED: "Đã đủ điều kiện",
+			NEGOTIATING: "Đang đàm phán",
+			WON: "Thắng",
+			LOST: "Thua"
+		},
+		interestLevel: {
+			LOW: "Thấp",
+			MEDIUM: "Trung bình",
+			HIGH: "Cao",
+			VERY_HIGH: "Rất cao"
+		}
+	}
+}, y = {
+	tabs: n,
+	header: r,
+	launcher: i,
+	home: a,
+	messages: o,
+	prechat: s,
+	help: c,
+	news: l,
+	reactions: u,
+	languageSelector: d,
+	branding: f,
+	sound: p,
+	article: m,
+	peek: h,
+	lightbox: g,
+	authError: _,
+	profile: v
+};
+//#endregion
+export { t as n, y as t };
+
+//# sourceMappingURL=widget-react-ecrdUwW-2.js.map
