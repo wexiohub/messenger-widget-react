@@ -2,12 +2,12 @@
 
 [![Version](https://img.shields.io/npm/v/@wexio/messenger-widget-react.svg)](https://www.npmjs.com/package/@wexio/messenger-widget-react)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![Documentation](https://img.shields.io/badge/docs-wexio.io-blue.svg)](https://learn.wexio.io)
+[![Documentation](https://img.shields.io/badge/docs-wexio.io-blue.svg)](https://learn.wexio.io/docs/web-widget)
 
 Native React component for the [Wexio](https://wexio.io) web messenger. Renders inside a Shadow DOM portal for full style isolation — same `WidgetShell` runtime as the script-injected iframe and the `<wexio-widget>` web component. Same chat, same visitor identity, same backend; the only difference is **where the React tree mounts.**
 
 🏠 [Website](https://wexio.io)
-📚 [Developer Docs](https://learn.wexio.io)
+📚 [Developer Docs](https://learn.wexio.io/docs/web-widget)
 
 ## 📂 Description
 
@@ -161,13 +161,13 @@ The underlying widget runtime is a Web Component, so it works in any modern fram
 <script type="module" src="https://cdn.wexio.io/widget/widget.js"></script>
 ```
 
-Typed wrappers are on the roadmap:
+Typed wrappers for the popular frameworks:
 
-- `@wexio/messenger-widget-vue` — coming soon
-- `@wexio/messenger-widget-angular` — coming soon
-- `@wexio/messenger-widget-ember` — coming soon
+- [`@wexio/messenger-widget-vue`](https://www.npmjs.com/package/@wexio/messenger-widget-vue) — Vue 3
+- [`@wexio/messenger-widget-angular`](https://www.npmjs.com/package/@wexio/messenger-widget-angular) — Angular
+- [`@wexio/messenger-widget-ember`](https://www.npmjs.com/package/@wexio/messenger-widget-ember) — Ember
 
-For plain HTML / script-injection setups, paste the loader snippet from https://learn.wexio.io.
+For plain HTML / script-injection setups, paste the loader snippet from https://learn.wexio.io/docs/web-widget.
 
 ## Author
 

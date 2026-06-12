@@ -4651,11 +4651,11 @@ function Qo() {
 		error: null
 	}), [i, a] = C(null);
 	b(() => {
-		let n = new URL(window.location.href), i = n.searchParams.get("pk") ?? void 0, o = n.searchParams.get("mode"), s = e.modeOverride === "demo", c = s ? void 0 : Io() || void 0, l = s ? void 0 : e.publicKeyOverride ?? i ?? c, u = e.modeOverride ?? (l ? "production" : o === "preview" ? "preview" : "demo"), d = !1;
+		let n = new URL(window.location.href), i = n.searchParams.get("pk") ?? void 0, o = n.searchParams.get("mode"), s = e.modeOverride === "demo", c = s ? void 0 : Io() || void 0, l = s ? void 0 : e.publicKeyOverride ?? i ?? c, u = l === "pk_demo" ? void 0 : l, d = e.modeOverride ?? (u ? "production" : o === "preview" ? "preview" : "demo"), f = !1;
 		if ((async () => {
 			if (e.configBase) {
-				let t = l ? await Go(l) : null;
-				if (d) return;
+				let t = u ? await Go(u) : null;
+				if (f) return;
 				let n = e.configBase.security, i = t?.security, a = {
 					requireAuth: n?.requireAuth ?? i?.requireAuth ?? !1,
 					google: {
@@ -4665,7 +4665,7 @@ function Qo() {
 					passkey: { enabled: n?.passkey?.enabled ?? i?.passkey?.enabled ?? !1 }
 				}, { security: o, ...s } = e.configBase;
 				r({
-					mode: u,
+					mode: d,
 					config: {
 						...s,
 						security: a,
@@ -4680,7 +4680,7 @@ function Qo() {
 			}
 			if (e.forceDummyData !== void 0) {
 				r({
-					mode: u,
+					mode: d,
 					config: Xo,
 					isDummy: e.forceDummyData,
 					isLoading: !1,
@@ -4688,12 +4688,12 @@ function Qo() {
 				});
 				return;
 			}
-			if (l) {
-				let e = await Ro(l, t);
-				if (d) return;
+			if (u) {
+				let e = await Ro(u, t);
+				if (f) return;
 				if (e) {
 					r({
-						mode: u,
+						mode: d,
 						config: e,
 						isDummy: !1,
 						isLoading: !1,
@@ -4702,7 +4702,7 @@ function Qo() {
 					return;
 				}
 				r({
-					mode: u,
+					mode: d,
 					config: Xo,
 					isDummy: !0,
 					isLoading: !1,
@@ -4711,22 +4711,22 @@ function Qo() {
 				return;
 			}
 			r({
-				mode: u,
+				mode: d,
 				config: Xo,
 				isDummy: !0,
 				isLoading: !1,
 				error: null
 			});
-		})(), u !== "preview") return () => {
-			d = !0;
+		})(), d !== "preview") return () => {
+			f = !0;
 		};
-		let f = (e) => {
+		let p = (e) => {
 			if (!e.data || typeof e.data != "object" || e.data.type !== "wexio:preview-config:v1") return;
 			let t = e.data.config;
 			t && a((e) => $o(e ?? {}, t));
 		};
-		return window.addEventListener("message", f), () => {
-			d = !0, window.removeEventListener("message", f);
+		return window.addEventListener("message", p), () => {
+			f = !0, window.removeEventListener("message", p);
 		};
 	}, [
 		e.publicKeyOverride,
@@ -5948,4 +5948,4 @@ function Dc(e) {
 //#endregion
 export { H as $, Rt as $t, mo as A, nr as At, ba as B, un as Bt, Zo as C, cr as Ct, Ao as D, Wn as Dt, ko as E, ur as Et, Ja as F, En as Ft, fa as G, $t as Gt, G as H, dn as Ht, Za as I, Tn as It, ua as J, Gt as Jt, ca as K, en as Kt, J as L, Cn as Lt, oo as M, kn as Mt, no as N, Dn as Nt, Eo as O, Un as Ot, co as P, On as Pt, V as Q, Lt as Qt, Ha as R, bn as Rt, Qo as S, ar as St, Po as T, lr as Tt, _a as U, sn as Ut, Sa as V, cn as Vt, pa as W, nn as Wt, Ji as X, Vt as Xt, W as Y, Ht as Yt, qi as Z, Bt as Zt, Y as _, _r as _t, zs as a, Ce as an, Fi as at, cs as b, hr as bt, Fs as c, ye as cn, ii as ct, Os as d, ce as dn, $r as dt, nt as en, Gi as et, ms as f, de as fn, Tr as ft, ps as g, mr as gt, _s as h, gr as ht, Z as i, Te as in, Ii as it, to as j, zn as jt, wo as k, sr as kt, ks as l, E as ln, ai as lt, vs as m, D as mn, vr as mt, Tc as n, Ae as nn, Ri as nt, Rs as o, Se as on, ji as ot, ys as p, le as pn, dr as pt, la as q, Xt as qt, Cc as r, A as rn, Li as rt, X as s, k as sn, Oi as st, Dc as t, M as tn, zi as tt, Ds as u, ue as un, ri as ut, ds as v, fr as vt, qo as w, Gn as wt, ss as x, or as xt, us as y, pr as yt, Na as z, ln as zt };
 
-//# sourceMappingURL=widget-react-CxCHz0ip.js.map
+//# sourceMappingURL=widget-react-DfX-FjHu.js.map
