@@ -293,8 +293,12 @@ async function E(e) {
 }
 //#endregion
 //#region components/widget/tabs/messages-tab/composer/voice-recorder-bar/index.tsx
-function D({ onComplete: o, onCancel: c, onError: _ }) {
-	let v = i("messages"), y = d(null), b = d(null), x = d(null), S = d(null), D = d([]), k = d(null), [A, j] = f("recording"), [M, N] = f(0), [P, F] = f(!1), I = d(null), L = d(!1);
+function D(e) {
+	let t = e?.name ?? "", n = e?.message ?? "";
+	return t === "NotAllowedError" || t === "PermissionDeniedError" ? "denied" : t === "NotFoundError" || t === "NotReadableError" || t === "OverconstrainedError" || t === "SecurityError" || t === "AbortError" || t === "TypeError" || /not found|could not start|secure origin|not readable|in use/i.test(n) ? "failed" : /permission|denied|not allowed/i.test(n) ? "denied" : "failed";
+}
+function O({ onComplete: o, onCancel: c, onError: _ }) {
+	let v = i("messages"), y = d(null), b = d(null), x = d(null), S = d(null), O = d([]), A = d(null), [j, M] = f("recording"), [N, P] = f(0), [F, I] = f(!1), L = d(null), R = d(!1);
 	return u(() => {
 		let e = y.current;
 		if (!e) return;
@@ -303,7 +307,7 @@ function D({ onComplete: o, onCancel: c, onError: _ }) {
 			return;
 		}
 		let t = !1;
-		L.current = !1;
+		R.current = !1;
 		let n = getComputedStyle(e), r = n.getPropertyValue("--wx-primary").trim() || "#5b6cff", i = n.getPropertyValue("--wx-fg-muted").trim() || "#6b7280", a = l.create({
 			container: e,
 			waveColor: i,
@@ -317,7 +321,7 @@ function D({ onComplete: o, onCancel: c, onError: _ }) {
 			interact: !0,
 			hideScrollbar: !0
 		});
-		b.current = a, a.on("play", () => F(!0)), a.on("pause", () => F(!1)), a.on("finish", () => F(!1));
+		b.current = a, a.on("play", () => I(!0)), a.on("pause", () => I(!1)), a.on("finish", () => I(!1));
 		let o = a.registerPlugin(C.create({
 			continuousWaveform: !0,
 			continuousWaveformDuration: 60,
@@ -326,7 +330,7 @@ function D({ onComplete: o, onCancel: c, onError: _ }) {
 		x.current = o;
 		let s = null, c = null;
 		return o.startMic().then((e) => {
-			if (t || L.current) {
+			if (t || R.current) {
 				try {
 					e.getTracks().forEach((e) => {
 						e.stop();
@@ -338,25 +342,25 @@ function D({ onComplete: o, onCancel: c, onError: _ }) {
 				return;
 			}
 			let n = T(), r = n ? new MediaRecorder(e, { mimeType: n }) : new MediaRecorder(e);
-			S.current = r, c = r, D.current = [], r.addEventListener("dataavailable", (e) => {
-				e.data && e.data.size > 0 && D.current.push(e.data);
+			S.current = r, c = r, O.current = [], r.addEventListener("dataavailable", (e) => {
+				e.data && e.data.size > 0 && O.current.push(e.data);
 			}), r.addEventListener("stop", () => {
-				if (t || L.current) return;
+				if (t || R.current) return;
 				try {
 					o.stopMic();
 				} catch {}
-				s !== null && (clearInterval(s), s = null, k.current = null);
-				let e = r.mimeType || n || "audio/webm", i = new Blob(D.current, { type: e });
+				s !== null && (clearInterval(s), s = null, A.current = null);
+				let e = r.mimeType || n || "audio/webm", i = new Blob(O.current, { type: e });
 				E(i).then((n) => {
-					if (t || L.current) return;
+					if (t || R.current) return;
 					let r = e.includes("mp4") ? "mp4" : "webm";
-					I.current = {
+					L.current = {
 						base64: n,
 						mimetype: e.split(";")[0].trim(),
 						size: i.size,
 						filename: `voice-${Date.now()}.${r}`
 					}, a.loadBlob(i).then(() => {
-						if (!(t || L.current)) {
+						if (!(t || R.current)) {
 							try {
 								a.setOptions({ interact: !0 });
 							} catch {}
@@ -364,18 +368,16 @@ function D({ onComplete: o, onCancel: c, onError: _ }) {
 								a.setTime(0);
 							} catch {}
 						}
-					}).catch(() => {}), j("preview");
+					}).catch(() => {}), M("preview");
 				}).catch(() => _("failed"));
 			}), r.start();
 			let i = performance.now();
 			s = window.setInterval(() => {
 				let e = performance.now() - i, t = Math.floor(e / 1e3);
-				N((e) => e === t ? e : t);
-			}, 250), k.current = s;
+				P((e) => e === t ? e : t);
+			}, 250), A.current = s;
 		}).catch((e) => {
-			if (t) return;
-			let n = e?.message ?? "";
-			_(n.includes("Permission") || n.includes("denied") ? "denied" : "failed");
+			t || _(D(e));
 		}), () => {
 			t = !0, s !== null && clearInterval(s);
 			try {
@@ -398,10 +400,10 @@ function D({ onComplete: o, onCancel: c, onError: _ }) {
 		transition: { duration: .18 },
 		className: a("flex items-center gap-1.5 rounded-wx-lg border border-wx-border bg-wx-bg px-2 py-2"),
 		children: [
-			/* @__PURE__ */ m(O, {
+			/* @__PURE__ */ m(k, {
 				Icon: t,
 				onClick: () => {
-					L.current = !0;
+					R.current = !0;
 					try {
 						S.current?.state === "recording" && S.current.stop();
 					} catch {}
@@ -419,22 +421,22 @@ function D({ onComplete: o, onCancel: c, onError: _ }) {
 			/* @__PURE__ */ h("div", {
 				className: "flex h-9 min-w-0 flex-1 items-center gap-2 rounded-full bg-wx-bg-elevated px-3",
 				children: [
-					A === "recording" && /* @__PURE__ */ m("span", {
+					j === "recording" && /* @__PURE__ */ m("span", {
 						"aria-hidden": "true",
 						className: "h-2 w-2 shrink-0 animate-pulse rounded-full bg-wx-danger"
 					}),
 					/* @__PURE__ */ m("div", {
 						ref: y,
 						"aria-hidden": "true",
-						className: a("min-w-0 flex-1 overflow-hidden", A !== "preview" && "pointer-events-none")
+						className: a("min-w-0 flex-1 overflow-hidden", j !== "preview" && "pointer-events-none")
 					}),
 					/* @__PURE__ */ m("span", {
 						className: "shrink-0 font-mono text-xs tabular-nums text-wx-fg-muted",
-						children: w(M)
+						children: w(N)
 					})
 				]
 			}),
-			A === "recording" && /* @__PURE__ */ m(e.button, {
+			j === "recording" && /* @__PURE__ */ m(e.button, {
 				type: "button",
 				onClick: () => {
 					try {
@@ -452,18 +454,18 @@ function D({ onComplete: o, onCancel: c, onError: _ }) {
 				className: a("flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors", "text-wx-fg-muted hover:bg-wx-bg-elevated hover:text-wx-fg"),
 				children: /* @__PURE__ */ m(g, { size: 14 })
 			}),
-			A === "preview" && /* @__PURE__ */ h(p, { children: [/* @__PURE__ */ m(O, {
-				Icon: P ? n : r,
+			j === "preview" && /* @__PURE__ */ h(p, { children: [/* @__PURE__ */ m(k, {
+				Icon: F ? n : r,
 				onClick: () => {
 					let e = b.current;
 					e && (e.isPlaying() ? e.pause() : e.play());
 				},
-				ariaLabel: v(P ? "pauseRecording" : "playPreview"),
+				ariaLabel: v(F ? "pauseRecording" : "playPreview"),
 				intent: "ghost"
 			}), /* @__PURE__ */ m(e.button, {
 				type: "button",
 				onClick: () => {
-					let e = I.current;
+					let e = L.current;
 					e && o(e);
 				},
 				"aria-label": v("sendCta"),
@@ -480,7 +482,7 @@ function D({ onComplete: o, onCancel: c, onError: _ }) {
 		]
 	}, "voice-recorder");
 }
-function O({ Icon: t, onClick: n, ariaLabel: r, intent: i, size: o = 16 }) {
+function k({ Icon: t, onClick: n, ariaLabel: r, intent: i, size: o = 16 }) {
 	let s = c();
 	return /* @__PURE__ */ m(e.button, {
 		type: "button",
@@ -502,6 +504,6 @@ function O({ Icon: t, onClick: n, ariaLabel: r, intent: i, size: o = 16 }) {
 	});
 }
 //#endregion
-export { D as VoiceRecorderBar };
+export { O as VoiceRecorderBar };
 
-//# sourceMappingURL=widget-react-B3JUsNG42.js.map
+//# sourceMappingURL=widget-react-zxHGJvC92.js.map
