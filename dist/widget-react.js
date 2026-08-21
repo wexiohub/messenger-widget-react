@@ -1099,13 +1099,13 @@ function Cr(e) {
 }
 //#endregion
 //#region lib/use-visitor-unread.ts
-function wr({ chatId: e, isDummy: t }) {
-	let n = V("demo"), [r, i] = X(!1), [a, o] = X(0), [s, c] = X(null), l = Y(/* @__PURE__ */ new Set()), u = Y(null), d = Y(!1), [f] = cn({ fetchPolicy: "network-only" });
+function wr({ chatId: e, isDummy: t, isLoading: n }) {
+	let r = V("demo"), [i, a] = X(!1), [o, s] = X(0), [c, l] = X(null), u = Y(/* @__PURE__ */ new Set()), d = Y(null), f = Y(!1), [p] = cn({ fetchPolicy: "network-only" });
 	J(() => {
-		t || !e || u.current !== e && (u.current = e, l.current = /* @__PURE__ */ new Set(), d.current = !1, f({ variables: { chatId: e } }).then((e) => {
-			if (d.current) return;
+		t || !e || d.current !== e && (d.current = e, u.current = /* @__PURE__ */ new Set(), f.current = !1, p({ variables: { chatId: e } }).then((e) => {
+			if (f.current) return;
 			let t = e.data?.visitorChatUnread;
-			if (t) if (o(t.count ?? 0), t.lastMessage) {
+			if (t) if (s(t.count ?? 0), t.lastMessage) {
 				let e = {
 					id: t.lastMessage.id,
 					text: t.lastMessage.text ?? null,
@@ -1116,32 +1116,32 @@ function wr({ chatId: e, isDummy: t }) {
 					},
 					buttons: Er(t.lastMessage.buttons)
 				};
-				l.current.add(e.id), c(e);
-			} else c(null);
+				u.current.add(e.id), l(e);
+			} else l(null);
 		}).catch(() => {}));
 	}, [
 		e,
 		t,
-		f
+		p
 	]);
-	let p = q(() => {
+	let m = q(() => {
 		if (t) {
-			i(!0);
+			a(!0);
 			return;
 		}
-		o(0), c(null), d.current = !0;
-	}, [t]), m = q((e) => {
+		s(0), l(null), f.current = !0;
+	}, [t]), h = q((e) => {
 		if (t || e.kind === "typing" || e.kind === "read-receipt" || e.kind === "assignment") return;
 		let n = e.from ?? e.sender;
 		if (n?.kind === "visitor") return;
 		let r = e.externalMessageId;
-		if (!r || l.current.has(r)) return;
-		l.current.add(r), o((e) => e + 1);
+		if (!r || u.current.has(r)) return;
+		u.current.add(r), s((e) => e + 1);
 		let i = Array.isArray(e.buttons) ? e.buttons.map((e) => ({
 			text: e.label,
 			payload: e.value
 		})) : [];
-		c({
+		l({
 			id: r,
 			text: e.text ?? null,
 			sender: {
@@ -1151,28 +1151,28 @@ function wr({ chatId: e, isDummy: t }) {
 			},
 			buttons: i
 		});
-	}, [t]), h = q((e) => {
+	}, [t]), g = q((e) => {
 		if (t || e.length === 0) return;
 		let n = 0;
-		for (let t of e) l.current.has(t) && (l.current.delete(t), n += 1);
-		n > 0 && o((e) => Math.max(0, e - n)), c((t) => t && (e.includes(t.id) ? null : t));
+		for (let t of e) u.current.has(t) && (u.current.delete(t), n += 1);
+		n > 0 && s((e) => Math.max(0, e - n)), l((t) => t && (e.includes(t.id) ? null : t));
 	}, [t]);
-	if (t) {
-		let e = r ? null : Tr(n);
+	if (t && !n) {
+		let e = i ? null : Tr(r);
 		return {
 			count: +!!e,
 			lastMessage: e,
-			clear: p,
-			noteInbound: m,
-			noteRead: h
+			clear: m,
+			noteInbound: h,
+			noteRead: g
 		};
 	}
 	return {
-		count: a,
-		lastMessage: s,
-		clear: p,
-		noteInbound: m,
-		noteRead: h
+		count: o,
+		lastMessage: c,
+		clear: m,
+		noteInbound: h,
+		noteRead: g
 	};
 }
 function Tr(e) {
@@ -20293,7 +20293,8 @@ function $v() {
 	]);
 	let _e = wr({
 		chatId: M.chatId,
-		isDummy: o
+		isDummy: o,
+		isLoading: s
 	}), ve = Pn({
 		enabled: i === "production" && !o && !!a.features.news,
 		locale: t
