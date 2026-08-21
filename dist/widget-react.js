@@ -19977,12 +19977,16 @@ function Iv({ isOpen: e, onToggle: t, unreadCount: i = 0, newsUnread: o = !1, po
 		onHoverEnd: m.onMouseLeave,
 		...m,
 		className: H(c ? "absolute" : "fixed", "bottom-4 z-2147483600", s === "left" ? "left-4" : "right-4", "flex h-14 w-14 items-center justify-center rounded-full", "bg-wx-launcher-bg text-wx-launcher-fg", "shadow-[0_8px_24px_rgba(0,0,0,0.18)]", "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wx-launcher-bg focus-visible:ring-offset-2 focus-visible:ring-offset-white"),
-		children: [/* @__PURE__ */ Z(xi, {
-			count: g ? h : 0,
-			dot: _,
-			label: _ ? d("unread") : void 0,
-			size: "md",
-			className: "absolute -top-1 -right-1 z-10"
+		children: [/* @__PURE__ */ Z("span", {
+			"aria-hidden": !0,
+			className: "contents",
+			children: /* @__PURE__ */ Z(xi, {
+				count: g ? h : 0,
+				dot: _,
+				label: _ ? d("unread") : void 0,
+				size: "md",
+				className: "absolute -top-1 -right-1 z-10"
+			})
 		}), /* @__PURE__ */ Z(ne, {
 			mode: "wait",
 			initial: !1,
@@ -20483,6 +20487,7 @@ function $v() {
 	return /* @__PURE__ */ Q(Ft, { children: [
 		/* @__PURE__ */ Q(n.div, {
 			"aria-hidden": !de,
+			inert: !de,
 			initial: !1,
 			animate: de ? {
 				opacity: 1,
