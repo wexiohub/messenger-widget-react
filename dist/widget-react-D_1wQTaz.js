@@ -11,7 +11,7 @@ import "react";
 import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
-import { t as e } from "./widget-react-CQ0DMi7b.js";
+import { t as e } from "./widget-react-BGCZpMUT.js";
 var t = e("external-link", [
 	["path", {
 		d: "M15 3h6v6",
@@ -29,4 +29,4 @@ var t = e("external-link", [
 //#endregion
 export { t };
 
-//# sourceMappingURL=widget-react-DP-dfZKt.js.map
+//# sourceMappingURL=widget-react-D_1wQTaz.js.map

@@ -12,12 +12,12 @@ import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
 import { c as e, d as t } from "./widget-react-B9XrHKqv.js";
-import { E as n, F as r, h as i, m as a, r as o, w as s, z as c } from "./widget-react-D4IN0PAd.js";
-import { i as l, n as u, o as d, t as f } from "./widget-react-CQ0DMi7b.js";
+import { D as n, H as r, R as i, _ as a, k as o, o as s, v as c } from "./widget-react-BFgpQWPW.js";
+import { i as l, n as u, o as d, t as f } from "./widget-react-BGCZpMUT.js";
 import { useCallback as p, useEffect as m, useMemo as h, useRef as g, useState as _ } from "react";
 import { Fragment as v, jsx as y, jsxs as b } from "react/jsx-runtime";
 //#region lib/graphql/queries/generated/news.generated.tsx
-var x = {}, S = c`
+var x = {}, S = r`
     query VisitorNewsList($args: VisitorNewsListArgs) {
   visitorNewsList(args: $args) {
     items {
@@ -63,12 +63,12 @@ var x = {}, S = c`
 }
     `;
 function C(e) {
-	return r(S, {
+	return i(S, {
 		...x,
 		...e
 	});
 }
-var w = c`
+var w = r`
     query VisitorNewsPostCard($args: VisitorNewsPostArgs!) {
   visitorNewsPost(args: $args) {
     _id
@@ -83,12 +83,12 @@ var w = c`
 }
     `;
 function T(e) {
-	return r(w, {
+	return i(w, {
 		...x,
 		...e
 	});
 }
-var E = c`
+var E = r`
     query VisitorNewsPost($args: VisitorNewsPostArgs!) {
   visitorNewsPost(args: $args) {
     _id
@@ -141,12 +141,12 @@ var E = c`
 }
     `;
 function D(e) {
-	return r(E, {
+	return i(E, {
 		...x,
 		...e
 	});
 }
-var O = c`
+var O = r`
     query VisitorNewsRelated($postId: ID!, $limit: Int, $locale: String) {
   visitorNewsRelated(postId: $postId, limit: $limit, locale: $locale) {
     _id
@@ -163,19 +163,19 @@ var O = c`
 }
     `;
 function k(e) {
-	return r(O, {
+	return i(O, {
 		...x,
 		...e
 	});
 }
-c`
+r`
     mutation RecordVisitorNewsView($postId: String!) {
   recordVisitorNewsView(postId: $postId) {
     ok
   }
 }
     `;
-var A = c`
+var A = r`
     query VisitorNewsListSlim($args: VisitorNewsListArgs) {
   visitorNewsList(args: $args) {
     items {
@@ -186,7 +186,7 @@ var A = c`
 }
     `;
 function j(e) {
-	return r(A, {
+	return i(A, {
 		...x,
 		...e
 	});
@@ -265,15 +265,15 @@ var M = [
 	}
 ];
 function N(e) {
-	return M.map(({ tagSlugs: t, authorIds: n, categorySlug: r, ...i }) => ({
-		...i,
-		title: e.raw(`news.${i.id}.title`),
-		excerpt: e.raw(`news.${i.id}.excerpt`),
-		contentMarkdown: e.raw(`news.${i.id}.body`),
-		authors: s(n),
+	return M.map(({ tagSlugs: t, authorIds: r, categorySlug: i, ...a }) => ({
+		...a,
+		title: e.raw(`news.${a.id}.title`),
+		excerpt: e.raw(`news.${a.id}.excerpt`),
+		contentMarkdown: e.raw(`news.${a.id}.body`),
+		authors: n(r),
 		category: {
-			slug: r,
-			label: e.raw(`news.categories.${r}`)
+			slug: i,
+			label: e.raw(`news.categories.${i}`)
 		},
 		tags: t.map((t) => ({
 			slug: t,
@@ -416,9 +416,9 @@ function U(e) {
 //#region components/widget/tabs/news-tab/index.tsx
 var W = 10, G = 240;
 function K({ isDummy: e, onOpenArticle: t }) {
-	let r = l("news"), i = l("demo"), a = d(), s = n(), [c, u] = _(""), f = J(c, 300), g = f.length >= 2, x = s.previewData?.newsPosts, S = !e && Array.isArray(x) && x.length > 0, [w, T] = _(W), { data: E, error: D, loading: O, fetchMore: k } = C({
+	let n = l("news"), r = l("demo"), i = d(), a = o(), [c, u] = _(""), f = J(c, 300), g = f.length >= 2, x = a.previewData?.newsPosts, S = !e && Array.isArray(x) && x.length > 0, [w, T] = _(W), { data: E, error: D, loading: O, fetchMore: k } = C({
 		variables: { args: {
-			locale: a,
+			locale: i,
 			limit: W,
 			offset: 0,
 			...g ? { query: f } : {}
@@ -429,7 +429,7 @@ function K({ isDummy: e, onOpenArticle: t }) {
 	m(() => {
 		T(W);
 	}, [f, S]);
-	let A = h(() => (E?.visitorNewsList.items ?? []).filter((e) => !!e).map(q), [E]), j = S ? (x ?? []).filter((e) => !!e && typeof e == "object").map(q) : [], M = p((e) => e.title.toLowerCase().includes(f.toLowerCase()) || e.excerpt.toLowerCase().includes(f.toLowerCase()), [f]), L = e ? g ? N(i).filter(M) : N(i) : S ? g ? j.filter(M) : j : A, R = S || e ? L.slice(0, w) : L, B = h(() => e || S ? w < L.length : E?.visitorNewsList.meta.hasNextPage ?? !1, [
+	let A = h(() => (E?.visitorNewsList.items ?? []).filter((e) => !!e).map(q), [E]), j = S ? (x ?? []).filter((e) => !!e && typeof e == "object").map(q) : [], M = p((e) => e.title.toLowerCase().includes(f.toLowerCase()) || e.excerpt.toLowerCase().includes(f.toLowerCase()), [f]), L = e ? g ? N(r).filter(M) : N(r) : S ? g ? j.filter(M) : j : A, R = S || e ? L.slice(0, w) : L, B = h(() => e || S ? w < L.length : E?.visitorNewsList.meta.hasNextPage ?? !1, [
 		e,
 		S,
 		w,
@@ -445,7 +445,7 @@ function K({ isDummy: e, onOpenArticle: t }) {
 			try {
 				await k({
 					variables: { args: {
-						locale: a,
+						locale: i,
 						limit: W,
 						offset: E?.visitorNewsList.items.length ?? 0,
 						...g ? { query: f } : {}
@@ -474,7 +474,7 @@ function K({ isDummy: e, onOpenArticle: t }) {
 		S,
 		g,
 		f,
-		a,
+		i,
 		k,
 		E
 	]), X = V("news"), Z = p((e) => {
@@ -485,16 +485,16 @@ function K({ isDummy: e, onOpenArticle: t }) {
 		className: "flex flex-1 flex-col items-center justify-center gap-3 px-6 py-12 text-center",
 		children: /* @__PURE__ */ y("p", {
 			className: "text-sm text-wx-fg-muted",
-			children: r("emptyTitle")
+			children: n("emptyTitle")
 		})
-	}) : /* @__PURE__ */ b(o, {
+	}) : /* @__PURE__ */ b(s, {
 		className: "flex-1",
 		viewportRef: X,
 		onScroll: Z,
 		children: [Q && /* @__PURE__ */ y(z, {
 			value: c,
 			onChange: u,
-			placeholder: r("searchPlaceholder")
+			placeholder: n("searchPlaceholder")
 		}), /* @__PURE__ */ y("div", {
 			className: "flex flex-col gap-3 px-4 pt-4 pb-6",
 			children: $ ? Array.from({ length: 3 }).map((e, t) => /* @__PURE__ */ b("div", {
@@ -519,16 +519,16 @@ function K({ isDummy: e, onOpenArticle: t }) {
 					}),
 					/* @__PURE__ */ y("p", {
 						className: "text-base font-semibold text-wx-fg",
-						children: r(g ? "noResults" : "emptyTitle")
+						children: n(g ? "noResults" : "emptyTitle")
 					}),
 					!g && /* @__PURE__ */ y("p", {
 						className: "text-sm text-wx-fg-muted",
-						children: r("emptyBody")
+						children: n("emptyBody")
 					})
 				]
 			}) : /* @__PURE__ */ b(v, { children: [R.map((e, n) => /* @__PURE__ */ y(Y, {
 				item: e,
-				locale: a,
+				locale: i,
 				delay: n < W ? n * .04 : 0,
 				onClick: () => t(e.id)
 			}, e.id)), H && /* @__PURE__ */ y("div", {
@@ -578,11 +578,11 @@ function J(e, t) {
 		return () => clearTimeout(n);
 	}, [e, t]), n;
 }
-function Y({ item: e, locale: n, delay: r, onClick: o }) {
-	let s = l("news"), c = e.categories ?? (e.category ? [e.category] : []), d = L(e.authors);
+function Y({ item: e, locale: n, delay: r, onClick: i }) {
+	let o = l("news"), s = e.categories ?? (e.category ? [e.category] : []), d = L(e.authors);
 	return /* @__PURE__ */ b(t.button, {
 		type: "button",
-		onClick: o,
+		onClick: i,
 		initial: {
 			opacity: 0,
 			y: 8
@@ -605,11 +605,11 @@ function Y({ item: e, locale: n, delay: r, onClick: o }) {
 		}), /* @__PURE__ */ b("div", {
 			className: "px-5 py-4",
 			children: [
-				(c.length > 0 || d != null) && /* @__PURE__ */ b("div", {
+				(s.length > 0 || d != null) && /* @__PURE__ */ b("div", {
 					className: "mb-1.5 flex items-center justify-between gap-2",
 					children: [/* @__PURE__ */ y("div", {
 						className: "flex min-w-0 flex-wrap gap-1.5",
-						children: c.slice(0, 2).map((e) => /* @__PURE__ */ y("span", {
+						children: s.slice(0, 2).map((e) => /* @__PURE__ */ y("span", {
 							className: "text-[10px] font-semibold uppercase tracking-wide text-wx-primary",
 							children: e.label
 						}, e.slug))
@@ -618,7 +618,7 @@ function Y({ item: e, locale: n, delay: r, onClick: o }) {
 						className: "shrink-0"
 					})]
 				}),
-				/* @__PURE__ */ y(i, {
+				/* @__PURE__ */ y(c, {
 					className: "text-sm",
 					children: e.title
 				}),
@@ -635,7 +635,7 @@ function Y({ item: e, locale: n, delay: r, onClick: o }) {
 					}) }), H(e) && e.upstreamUpdatedAt && /* @__PURE__ */ y("span", {
 						className: "rounded-full bg-wx-bg-elevated px-1.5 py-0.5 text-[10px] font-medium text-wx-fg-muted",
 						title: new Date(e.upstreamUpdatedAt).toLocaleString(n),
-						children: s("editedAt", { when: U(e.upstreamUpdatedAt) })
+						children: o("editedAt", { when: U(e.upstreamUpdatedAt) })
 					})]
 				}),
 				e.tags && e.tags.length > 0 && /* @__PURE__ */ y("div", {
@@ -652,4 +652,4 @@ function Y({ item: e, locale: n, delay: r, onClick: o }) {
 //#endregion
 export { z as a, I as c, N as d, j as f, k as h, V as i, F as l, D as m, U as n, R as o, T as p, H as r, L as s, K as t, P as u };
 
-//# sourceMappingURL=widget-react-CQ0MdjMO.js.map
+//# sourceMappingURL=widget-react-BDd1HJHs.js.map

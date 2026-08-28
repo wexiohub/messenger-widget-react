@@ -11,7 +11,7 @@ import "react";
 import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
-import { t as e } from "./widget-react-CQ0DMi7b.js";
+import { t as e } from "./widget-react-BGCZpMUT.js";
 var t = e("loader-circle", [["path", {
 	d: "M21 12a9 9 0 1 1-6.219-8.56",
 	key: "13zald"
@@ -36,4 +36,4 @@ var t = e("loader-circle", [["path", {
 //#endregion
 export { n, t as r, r as t };
 
-//# sourceMappingURL=widget-react-TZUXHkN3.js.map
+//# sourceMappingURL=widget-react-BVRYDaf5.js.map

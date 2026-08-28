@@ -12,10 +12,10 @@ import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
 import { i as e } from "./widget-react-B9XrHKqv.js";
-import { E as t, S as n, f as r, p as i, r as a } from "./widget-react-D4IN0PAd.js";
-import { a as o, c as ee, i as s, l as c, n as l, o as u, r as te, s as d, t as f } from "./widget-react-qdPNeB-W.js";
-import { f as p, g as m, l as h, n as g, r as _, u as v } from "./widget-react-nq6E5YOO.js";
-import { i as y, n as b } from "./widget-react-CQ0DMi7b.js";
+import { T as t, g as n, h as r, k as i, o as a } from "./widget-react-BFgpQWPW.js";
+import { f as o, g as ee, l as te, n as s, r as c, u as l } from "./widget-react-DmQP1bcj.js";
+import { i as u, n as d } from "./widget-react-BGCZpMUT.js";
+import { a as f, c as p, i as m, l as h, n as g, o as _, r as v, s as y, t as b } from "./widget-react-CPnUEeex.js";
 import { t as x } from "./widget-react-GkCAcRz0.js";
 import { useEffect as S, useMemo as C, useState as w } from "react";
 import { jsx as T, jsxs as E } from "react/jsx-runtime";
@@ -27,7 +27,7 @@ function ne(e) {
 		title: typeof e.title == "string" ? e.title : "",
 		excerpt: typeof e.excerpt == "string" ? e.excerpt : "",
 		content: typeof e.content == "string" ? e.content : "",
-		contentFormat: e.contentFormat === d.HTML ? d.HTML : d.MARKDOWN,
+		contentFormat: e.contentFormat === y.HTML ? y.HTML : y.MARKDOWN,
 		authors: t(e.authors).filter((e) => !!e && typeof e == "object").map((e) => ({
 			_id: String(e._id ?? ""),
 			name: typeof e.name == "string" ? e.name : null,
@@ -42,31 +42,31 @@ function ne(e) {
 }
 //#endregion
 //#region components/widget/help-article-view/index.tsx
-function D({ slug: b, locale: D, isDummy: k, onHandoff: A, onOpenArticle: j, onOpenTranslation: M, onTitleResolved: N }) {
-	let P = y("help"), F = y("demo"), I = t(), { config: L } = n(), R = L.messenger?.showRelatedHelpArticles ?? !0, z = L.messenger?.showReactionCounts ?? !0, B = x(), [V, H] = w(D), U = o(V, F), W = C(() => {
+function D({ slug: d, locale: D, isDummy: k, onHandoff: A, onOpenArticle: j, onOpenTranslation: M, onTitleResolved: N }) {
+	let P = u("help"), F = u("demo"), I = i(), { config: L } = t(), R = L.messenger?.showRelatedHelpArticles ?? !0, z = L.messenger?.showReactionCounts ?? !0, B = x(), [V, H] = w(D), U = f(V, F), W = C(() => {
 		if (k) return null;
 		let e = I.previewData?.helpArticles;
-		return Array.isArray(e) ? e.find((e) => e && typeof e == "object" && e.slug === b) ?? null : null;
+		return Array.isArray(e) ? e.find((e) => e && typeof e == "object" && e.slug === d) ?? null : null;
 	}, [
 		I.previewData,
 		k,
-		b
-	]), G = !!W, { data: K, loading: q } = _({
+		d
+	]), G = !!W, { data: K, loading: q } = c({
 		variables: { args: {
-			slug: b,
+			slug: d,
 			locale: D
 		} },
 		skip: k || G
-	}), [J] = g(), Y = C(() => k ? p(U).find((e) => e.slug === b) : null, [
+	}), [J] = s(), Y = C(() => k ? o(U).find((e) => e.slug === d) : null, [
 		k,
-		b,
+		d,
 		U
 	]), X = k ? Y ? {
 		id: Y.id,
 		title: Y.title,
 		excerpt: Y.excerpt,
 		content: Y.contentMarkdown,
-		contentFormat: d.MARKDOWN,
+		contentFormat: y.MARKDOWN,
 		authors: Y.authors,
 		tags: Y.tags,
 		reactionCounts: null,
@@ -88,7 +88,7 @@ function D({ slug: b, locale: D, isDummy: k, onHandoff: A, onOpenArticle: j, onO
 		reactionCounts: K.visitorHelpArticle.reactionCounts ?? null,
 		locale: K.visitorHelpArticle.locale,
 		translations: K.visitorHelpArticle.translations
-	} : null, { data: Z } = h({
+	} : null, { data: Z } = te({
 		variables: {
 			articleId: X?.id ?? "",
 			limit: 5,
@@ -128,16 +128,16 @@ function D({ slug: b, locale: D, isDummy: k, onHandoff: A, onOpenArticle: j, onO
 		I.previewData
 	]), Q = G ? re : Z?.visitorHelpRelated ?? [], ie = k || G ? null : K?.visitorHelpArticle?.viewerReaction ?? null, ae = !k && !G && K?.visitorHelpArticle ? [K.visitorHelpArticle._id, ...(K.visitorHelpArticle.translations ?? []).map((e) => e._id)] : X?.id ? [X.id] : [];
 	S(() => {
-		k || !X?.id || !m() || J({ variables: { articleId: X.id } }).catch(() => {});
+		k || !X?.id || !ee() || J({ variables: { articleId: X.id } }).catch(() => {});
 	}, [
 		X?.id,
 		k,
 		J
-	]), u(X?.title, N);
+	]), _(X?.title, N);
 	let oe = () => A();
 	if (!q && !X) return /* @__PURE__ */ T("div", {
 		className: "flex flex-1 flex-col items-center justify-center px-6 py-12",
-		children: /* @__PURE__ */ T(r, { children: /* @__PURE__ */ T(i, {
+		children: /* @__PURE__ */ T(r, { children: /* @__PURE__ */ T(n, {
 			className: "py-8 text-center",
 			children: /* @__PURE__ */ T("p", {
 				className: "text-sm font-semibold text-wx-fg",
@@ -148,7 +148,7 @@ function D({ slug: b, locale: D, isDummy: k, onHandoff: A, onOpenArticle: j, onO
 	let se = D.split("-")[0].toLowerCase(), $ = X ? X.locale.split("-")[0].toLowerCase() : null;
 	return !k && !G && !L.contentLocaleFallback && $ !== null && $ !== se ? /* @__PURE__ */ T("div", {
 		className: "flex flex-1 flex-col items-center justify-center px-6 py-12",
-		children: /* @__PURE__ */ T(r, { children: /* @__PURE__ */ T(i, {
+		children: /* @__PURE__ */ T(r, { children: /* @__PURE__ */ T(n, {
 			className: "py-8 text-center",
 			children: /* @__PURE__ */ T("p", {
 				className: "text-sm font-semibold text-wx-fg",
@@ -193,12 +193,12 @@ function D({ slug: b, locale: D, isDummy: k, onHandoff: A, onOpenArticle: j, onO
 					className: "mt-2 mb-5 text-sm text-wx-fg-muted",
 					children: X.excerpt
 				}),
-				/* @__PURE__ */ T(te, {
+				/* @__PURE__ */ T(v, {
 					content: X.content,
-					isHtml: X.contentFormat === d.HTML || c(X.content),
+					isHtml: X.contentFormat === y.HTML || h(X.content),
 					markdownMarginClass: "mt-3"
 				}),
-				/* @__PURE__ */ E(v, {
+				/* @__PURE__ */ E(l, {
 					type: "button",
 					variant: "solid",
 					size: "lg",
@@ -210,8 +210,8 @@ function D({ slug: b, locale: D, isDummy: k, onHandoff: A, onOpenArticle: j, onO
 						size: 16
 					}), /* @__PURE__ */ T("span", { children: P("unresolvedCta") })]
 				}),
-				X.id && /* @__PURE__ */ T(f, {
-					surface: ee.HELP,
+				X.id && /* @__PURE__ */ T(b, {
+					surface: p.HELP,
 					itemId: X.id,
 					reactionCounts: X.reactionCounts,
 					viewerReaction: ie,
@@ -220,9 +220,9 @@ function D({ slug: b, locale: D, isDummy: k, onHandoff: A, onOpenArticle: j, onO
 					showCounts: z,
 					className: "mt-4"
 				}),
-				/* @__PURE__ */ T(l, {
+				/* @__PURE__ */ T(g, {
 					currentLocale: k ? V : X.locale,
-					locales: k ? [...s] : X.translations.map((e) => e.locale),
+					locales: k ? [...m] : X.translations.map((e) => e.locale),
 					allowedLocales: k ? void 0 : L.supportedLocales,
 					onSelect: k ? (e) => H(e) : (e) => {
 						let t = X.translations.find((t) => t.locale === e);
@@ -282,7 +282,7 @@ function O() {
 						"w-full",
 						"w-11/12",
 						"w-7/12"
-					].map((e, t) => /* @__PURE__ */ T("div", { className: b("h-3 rounded-md bg-wx-bg-elevated", e) }, t))
+					].map((e, t) => /* @__PURE__ */ T("div", { className: d("h-3 rounded-md bg-wx-bg-elevated", e) }, t))
 				})
 			]
 		})
@@ -291,4 +291,4 @@ function O() {
 //#endregion
 export { D as HelpArticleView };
 
-//# sourceMappingURL=widget-react-C2zCJ9nY2.js.map
+//# sourceMappingURL=widget-react-NUWScxeE2.js.map

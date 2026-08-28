@@ -12,8 +12,8 @@ import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
 import { d as e, l as t, o as n, s as r } from "./widget-react-B9XrHKqv.js";
-import { i, n as a, t as o } from "./widget-react-CQ0DMi7b.js";
-import { t as s } from "./widget-react-BTMh-VbZ.js";
+import { i, n as a, t as o } from "./widget-react-BGCZpMUT.js";
+import { t as s } from "./widget-react-NffhFueH.js";
 import { t as c } from "./widget-react-GkCAcRz0.js";
 import { t as l } from "./widget-react-D9b9f-j_2.js";
 import { useEffect as u, useRef as d, useState as f } from "react";
@@ -506,4 +506,4 @@ function k({ Icon: t, onClick: n, ariaLabel: r, intent: i, size: o = 16 }) {
 //#endregion
 export { O as VoiceRecorderBar };
 
-//# sourceMappingURL=widget-react-zxHGJvC92.js.map
+//# sourceMappingURL=widget-react-Br8qtj152.js.map
