@@ -23853,4 +23853,4 @@ function mo(e) {
 //#endregion
 export { A as Categories, po as Emoji, D as EmojiStyle, j as SkinTonePickerLocation, k as SkinTones, E as SuggestionMode, O as Theme, mo as default, jt as emojiByUnified };
 
-//# sourceMappingURL=widget-react-BhdM1EXE2.js.map
+//# sourceMappingURL=widget-react-DXP6EOCM.js.map

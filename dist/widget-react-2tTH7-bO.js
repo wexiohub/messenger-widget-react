@@ -1342,4 +1342,4 @@ C.BasePlugin = class extends t {
 //#endregion
 export { C as t };
 
-//# sourceMappingURL=widget-react-D9b9f-j_2.js.map
+//# sourceMappingURL=widget-react-2tTH7-bO.js.map

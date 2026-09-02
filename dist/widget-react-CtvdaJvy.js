@@ -11,10 +11,10 @@ import "react";
 import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
-import { i as e, n as t } from "./widget-react-BGCZpMUT.js";
-import { t as n } from "./widget-react-D_1wQTaz.js";
-import { n as r, r as i, t as a } from "./widget-react-BVRYDaf5.js";
-import { t as o } from "./widget-react-D9b9f-j_2.js";
+import { i as e, n as t } from "./widget-react-krPPnv02.js";
+import { t as n } from "./widget-react-CIy9jXND.js";
+import { n as r, r as i, t as a } from "./widget-react-faSyVXFQ.js";
+import { t as o } from "./widget-react-2tTH7-bO.js";
 import { memo as s, useEffect as c, useMemo as l, useRef as u, useState as d } from "react";
 import { jsx as f, jsxs as p } from "react/jsx-runtime";
 //#region node_modules/@wavesurfer/react/dist/index.js
@@ -361,4 +361,4 @@ function A(e, t) {
 //#endregion
 export { O as AudioBubblePlayer };
 
-//# sourceMappingURL=widget-react-DWO5MXt62.js.map
+//# sourceMappingURL=widget-react-CtvdaJvy.js.map
