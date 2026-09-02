@@ -177,6 +177,10 @@ For plain HTML / script-injection setups, paste the loader snippet from https://
 
 Give a ⭐️ if this package helped you!
 
+## Changelog
+
+See the [Releases](https://github.com/wexiohub/messenger-widget-react/releases) page for the full changelog.
+
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.

@@ -11,7 +11,7 @@ import "react";
 import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
-import { S as e, at as t, it as n, j as r, ot as i } from "./widget-react-CVLHwRZh.js";
+import { S as e, at as t, it as n, j as r, ot as i } from "./widget-react-CK8xTxwO.js";
 import { n as a, r as o } from "./widget-react-krPPnv02.js";
 import * as s from "react";
 import { jsx as c } from "react/jsx-runtime";
@@ -472,4 +472,4 @@ function G(e) {
 //#endregion
 export { G as a, U as c, _ as d, f, L as i, z as l, V as n, j as o, u as p, F as r, N as s, k as t, D as u };
 
-//# sourceMappingURL=widget-react--D5-TDqS.js.map
+//# sourceMappingURL=widget-react-AwEaD0v2.js.map

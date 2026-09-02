@@ -9957,7 +9957,7 @@ function ip() {
 	return w(rp);
 }
 function ap({ children: e, tracking: t, enabled: n, token: r }) {
-	let i = md(), [a] = Mu(), [o] = Pu(), s = n && (t?.trackWebsitePages ?? !0), c = n && (t?.trackWidgetLinks ?? !0), l = ne([]), u = ne(null), d = ne(null), f = C((e) => {
+	let i = md(), [a] = Mu(), [o] = Pu(), s = n && (t?.trackWebsitePages ?? !0), c = n && (t?.trackWidgetLinks ?? !0), l = ne([]), u = ne(null), d = ne(null), f = ne(null), p = C((e) => {
 		td() ? e.kind === "page" ? a({ variables: { input: e.input } }).catch(() => {}) : o({ variables: { input: e.input } }).catch(() => {}) : l.current = np(l.current, e, 50);
 	}, [a, o]);
 	T(() => {
@@ -9972,9 +9972,9 @@ function ap({ children: e, tracking: t, enabled: n, token: r }) {
 	]), T(() => () => {
 		d.current && clearTimeout(d.current);
 	}, []);
-	let p = C((e, t) => {
+	let m = C((e, t) => {
 		!s || !e || u.current && tp(u.current, e) || (d.current && clearTimeout(d.current), d.current = setTimeout(() => {
-			u.current = e, f({
+			u.current = e, p({
 				kind: "page",
 				input: {
 					url: e,
@@ -9984,8 +9984,8 @@ function ap({ children: e, tracking: t, enabled: n, token: r }) {
 				}
 			});
 		}, 500));
-	}, [s, f]), m = C((e) => {
-		!c || !e.url || f({
+	}, [s, p]), h = C((e) => {
+		!c || !e.url || p({
 			kind: "link",
 			input: {
 				url: e.url,
@@ -9996,42 +9996,54 @@ function ap({ children: e, tracking: t, enabled: n, token: r }) {
 				occurredAt: (/* @__PURE__ */ new Date()).toISOString()
 			}
 		});
-	}, [c, f]);
+	}, [c, p]);
 	return T(() => {
 		if (!s || typeof window > "u") return;
 		if (i.kind === "iframe") {
 			let e = (e) => {
 				let t = e.data;
-				!t || typeof t != "object" || t.type !== "wexio:host-navigation:v1" || typeof t.url == "string" && p(t.url, {
+				!t || typeof t != "object" || t.type !== "wexio:host-navigation:v1" || typeof t.url == "string" && m(t.url, {
 					title: typeof t.title == "string" ? t.title : void 0,
 					referrer: typeof t.referrer == "string" ? t.referrer : void 0
 				});
 			};
 			return window.addEventListener("message", e), () => window.removeEventListener("message", e);
 		}
-		let e = () => p(window.location.href, {
+		let e = () => m(window.location.href, {
 			title: document.title,
 			referrer: document.referrer
-		});
+		}), t = () => {
+			f.current?.();
+			let t = document.querySelector("title"), n = !1, r = () => {
+				o?.disconnect(), clearTimeout(a), f.current = null;
+			}, i = () => {
+				n || (n = !0, r(), e());
+			}, a = setTimeout(i, 600), o = null;
+			t && typeof MutationObserver < "u" && (o = new MutationObserver(i), o.observe(t, {
+				childList: !0,
+				characterData: !0,
+				subtree: !0
+			})), f.current = r;
+		};
 		e();
-		let t = window.history.pushState, n = window.history.replaceState;
-		return window.history.pushState = function(...n) {
-			let r = t.apply(this, n);
-			return e(), r;
-		}, window.history.replaceState = function(...t) {
-			let r = n.apply(this, t);
-			return e(), r;
-		}, window.addEventListener("popstate", e), window.addEventListener("hashchange", e), () => {
-			window.history.pushState = t, window.history.replaceState = n, window.removeEventListener("popstate", e), window.removeEventListener("hashchange", e);
+		let n = window.history.pushState, r = window.history.replaceState;
+		return window.history.pushState = function(...e) {
+			let r = n.apply(this, e);
+			return t(), r;
+		}, window.history.replaceState = function(...e) {
+			let n = r.apply(this, e);
+			return t(), n;
+		}, window.addEventListener("popstate", t), window.addEventListener("hashchange", t), () => {
+			f.current?.(), window.history.pushState = n, window.history.replaceState = r, window.removeEventListener("popstate", t), window.removeEventListener("hashchange", t);
 		};
 	}, [
 		s,
 		i.kind,
-		p
+		m
 	]), /* @__PURE__ */ O(rp.Provider, {
 		value: {
-			trackPageView: p,
-			trackLinkClick: m
+			trackPageView: m,
+			trackLinkClick: h
 		},
 		children: e
 	});
@@ -21616,4 +21628,4 @@ function RC(e) {
 //#endregion
 export { wu as $, bd as A, ed as B, Rd as C, jd as D, Nd as E, cd as F, Au as G, Tu as H, td as I, ou as J, uu as K, ad as L, pd as M, md as N, Ad as O, ud as P, Ou as Q, rd as R, Ld as S, Pd as T, fu as U, Bu as V, bu as W, Su as X, cu as Y, vu as Z, $d as _, Ly as a, xl as at, Ud as b, ip as c, Ja as ct, ff as d, A as dt, Eu as et, df as f, le as ft, Qd as g, ef as h, VS as i, Gl as it, gd as j, xd as k, $f as l, Me as lt, sf as m, FC as n, ru as nt, op as o, G as ot, lf as p, j as pt, gu as q, IC as r, tu as rt, ap as s, Ya as st, RC as t, mu as tt, pf as u, M as ut, zd as v, Fd as w, Hd as x, Wd as y, sd as z };
 
-//# sourceMappingURL=widget-react-CVLHwRZh.js.map
+//# sourceMappingURL=widget-react-CK8xTxwO.js.map

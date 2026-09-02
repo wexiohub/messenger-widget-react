@@ -11,11 +11,11 @@ import "react";
 import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
-import { N as e, c as t, k as n, l as r } from "./widget-react-CVLHwRZh.js";
+import { N as e, c as t, k as n, l as r } from "./widget-react-CK8xTxwO.js";
 import { i, n as a, o } from "./widget-react-krPPnv02.js";
-import { d as s, h as c, m as l, n as u, r as d } from "./widget-react-DejnNTzJ.js";
+import { d as s, h as c, m as l, n as u, r as d } from "./widget-react-DV3UnggB.js";
 import { t as f } from "./widget-react-CIy9jXND.js";
-import { a as p, c as ee, i as m, l as h, n as g, o as _, r as v, t as y } from "./widget-react-D8-Z8fvu.js";
+import { a as p, c as ee, i as m, l as h, n as g, o as _, r as v, t as y } from "./widget-react-DDEFbIbU.js";
 import { useEffect as b, useRef as x, useState as S } from "react";
 import { jsx as C, jsxs as w } from "react/jsx-runtime";
 //#region components/widget/news-article-view/helpers.ts
@@ -353,4 +353,4 @@ function O() {
 //#endregion
 export { D as NewsArticleView };
 
-//# sourceMappingURL=widget-react-BPNfTldJ.js.map
+//# sourceMappingURL=widget-react-yTVzOzaU.js.map
