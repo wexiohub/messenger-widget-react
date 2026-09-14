@@ -154,7 +154,7 @@ function jt({ enabled: e, locale: t }) {
 Array.from({ length: 21 }, (e, t) => `wx-nt_${t + 1}`);
 var Mt = "wx-nt_";
 function Nt(e) {
-	return e ? e.startsWith("http://") || e.startsWith("https://") ? e : e.startsWith(Mt) ? he(`/sounds/${e}.wav`) : null : null;
+	return e ? e.startsWith("http://") || e.startsWith("https://") ? e : e.startsWith(Mt) ? he(`/sounds/${e}.mp3`) : null : null;
 }
 var Pt = "wexio:sound-muted";
 //#endregion
@@ -192,8 +192,8 @@ function Ft(e) {
 	};
 }
 function It(e, t) {
-	let n = new Audio(e);
-	return n.preload = "auto", n.volume = t, n;
+	let n = new Audio();
+	return n.preload = "none", n.volume = t, n.src = e, n;
 }
 //#endregion
 //#region lib/use-theme-mode.ts
