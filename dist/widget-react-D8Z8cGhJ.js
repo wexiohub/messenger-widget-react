@@ -160,77 +160,64 @@ var e = {
 		visitorName: "You",
 		messages: {
 			"m-demo-1": {
-				text: "Hi there 👋 Thanks for reaching out. I'm Gaia, the wexio AI - happy to help.",
-				ageLabel: "4h",
+				text: "Hi there 👋 I'm Gaia, the Wexio AI. What can I help you with?",
+				ageLabel: "9:41 AM",
 				buttons: [
 					"How does pricing work?",
-					"What is Gaia?",
+					"What can it do?",
 					"Talk to a human"
 				]
 			},
 			"m-demo-2": {
-				text: "I'm evaluating the widget for our docs site - does it support dark mode out of the box?",
-				ageLabel: "4h"
+				text: "Can you show me what the widget looks like?",
+				ageLabel: "9:41 AM"
 			},
 			"m-demo-3": {
-				text: "Yes - the widget follows your visitors' system preference by default, and operators can pin to light or dark from the dashboard.",
-				ageLabel: "4h"
+				text: "",
+				ageLabel: "9:42 AM",
+				mediaAlts: ["Product screenshot"]
 			},
 			"m-demo-4": {
-				text: "Here's a screenshot of the dashboard theme controls 👇",
-				ageLabel: "4h",
-				mediaAlts: ["Dashboard theme controls"]
-			},
-			"m-demo-gallery-captioned": {
-				text: "Three real installs we shipped last week - different industries, same setup time.",
-				ageLabel: "4h",
-				mediaAlts: [
-					"SaaS dashboard install",
-					"E-commerce checkout install",
-					"Docs site install"
-				]
-			},
-			"m-demo-gallery-bare": {
 				text: "",
-				ageLabel: "4h",
-				mediaAlts: [
-					"My setup, frame 1",
-					"My setup, frame 2",
-					"My setup, frame 3",
-					"My setup, frame 4"
-				]
+				ageLabel: "9:42 AM",
+				mediaAlts: ["Spinning globe"]
 			},
 			"m-demo-5": {
-				text: "Want a 30-second tour of how visitors interact with the widget? Tap play 👇",
-				ageLabel: "4h",
-				mediaAlts: ["Widget walkthrough"]
+				text: "Nice one! 😄 Here are a few views from our team.",
+				ageLabel: "9:43 AM"
 			},
 			"m-demo-6": {
-				text: "Neat. And the docs?",
-				ageLabel: "3h"
+				text: "A few dashboard highlights",
+				ageLabel: "9:43 AM",
+				mediaAlts: [
+					"Dashboard overview",
+					"Analytics",
+					"Inbox",
+					"Reports"
+				]
 			},
 			"m-demo-7": {
-				text: "Here's the full integration guide as a PDF - start with §2 if you've already got a Wexio account.",
-				ageLabel: "3h",
-				mediaAlts: ["Wexio integration guide.pdf"]
+				text: "",
+				ageLabel: "9:44 AM",
+				mediaAlts: ["Quick walkthrough"]
 			},
 			"m-demo-8": {
-				text: "And a quick voice note explaining the auth flow - easier than typing it out:",
-				ageLabel: "3h",
-				mediaAlts: ["Auth flow voice note"]
+				text: "",
+				ageLabel: "9:44 AM",
+				mediaAlts: ["Voice note"]
 			},
 			"m-demo-9": {
-				text: "Perfect. One more - what's the easiest way to get started?",
-				ageLabel: "2h"
+				text: "",
+				ageLabel: "9:45 AM",
+				mediaAlts: ["Getting started guide"]
 			},
 			"m-demo-10": {
-				text: "Pick the path that fits - we can spin up a sandbox, send the install snippet, or jump on a 10-minute call:",
-				ageLabel: "2h",
+				text: "Ready to try it yourself?",
+				ageLabel: "9:45 AM",
 				buttons: [
-					"📦 Start a sandbox project",
-					"📋 Send me the install snippet",
-					"📞 Book a 10-min call",
-					"💬 Keep chatting here"
+					"Open sandbox",
+					"Book a call",
+					"Keep chatting"
 				]
 			}
 		}
@@ -254,9 +241,14 @@ var e = {
 			human: { text: "Of course - looping in Alex from the team. They'll respond within a few minutes during business hours." },
 			fallback: { text: "Got it - let me check on that and circle back in a moment." }
 		}
+	},
+	threads: {
+		main: "Ready to try it yourself?",
+		billing: "Thanks! I flagged your invoice question to the billing team.",
+		integrations: "How do I connect WhatsApp to my account?"
 	}
 };
 //#endregion
 export { e as default };
 
-//# sourceMappingURL=widget-react-DNFROpaS.js.map
+//# sourceMappingURL=widget-react-D8Z8cGhJ.js.map

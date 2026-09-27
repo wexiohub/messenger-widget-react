@@ -241,8 +241,8 @@ export interface VisitorIdentity {
 export interface WexioWidgetProps {
   publicKey?: string;
   /**
-   * Log a known user into the widget (the React equivalent of
-   * Intercom's `boot({ user_id, ... })`). Provide ONE proof:
+   * Log a known user into the widget (a known-user login / boot).
+   * Provide ONE proof:
    * `googleIdToken`, `jwt`, or the legacy `userId` + `userHash` pair.
    * `name` / `email` / `phone` populate the People profile;
    * `attributes` is an open bag of extra fields.

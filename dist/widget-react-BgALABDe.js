@@ -36,4 +36,4 @@ var t = e("loader-circle", [["path", {
 //#endregion
 export { n, t as r, r as t };
 
-//# sourceMappingURL=widget-react-faSyVXFQ.js.map
+//# sourceMappingURL=widget-react-BgALABDe.js.map

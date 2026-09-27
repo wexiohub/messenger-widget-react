@@ -11,9 +11,10 @@ import "react";
 import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
-import { d as e } from "./widget-react-B9XrHKqv.js";
-import { D as t, O as n, T as r, a as i, at as a, i as o, it as s, n as c, ot as l, rt as u, st as d, t as f } from "./widget-react-CK8xTxwO.js";
-import { i as p, n as m } from "./widget-react-krPPnv02.js";
+import { t as e } from "./widget-react-DbOJZl9F.js";
+import { Ct as t, D as n, L as r, O as i, P as a, R as o, T as s, a as c, i as l, n as u, t as d } from "./widget-react-Dtx_fW3V.js";
+import { i as f, n as p } from "./widget-react-krPPnv02.js";
+import { n as m } from "./widget-react-wSc9gIfG.js";
 import { useCallback as h, useEffect as g, useMemo as _, useRef as v, useState as y } from "react";
 import { jsx as b, jsxs as x } from "react/jsx-runtime";
 //#region lib/detect-html.ts
@@ -41,8 +42,8 @@ function T(e, t) {
 var E = ["en", "uk"];
 async function D(e) {
 	switch (e) {
-		case "uk": return (await import("./widget-react-B9X7Tn7t.js")).default;
-		default: return (await import("./widget-react-DNFROpaS.js")).default;
+		case "uk": return (await import("./widget-react-DSUX0aJn.js")).default;
+		default: return (await import("./widget-react-D8Z8cGhJ.js")).default;
 	}
 }
 function O(e) {
@@ -70,23 +71,23 @@ var A = (/* @__PURE__ */ "prose max-w-none text-sm leading-relaxed text-wx-fg,[&
 //#endregion
 //#region components/widget/article-body.tsx
 function j({ content: e, isHtml: t, markdownMarginClass: n }) {
-	return t ? /* @__PURE__ */ b(c, {
+	return t ? /* @__PURE__ */ b(u, {
 		html: e,
 		className: `mt-0 ${A}`
 	}) : /* @__PURE__ */ b("div", {
 		className: `${n} ${A}`,
-		children: /* @__PURE__ */ b(i, {
-			remarkPlugins: [o],
+		children: /* @__PURE__ */ b(c, {
+			remarkPlugins: [l],
 			children: e
 		})
 	});
 }
 //#endregion
 //#region components/widget/language-selector/index.tsx
-function M({ currentLocale: i, locales: a, allowedLocales: o, onSelect: s, className: c }) {
-	let l = p("languageSelector"), [d, h] = y(!1), _ = v(null);
+function M({ currentLocale: t, locales: r, allowedLocales: a, onSelect: o, className: c }) {
+	let l = f("languageSelector"), [u, h] = y(!1), _ = v(null);
 	g(() => {
-		if (!d) return;
+		if (!u) return;
 		let e = (e) => {
 			_.current && !_.current.contains(e.target) && h(!1);
 		}, t = (e) => {
@@ -95,13 +96,13 @@ function M({ currentLocale: i, locales: a, allowedLocales: o, onSelect: s, class
 		return document.addEventListener("mousedown", e), document.addEventListener("keydown", t), () => {
 			document.removeEventListener("mousedown", e), document.removeEventListener("keydown", t);
 		};
-	}, [d]);
-	let S = o && o.length > 0 ? new Set(o.map((e) => e.split("-")[0].toLowerCase())) : null, C = Array.from(new Set(a.filter(Boolean))).filter((e) => !S || S.has(e.split("-")[0].toLowerCase()));
+	}, [u]);
+	let S = a && a.length > 0 ? new Set(a.map((e) => e.split("-")[0].toLowerCase())) : null, C = Array.from(new Set(r.filter(Boolean))).filter((e) => !S || S.has(e.split("-")[0].toLowerCase()));
 	if (C.length <= 1) return null;
-	let w = i.split("-")[0].toLowerCase();
+	let w = t.split("-")[0].toLowerCase();
 	return /* @__PURE__ */ x("div", {
 		ref: _,
-		className: m("relative", c),
+		className: p("relative", c),
 		children: [
 			/* @__PURE__ */ b("p", {
 				className: "mb-1.5 text-xs font-semibold tracking-wide text-wx-fg-muted uppercase",
@@ -111,25 +112,25 @@ function M({ currentLocale: i, locales: a, allowedLocales: o, onSelect: s, class
 				type: "button",
 				onClick: () => h((e) => !e),
 				"aria-haspopup": "listbox",
-				"aria-expanded": d,
+				"aria-expanded": u,
 				"aria-label": l("ariaLabel"),
-				className: m("flex w-full items-center gap-2 rounded-wx-sm border border-wx-border bg-wx-bg px-3 py-2", "text-sm font-medium text-wx-fg transition-colors hover:bg-wx-bg-elevated", "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wx-primary"),
+				className: p("flex w-full items-center gap-2 rounded-wx-sm border border-wx-border bg-wx-bg px-3 py-2", "text-sm font-medium text-wx-fg transition-colors hover:bg-wx-bg-elevated", "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wx-primary"),
 				children: [
-					/* @__PURE__ */ b(r, {
+					/* @__PURE__ */ b(s, {
 						size: 15,
 						className: "shrink-0 text-wx-fg-muted"
 					}),
 					/* @__PURE__ */ b("span", {
 						className: "min-w-0 flex-1 truncate text-left",
-						children: f(i)
+						children: d(t)
 					}),
-					/* @__PURE__ */ b(t, {
+					/* @__PURE__ */ b(n, {
 						size: 15,
-						className: m("shrink-0 text-wx-fg-subtle transition-transform", d && "rotate-180")
+						className: p("shrink-0 text-wx-fg-subtle transition-transform", u && "rotate-180")
 					})
 				]
 			}),
-			/* @__PURE__ */ b(u, { children: d && /* @__PURE__ */ b(e.ul, {
+			/* @__PURE__ */ b(m, { children: u && /* @__PURE__ */ b(e.ul, {
 				initial: {
 					opacity: 0,
 					y: 4
@@ -143,7 +144,7 @@ function M({ currentLocale: i, locales: a, allowedLocales: o, onSelect: s, class
 					y: 4
 				},
 				transition: { duration: .14 },
-				className: m("absolute bottom-full left-0 z-20 mb-1 max-h-56 w-full overflow-auto", "rounded-wx-sm border border-wx-border bg-wx-bg py-1 shadow-[0_12px_32px_rgba(0,0,0,0.16)]"),
+				className: p("absolute bottom-full left-0 z-20 mb-1 max-h-56 w-full overflow-auto", "rounded-wx-sm border border-wx-border bg-wx-bg py-1 shadow-[0_12px_32px_rgba(0,0,0,0.16)]"),
 				role: "listbox",
 				children: C.map((e) => {
 					let t = e.split("-")[0].toLowerCase() === w;
@@ -152,13 +153,13 @@ function M({ currentLocale: i, locales: a, allowedLocales: o, onSelect: s, class
 						role: "option",
 						"aria-selected": t,
 						onClick: () => {
-							s(e), h(!1);
+							o(e), h(!1);
 						},
-						className: m("flex w-full items-center gap-2 px-3 py-2 text-left text-sm transition-colors", t ? "font-semibold text-wx-primary" : "text-wx-fg hover:bg-wx-bg-elevated"),
+						className: p("flex w-full items-center gap-2 px-3 py-2 text-left text-sm transition-colors", t ? "font-semibold text-wx-primary" : "text-wx-fg hover:bg-wx-bg-elevated"),
 						children: [/* @__PURE__ */ b("span", {
 							className: "min-w-0 flex-1 truncate",
-							children: f(e)
-						}), t && /* @__PURE__ */ b(n, {
+							children: d(e)
+						}), t && /* @__PURE__ */ b(i, {
 							size: 15,
 							className: "shrink-0 text-wx-primary"
 						})]
@@ -169,43 +170,8 @@ function M({ currentLocale: i, locales: a, allowedLocales: o, onSelect: s, class
 	});
 }
 //#endregion
-//#region lib/graphql/queries/generated/reactions.generated.tsx
-var N = {}, P = l`
-    query VisitorReactionSet($surface: ReactionSurface!) {
-  visitorReactionSet(surface: $surface) {
-    _id
-    surface
-    enabled
-    slots {
-      slotIndex
-      emoji
-      sentiment
-    }
-  }
-}
-    `;
-function F(e) {
-	return a(P, {
-		...N,
-		...e
-	});
-}
-var I = l`
-    mutation SubmitVisitorReaction($input: VisitorReactionInput!) {
-  submitVisitorReaction(input: $input) {
-    ok
-  }
-}
-    `;
-function L(e) {
-	return s(I, {
-		...N,
-		...e
-	});
-}
-//#endregion
 //#region components/widget/reaction-bar.tsx
-var R = (e, t) => `wexio:reaction:${e}:${t}`, z = [
+var N = (e, t) => `wexio:reaction:${e}:${t}`, P = [
 	{
 		slotIndex: 0,
 		emoji: "🎉"
@@ -218,84 +184,96 @@ var R = (e, t) => `wexio:reaction:${e}:${t}`, z = [
 		slotIndex: 2,
 		emoji: "👍"
 	}
-], B = {
+], F = {
 	[w.NEWS]: "NewsPost",
 	[w.HELP]: "HelpArticle"
 };
-function V({ surface: t, itemId: n, reactionCounts: r, viewerReaction: i, groupItemIds: a, readonly: o = !1, showCounts: s = !0, isDummy: c = !1, className: l }) {
-	let u = p("reactions"), f = d(), { data: v, loading: S } = F({
-		variables: { surface: t },
+function I({ surface: n, itemId: i, reactionCounts: s, viewerReaction: c, groupItemIds: l, readonly: u = !1, showCounts: d = !0, isDummy: m = !1, className: v }) {
+	let S = f("reactions"), C = t(), { data: w, loading: T } = o({
+		variables: { surface: n },
 		fetchPolicy: "cache-first",
-		skip: c
-	}), [C, { loading: w }] = L(), T = _(() => c ? z : v?.visitorReactionSet?.slots ?? [], [c, v]), E = c ? !0 : v?.visitorReactionSet?.enabled ?? !0, D = R(t, n), [O, k] = y(null);
+		skip: m
+	}), [E, { loading: D }] = r(), O = a(), k = _(() => m ? P : w?.visitorReactionSet?.slots ?? [], [m, w]), A = m ? !0 : w?.visitorReactionSet?.enabled ?? !0, j = N(n, i), [M, I] = y(null);
 	g(() => {
-		if (!c) {
-			k(i ?? null);
+		if (!m) {
+			I(c ?? null);
 			return;
 		}
 		if (typeof window > "u") return;
-		let e = window.localStorage.getItem(D);
-		k(e === null ? null : Number(e));
+		let e = window.localStorage.getItem(j);
+		I(e === null ? null : Number(e));
 	}, [
-		c,
-		D,
-		i
+		m,
+		j,
+		c
 	]);
-	let [A, j] = y({}), M = (e) => (r?.[String(e)] ?? 0) + (c ? A[e] ?? 0 : 0), N = h((e, r) => {
-		let i = B[t], o = a?.length ? a : [n];
-		for (let t of o) {
-			let n = f.cache.identify({
-				__typename: i,
-				_id: t
+	let [L, R] = y({}), z = (e) => (s?.[String(e)] ?? 0) + (m ? L[e] ?? 0 : 0), B = h((e, t) => {
+		let r = F[n], a = l?.length ? l : [i];
+		for (let n of a) {
+			let i = C.cache.identify({
+				__typename: r,
+				_id: n
 			});
-			n && f.cache.modify({
-				id: n,
+			i && C.cache.modify({
+				id: i,
 				fields: {
-					viewerReaction: () => r,
-					reactionCounts: (t) => {
-						let n = { ...t ?? {} };
-						return r !== null && (n[r] = (n[r] ?? 0) + 1), e !== null && (n[e] = Math.max(0, (n[e] ?? 0) - 1)), n;
+					viewerReaction: () => t,
+					reactionCounts: (n) => {
+						let r = { ...n ?? {} };
+						return t !== null && (r[t] = (r[t] ?? 0) + 1), e !== null && (r[e] = Math.max(0, (r[e] ?? 0) - 1)), r;
 					}
 				}
 			});
 		}
 	}, [
-		f,
-		t,
-		a,
-		n
-	]), P = async (e) => {
-		if (o || w || O === e) return;
-		let r = O;
-		if (k(e), c) {
-			typeof window < "u" && window.localStorage.setItem(D, String(e)), j((t) => ({
-				...t,
-				[e]: (t[e] ?? 0) + 1,
-				...r === null ? {} : { [r]: (t[r] ?? 0) - 1 }
+		C,
+		n,
+		l,
+		i
+	]), V = async (e) => {
+		if (u || D || M === e) return;
+		let t = M;
+		if (I(e), m) {
+			typeof window < "u" && window.localStorage.setItem(j, String(e)), R((n) => ({
+				...n,
+				[e]: (n[e] ?? 0) + 1,
+				...t === null ? {} : { [t]: (n[t] ?? 0) - 1 }
 			}));
 			return;
 		}
-		N(r, e);
+		if (B(t, e), O) {
+			O.enqueue({
+				op: "reaction",
+				semantics: "convergence",
+				convergenceKey: `reaction:${n}:${i}`,
+				payload: {
+					surface: n,
+					itemId: i,
+					slotIndex: e
+				}
+			});
+			return;
+		}
 		try {
-			await C({ variables: { input: {
-				surface: t,
-				itemId: n,
+			await E({ variables: { input: {
+				surface: n,
+				itemId: i,
 				slotIndex: e
 			} } });
 		} catch {
-			N(e, r), k(r);
+			B(e, t), I(t);
 		}
 	};
-	return S || !E || T.length === 0 ? null : /* @__PURE__ */ b("div", {
-		className: m("flex flex-wrap items-center justify-center gap-2", l),
+	return T || !A || k.length === 0 ? null : /* @__PURE__ */ b("div", {
+		className: p("flex flex-wrap items-center justify-center gap-2", v),
 		role: "group",
-		"aria-label": u("ariaLabel"),
-		children: T.map((t) => {
-			let n = O === t.slotIndex, r = M(t.slotIndex);
+		"aria-label": S("ariaLabel"),
+		children: k.map((t) => {
+			let n = M === t.slotIndex, r = z(t.slotIndex);
 			return /* @__PURE__ */ x(e.button, {
 				type: "button",
-				disabled: o || w,
-				onClick: () => void P(t.slotIndex),
+				disabled: u || D,
+				onClick: () => void V(t.slotIndex),
 				whileTap: { scale: .9 },
 				whileHover: { scale: 1.06 },
 				transition: {
@@ -303,13 +281,13 @@ function V({ surface: t, itemId: n, reactionCounts: r, viewerReaction: i, groupI
 					stiffness: 400,
 					damping: 18
 				},
-				className: m("flex items-center gap-1.5 rounded-full px-3 py-1.5 text-2xl leading-none transition-colors", "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wx-primary", n ? "bg-wx-primary/10 ring-1 ring-wx-primary/40" : "hover:bg-wx-bg-elevated", o && "cursor-default opacity-70"),
+				className: p("flex items-center gap-1.5 rounded-full px-3 py-1.5 text-2xl leading-none transition-colors", "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wx-primary", n ? "bg-wx-primary/10 ring-1 ring-wx-primary/40" : "hover:bg-wx-bg-elevated", u && "cursor-default opacity-70"),
 				"aria-pressed": n,
-				"aria-label": u("tapAria", { emoji: t.emoji }),
+				"aria-label": S("tapAria", { emoji: t.emoji }),
 				children: [/* @__PURE__ */ b("span", {
 					"aria-hidden": "true",
 					children: t.emoji
-				}), s && r > 0 && /* @__PURE__ */ b("span", {
+				}), d && r > 0 && /* @__PURE__ */ b("span", {
 					className: "text-xs font-medium text-wx-fg-muted",
 					children: r
 				})]
@@ -318,6 +296,6 @@ function V({ surface: t, itemId: n, reactionCounts: r, viewerReaction: i, groupI
 	});
 }
 //#endregion
-export { k as a, w as c, E as i, S as l, M as n, T as o, j as r, C as s, V as t };
+export { k as a, w as c, E as i, S as l, M as n, T as o, j as r, C as s, I as t };
 
-//# sourceMappingURL=widget-react-DDEFbIbU.js.map
+//# sourceMappingURL=widget-react-vXfa9GKf.js.map

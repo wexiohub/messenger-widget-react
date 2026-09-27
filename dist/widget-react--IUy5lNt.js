@@ -11,14 +11,15 @@ import "react";
 import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
-import { d as e, l as t, o as n, s as r } from "./widget-react-B9XrHKqv.js";
-import { i, n as a, t as o } from "./widget-react-krPPnv02.js";
-import { t as s } from "./widget-react-BlTmXnei.js";
-import { t as c } from "./widget-react-B8rXZyxg.js";
-import { t as l } from "./widget-react-2tTH7-bO.js";
+import { t as e } from "./widget-react-DbOJZl9F.js";
+import { i as t, n, t as r } from "./widget-react-krPPnv02.js";
+import { l as i, o as a, s as o } from "./widget-react-CN_FIvMD.js";
+import { t as s } from "./widget-react-DgIxSjv7.js";
+import { t as c } from "./widget-react-SI7deQTE.js";
+import { t as l } from "./widget-react-BAUpSGhZ.js";
 import { useEffect as u, useRef as d, useState as f } from "react";
 import { Fragment as p, jsx as m, jsxs as h } from "react/jsx-runtime";
-var g = o("square", [["rect", {
+var g = r("square", [["rect", {
 	width: "18",
 	height: "18",
 	x: "3",
@@ -297,8 +298,8 @@ function D(e) {
 	let t = e?.name ?? "", n = e?.message ?? "";
 	return t === "NotAllowedError" || t === "PermissionDeniedError" ? "denied" : t === "NotFoundError" || t === "NotReadableError" || t === "OverconstrainedError" || t === "SecurityError" || t === "AbortError" || t === "TypeError" || /not found|could not start|secure origin|not readable|in use/i.test(n) ? "failed" : /permission|denied|not allowed/i.test(n) ? "denied" : "failed";
 }
-function O({ onComplete: o, onCancel: c, onError: _ }) {
-	let v = i("messages"), y = d(null), b = d(null), x = d(null), S = d(null), O = d([]), A = d(null), [j, M] = f("recording"), [N, P] = f(0), [F, I] = f(!1), L = d(null), R = d(!1);
+function O({ onComplete: r, onCancel: c, onError: _ }) {
+	let v = t("messages"), y = d(null), b = d(null), x = d(null), S = d(null), O = d([]), A = d(null), [j, M] = f("recording"), [N, P] = f(0), [F, I] = f(!1), L = d(null), R = d(!1);
 	return u(() => {
 		let e = y.current;
 		if (!e) return;
@@ -398,10 +399,10 @@ function O({ onComplete: o, onCancel: c, onError: _ }) {
 			y: 0
 		},
 		transition: { duration: .18 },
-		className: a("flex items-center gap-1.5 rounded-wx-lg border border-wx-border bg-wx-bg px-2 py-2"),
+		className: n("flex items-center gap-1.5 rounded-wx-lg border border-wx-border bg-wx-bg px-2 py-2"),
 		children: [
 			/* @__PURE__ */ m(k, {
-				Icon: t,
+				Icon: i,
 				onClick: () => {
 					R.current = !0;
 					try {
@@ -428,7 +429,7 @@ function O({ onComplete: o, onCancel: c, onError: _ }) {
 					/* @__PURE__ */ m("div", {
 						ref: y,
 						"aria-hidden": "true",
-						className: a("min-w-0 flex-1 overflow-hidden", j !== "preview" && "pointer-events-none")
+						className: n("min-w-0 flex-1 overflow-hidden", j !== "preview" && "pointer-events-none")
 					}),
 					/* @__PURE__ */ m("span", {
 						className: "shrink-0 font-mono text-xs tabular-nums text-wx-fg-muted",
@@ -451,11 +452,11 @@ function O({ onComplete: o, onCancel: c, onError: _ }) {
 					stiffness: 400,
 					damping: 22
 				},
-				className: a("flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors", "text-wx-fg-muted hover:bg-wx-bg-elevated hover:text-wx-fg"),
+				className: n("flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors", "text-wx-fg-muted hover:bg-wx-bg-elevated hover:text-wx-fg"),
 				children: /* @__PURE__ */ m(g, { size: 14 })
 			}),
 			j === "preview" && /* @__PURE__ */ h(p, { children: [/* @__PURE__ */ m(k, {
-				Icon: F ? n : r,
+				Icon: F ? a : o,
 				onClick: () => {
 					let e = b.current;
 					e && (e.isPlaying() ? e.pause() : e.play());
@@ -466,7 +467,7 @@ function O({ onComplete: o, onCancel: c, onError: _ }) {
 				type: "button",
 				onClick: () => {
 					let e = L.current;
-					e && o(e);
+					e && r(e);
 				},
 				"aria-label": v("sendCta"),
 				whileHover: { scale: 1.08 },
@@ -476,18 +477,18 @@ function O({ onComplete: o, onCancel: c, onError: _ }) {
 					stiffness: 400,
 					damping: 22
 				},
-				className: a("flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors", "bg-wx-primary text-wx-primary-fg hover:bg-wx-primary-hover"),
+				className: n("flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors", "bg-wx-primary text-wx-primary-fg hover:bg-wx-primary-hover"),
 				children: /* @__PURE__ */ m(s, { size: 14 })
 			})] })
 		]
 	}, "voice-recorder");
 }
-function k({ Icon: t, onClick: n, ariaLabel: r, intent: i, size: o = 16 }) {
+function k({ Icon: t, onClick: r, ariaLabel: i, intent: a, size: o = 16 }) {
 	let s = c();
 	return /* @__PURE__ */ m(e.button, {
 		type: "button",
-		onClick: n,
-		"aria-label": r,
+		onClick: r,
+		"aria-label": i,
 		whileHover: { scale: 1.08 },
 		whileTap: { scale: .9 },
 		transition: {
@@ -496,7 +497,7 @@ function k({ Icon: t, onClick: n, ariaLabel: r, intent: i, size: o = 16 }) {
 			damping: 22
 		},
 		...s.parentHandlers,
-		className: a("flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors", i === "primary" ? "bg-wx-primary text-wx-primary-fg hover:bg-wx-primary-hover" : "text-wx-fg-muted hover:bg-wx-bg-elevated hover:text-wx-fg"),
+		className: n("flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors", a === "primary" ? "bg-wx-primary text-wx-primary-fg hover:bg-wx-primary-hover" : "text-wx-fg-muted hover:bg-wx-bg-elevated hover:text-wx-fg"),
 		children: /* @__PURE__ */ m(t, {
 			ref: s.iconRef,
 			size: o
@@ -506,4 +507,4 @@ function k({ Icon: t, onClick: n, ariaLabel: r, intent: i, size: o = 16 }) {
 //#endregion
 export { O as VoiceRecorderBar };
 
-//# sourceMappingURL=widget-react-DubCiNev.js.map
+//# sourceMappingURL=widget-react--IUy5lNt.js.map

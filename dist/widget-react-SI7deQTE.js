@@ -32,4 +32,4 @@ function n() {
 //#endregion
 export { n as t };
 
-//# sourceMappingURL=widget-react-B8rXZyxg.js.map
+//# sourceMappingURL=widget-react-SI7deQTE.js.map
