@@ -68,8 +68,8 @@ function p({ open: p, onClose: m, fetchPage: h, onPick: g, anchorRef: _ }) {
 	]), s(() => {
 		if (!p) return;
 		let e = (e) => {
-			let t = e.target;
-			y.current?.contains(t) || _?.current?.contains(t) || m();
+			let t = e.composedPath();
+			y.current && t.includes(y.current) || _?.current && t.includes(_.current) || m();
 		}, t = (e) => {
 			e.key === "Escape" && m();
 		};
@@ -226,4 +226,4 @@ function p({ open: p, onClose: m, fetchPage: h, onPick: g, anchorRef: _ }) {
 //#endregion
 export { p as GiphyPicker };
 
-//# sourceMappingURL=widget-react-CuphoFsN.js.map
+//# sourceMappingURL=widget-react-DSAyUf2U.js.map

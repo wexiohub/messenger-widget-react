@@ -11,7 +11,7 @@ import "react";
 import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
-import { C as e, St as t, bt as n, xt as r } from "./widget-react-Dtx_fW3V.js";
+import { C as e, Et as t, Tt as n, wt as r } from "./widget-react-C6lzldez.js";
 import { n as i, r as a } from "./widget-react-krPPnv02.js";
 import * as o from "react";
 import { jsx as s } from "react/jsx-runtime";
@@ -33,7 +33,7 @@ var c = {}, l = /* @__PURE__ */ function(e) {
 }
     `;
 function d(e) {
-	return r(u, {
+	return n(u, {
 		...c,
 		...e
 	});
@@ -93,7 +93,7 @@ var f = t`
 }
     `;
 function p(e) {
-	return r(f, {
+	return n(f, {
 		...c,
 		...e
 	});
@@ -145,7 +145,7 @@ var m = t`
 }
     `;
 function h(e) {
-	return r(m, {
+	return n(m, {
 		...c,
 		...e
 	});
@@ -166,7 +166,7 @@ var g = t`
 }
     `;
 function _(e) {
-	return r(g, {
+	return n(g, {
 		...c,
 		...e
 	});
@@ -186,7 +186,7 @@ var v = t`
 }
     `;
 function y(e) {
-	return r(v, {
+	return n(v, {
 		...c,
 		...e
 	});
@@ -199,7 +199,7 @@ var b = t`
 }
     `;
 function x(e) {
-	return n(b, {
+	return r(b, {
 		...c,
 		...e
 	});
@@ -216,7 +216,7 @@ var S = t`
 }
     `;
 function C(e) {
-	return r(S, {
+	return n(S, {
 		...c,
 		...e
 	});
@@ -231,7 +231,7 @@ var w = t`
 }
     `;
 function T(e) {
-	return r(w, {
+	return n(w, {
 		...c,
 		...e
 	});
@@ -368,4 +368,4 @@ B.displayName = "Button";
 //#endregion
 export { f as a, _ as c, p as d, C as f, u as i, T as l, A as n, x as o, y as p, l as r, h as s, B as t, d as u };
 
-//# sourceMappingURL=widget-react-BZ-SHa2o.js.map
+//# sourceMappingURL=widget-react-bPokx9L5.js.map

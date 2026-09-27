@@ -11,15 +11,15 @@ import "react";
 import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
-import { F as e, M as t, c as n, dt as r, k as i, l as a, rt as o, u as s } from "./widget-react-Dtx_fW3V.js";
-import { i as c, n as l, o as u } from "./widget-react-krPPnv02.js";
-import { h as d, m as f, n as p, r as m } from "./widget-react-CHSNuztJ.js";
-import { t as h } from "./widget-react-B7es3n1-.js";
-import { a as g, c as _, i as v, l as y, n as ee, o as b, r as x, t as S } from "./widget-react-vXfa9GKf.js";
-import { useEffect as C, useRef as w, useState as T } from "react";
-import { jsx as E, jsxs as D } from "react/jsx-runtime";
+import { F as e, I as t, M as n, N as r, c as i, ht as a, k as o, l as s, st as c, u as l, z as u } from "./widget-react-C6lzldez.js";
+import { i as d, n as f, o as p } from "./widget-react-krPPnv02.js";
+import { h as m, m as h, n as g, r as ee } from "./widget-react-MXOCL3Mg.js";
+import { t as _ } from "./widget-react-B7es3n1-.js";
+import { i as v, n as y, o as b, r as te, s as ne, t as re } from "./widget-react-BfO-uP4o.js";
+import { useEffect as x, useRef as S, useState as C } from "react";
+import { jsx as w, jsxs as T } from "react/jsx-runtime";
 //#region components/widget/news-article-view/helpers.ts
-function O(e) {
+function E(e) {
 	if (!e || typeof e != "object") return null;
 	let t = e, n = String(t._id ?? t.id ?? "");
 	if (!n) return null;
@@ -81,8 +81,8 @@ function O(e) {
 }
 //#endregion
 //#region components/widget/news-article-view/related-news-list.tsx
-function k({ currentId: e, currentCategoryIds: t, currentTagIds: n, previewPostsById: r, visitorRelatedRaw: i, isDummy: a, onOpen: o }) {
-	let s = c("news"), l = (() => {
+function D({ currentId: e, currentCategoryIds: t, currentTagIds: n, previewPostsById: r, visitorRelatedRaw: i, isDummy: a, onOpen: o }) {
+	let s = d("news"), c = (() => {
 		if (a) return [];
 		if (Array.isArray(i) && i.length > 0) return i.filter((e) => !!e && typeof e == "object").map((e) => {
 			let t = e.coverImageUrl?.url ?? e.externalCoverImageUrl;
@@ -124,22 +124,22 @@ function k({ currentId: e, currentCategoryIds: t, currentTagIds: n, previewPosts
 		}
 		return [];
 	})();
-	return l.length === 0 ? null : /* @__PURE__ */ D("section", {
+	return c.length === 0 ? null : /* @__PURE__ */ T("section", {
 		className: "mt-6",
-		children: [/* @__PURE__ */ E("p", {
+		children: [/* @__PURE__ */ w("p", {
 			className: "mb-2 text-xs font-semibold tracking-wide text-wx-fg-muted uppercase",
 			children: s("relatedTitle")
-		}), /* @__PURE__ */ E("ul", {
+		}), /* @__PURE__ */ w("ul", {
 			className: "flex flex-col gap-2",
-			children: l.map((e) => /* @__PURE__ */ E("li", { children: /* @__PURE__ */ D("button", {
+			children: c.map((e) => /* @__PURE__ */ w("li", { children: /* @__PURE__ */ T("button", {
 				type: "button",
 				onClick: () => o(e.id),
 				className: "flex w-full items-center gap-3 rounded-wx-lg bg-wx-bg-elevated px-3 py-2 text-left transition-colors hover:bg-wx-bg-elevated/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wx-primary",
-				children: [/* @__PURE__ */ E("span", {
+				children: [/* @__PURE__ */ w("span", {
 					className: "aspect-square w-12 shrink-0 rounded-wx-sm bg-cover bg-center",
 					style: e.coverImageUrl ? { backgroundImage: `url(${e.coverImageUrl})` } : { background: "linear-gradient(135deg, #1e1f21, #121314)" },
 					"aria-hidden": "true"
-				}), /* @__PURE__ */ E("span", {
+				}), /* @__PURE__ */ w("span", {
 					className: "min-w-0 flex-1 truncate text-sm font-medium text-wx-fg",
 					children: e.title
 				})]
@@ -149,23 +149,23 @@ function k({ currentId: e, currentCategoryIds: t, currentTagIds: n, previewPosts
 }
 //#endregion
 //#region components/widget/news-article-view/index.tsx
-function A({ id: A, isDummy: j, onOpenRelated: ne, onTitleResolved: re }) {
-	let M = c("news"), N = c("demo"), P = u(), F = t(), { config: I } = i(), L = I.messenger?.showRelatedNews ?? !0, R = I.messenger?.showReactionCounts ?? !0, { trackLinkClick: z } = n(), B = w(null), V = (e) => {
-		ne?.(e);
-	}, [H, U] = T(P), W = g(H, N), G = j ? null : F.previewData?.newsPostsById?.[A], K = !!G, { data: q, loading: J } = f({
+function O({ id: O, isDummy: A, onOpenRelated: ie, onTitleResolved: j }) {
+	let M = d("news"), N = e(), P = p(), F = n(), { config: I } = o(), L = I.messenger?.showRelatedNews ?? !0, R = I.messenger?.showReactionCounts ?? !0, { trackLinkClick: z } = i(), B = S(null), V = (e) => {
+		ie?.(e);
+	}, [H, U] = C(P), W = t(H, N), G = A ? null : F.previewData?.newsPostsById?.[O], K = !!G, { data: q, loading: J } = h({
 		variables: { args: {
-			id: A,
+			id: O,
 			locale: P
 		} },
-		skip: j || K || !A
-	}), Y = o(), ie = a(Y && !j && !K && A ? e.newsPost(Y, A, P) : null, q), { data: ae } = d({
+		skip: A || K || !O
+	}), Y = c(), ae = s(Y && !A && !K && O ? u.newsPost(Y, O, P) : null, q), { data: oe } = m({
 		variables: {
-			postId: A,
+			postId: O,
 			limit: 5,
 			locale: P
 		},
-		skip: j || K || !A || !L
-	}), X = j ? r(W).find((e) => e.id === A) ?? null : null, Z = X ? {
+		skip: A || K || !O || !L
+	}), X = A ? a(W).find((e) => e.id === O) ?? null : null, Z = X ? {
 		id: X.id,
 		title: X.title,
 		excerpt: X.excerpt,
@@ -179,130 +179,130 @@ function A({ id: A, isDummy: j, onOpenRelated: ne, onTitleResolved: re }) {
 		authors: X.authors,
 		category: X.category,
 		locale: H
-	} : O(K ? G : ie?.visitorNewsPost);
-	if (b(Z?.title, re), C(() => {
-		j || K || !Z?.id || B.current !== Z.id && (B.current = Z.id, z({
+	} : E(K ? G : ae?.visitorNewsPost);
+	if (v(Z?.title, j), x(() => {
+		A || K || !Z?.id || B.current !== Z.id && (B.current = Z.id, z({
 			url: `/news/${Z.id}`,
 			targetType: "NEWS_POST",
 			targetRefId: Z.id
 		}));
 	}, [
 		Z?.id,
-		j,
+		A,
 		K,
 		z
-	]), !Z) return J ? /* @__PURE__ */ E(te, {}) : /* @__PURE__ */ E("div", {
+	]), !Z) return J ? /* @__PURE__ */ w(k, {}) : /* @__PURE__ */ w("div", {
 		className: "flex flex-1 items-center justify-center px-6 py-12 text-center",
-		children: /* @__PURE__ */ E("p", {
+		children: /* @__PURE__ */ w("p", {
 			className: "text-sm text-wx-fg-muted",
 			children: M("articleNotFound")
 		})
 	});
-	let oe = P.split("-")[0].toLowerCase(), Q = Z.locale ? Z.locale.split("-")[0].toLowerCase() : null;
-	if (!j && !K && !I.contentLocaleFallback && Q !== null && Q !== oe) return /* @__PURE__ */ E("div", {
+	let se = P.split("-")[0].toLowerCase(), Q = Z.locale ? Z.locale.split("-")[0].toLowerCase() : null;
+	if (!A && !K && !I.contentLocaleFallback && Q !== null && Q !== se) return /* @__PURE__ */ w("div", {
 		className: "flex flex-1 items-center justify-center px-6 py-12 text-center",
-		children: /* @__PURE__ */ E("p", {
+		children: /* @__PURE__ */ w("p", {
 			className: "text-sm text-wx-fg-muted",
 			children: M("articleNotTranslated")
 		})
 	});
 	let $ = Z.coverGradient ?? ["#1e1f21", "#121314"];
-	return /* @__PURE__ */ E(s, {
+	return /* @__PURE__ */ w(l, {
 		className: "flex-1",
-		children: /* @__PURE__ */ D("div", {
+		children: /* @__PURE__ */ T("div", {
 			className: "flex flex-col",
-			children: [/* @__PURE__ */ E("div", {
-				className: l("relative w-full"),
+			children: [/* @__PURE__ */ w("div", {
+				className: f("relative w-full"),
 				style: {
 					aspectRatio: "16 / 9",
 					background: Z.coverImageUrl ? `url(${Z.coverImageUrl}) center/cover` : `linear-gradient(135deg, ${$[0]}, ${$[1]})`
 				},
 				"aria-hidden": "true"
-			}), /* @__PURE__ */ D("div", {
+			}), /* @__PURE__ */ T("div", {
 				className: "flex flex-col gap-3 px-5 pt-5 pb-12",
 				children: [
-					Z.category && /* @__PURE__ */ E("p", {
+					Z.category && /* @__PURE__ */ w("p", {
 						className: "text-[11px] font-semibold tracking-[0.14em] text-wx-primary uppercase",
 						children: Z.category.label
 					}),
-					/* @__PURE__ */ D("p", {
+					/* @__PURE__ */ T("p", {
 						className: "flex items-center gap-2 text-xs text-wx-fg-subtle",
-						children: [/* @__PURE__ */ E("span", { children: new Date(Z.publishedAt).toLocaleDateString(P, {
+						children: [/* @__PURE__ */ w("span", { children: new Date(Z.publishedAt).toLocaleDateString(P, {
 							month: "long",
 							day: "numeric",
 							year: "numeric"
-						}) }), m(Z) && Z.upstreamUpdatedAt && /* @__PURE__ */ E("span", {
+						}) }), ee(Z) && Z.upstreamUpdatedAt && /* @__PURE__ */ w("span", {
 							className: "rounded-full bg-wx-bg-elevated px-1.5 py-0.5 text-[10px] font-medium text-wx-fg-muted",
 							title: new Date(Z.upstreamUpdatedAt).toLocaleString(P),
-							children: M("editedAt", { when: p(Z.upstreamUpdatedAt) })
+							children: M("editedAt", { when: g(Z.upstreamUpdatedAt) })
 						})]
 					}),
-					/* @__PURE__ */ E("h2", {
+					/* @__PURE__ */ w("h2", {
 						className: "text-2xl leading-tight font-bold text-wx-fg",
 						children: Z.title
 					}),
-					Z.authors && Z.authors.length > 0 && /* @__PURE__ */ D("p", {
+					Z.authors && Z.authors.length > 0 && /* @__PURE__ */ T("p", {
 						className: "flex items-center gap-2 text-xs text-wx-fg-muted",
-						children: [/* @__PURE__ */ E("span", {
+						children: [/* @__PURE__ */ w("span", {
 							className: "flex -space-x-1.5",
-							children: Z.authors.slice(0, 3).map((e) => /* @__PURE__ */ E("span", {
+							children: Z.authors.slice(0, 3).map((e) => /* @__PURE__ */ w("span", {
 								className: "h-5 w-5 overflow-hidden rounded-full bg-wx-bg-elevated ring-1 ring-wx-bg",
 								"aria-hidden": "true",
-								children: /* @__PURE__ */ E("img", {
+								children: /* @__PURE__ */ w("img", {
 									src: e.photo.url,
 									alt: "",
 									className: "h-full w-full object-cover"
 								})
 							}, e._id))
-						}), /* @__PURE__ */ E("span", { children: M("writtenBy", { names: Z.authors.map((e) => e.name).join(", ") }) })]
+						}), /* @__PURE__ */ w("span", { children: M("writtenBy", { names: Z.authors.map((e) => e.name).join(", ") }) })]
 					}),
-					Z.tags && Z.tags.length > 0 && /* @__PURE__ */ E("div", {
+					Z.tags && Z.tags.length > 0 && /* @__PURE__ */ w("div", {
 						className: "flex flex-wrap gap-1",
-						children: Z.tags.map((e) => /* @__PURE__ */ E("span", {
+						children: Z.tags.map((e) => /* @__PURE__ */ w("span", {
 							className: "rounded-full bg-wx-bg-elevated px-2 py-0.5 text-[11px] font-medium text-wx-fg-muted",
 							children: e.label
 						}, e.slug))
 					}),
-					Z.excerpt && /* @__PURE__ */ E("p", {
+					Z.excerpt && /* @__PURE__ */ w("p", {
 						className: "text-base leading-relaxed text-wx-fg-muted",
 						children: Z.excerpt
 					}),
-					Z.contentMarkdown && /* @__PURE__ */ E(x, {
+					Z.contentMarkdown && /* @__PURE__ */ w(te, {
 						content: Z.contentMarkdown,
-						isHtml: Z.bodyFormat === "html" || y(Z.contentMarkdown),
+						isHtml: Z.bodyFormat === "html" || ne(Z.contentMarkdown),
 						markdownMarginClass: "mt-3"
 					}),
-					Z.sourceUrl && /* @__PURE__ */ D("a", {
+					Z.sourceUrl && /* @__PURE__ */ T("a", {
 						href: Z.sourceUrl,
 						target: "_blank",
 						rel: "noopener noreferrer",
 						className: "mt-4 flex items-center justify-center gap-1.5 text-xs text-wx-primary underline underline-offset-2 transition-opacity hover:opacity-80",
-						children: [/* @__PURE__ */ E(h, { size: 12 }), /* @__PURE__ */ E("span", { children: M("readOriginal") })]
+						children: [/* @__PURE__ */ w(_, { size: 12 }), /* @__PURE__ */ w("span", { children: M("readOriginal") })]
 					}),
-					L && /* @__PURE__ */ E(k, {
+					L && /* @__PURE__ */ w(D, {
 						currentId: Z.id,
 						currentCategoryIds: Z.categoryIds ?? [],
 						currentTagIds: Z.tagIds ?? [],
-						previewPostsById: j ? void 0 : F.previewData?.newsPostsById,
-						visitorRelatedRaw: ae?.visitorNewsRelated,
-						isDummy: j,
+						previewPostsById: A ? void 0 : F.previewData?.newsPostsById,
+						visitorRelatedRaw: oe?.visitorNewsRelated,
+						isDummy: A,
 						onOpen: V
 					}),
-					Z.id && /* @__PURE__ */ E(S, {
-						surface: _.NEWS,
+					Z.id && /* @__PURE__ */ w(re, {
+						surface: b.NEWS,
 						itemId: Z.id,
 						reactionCounts: Z.reactionCounts ?? null,
 						viewerReaction: Z.viewerReaction ?? null,
 						groupItemIds: [Z.id, ...(Z.translations ?? []).map((e) => e.id)],
-						isDummy: j,
+						isDummy: A,
 						showCounts: R,
 						className: "mt-6"
 					}),
-					/* @__PURE__ */ E(ee, {
-						currentLocale: j ? H : Z.locale ?? P,
-						locales: j ? [...v] : (Z.translations ?? []).map((e) => e.locale),
-						allowedLocales: j ? void 0 : I.supportedLocales,
-						onSelect: j ? (e) => U(e) : (e) => {
+					/* @__PURE__ */ w(y, {
+						currentLocale: A ? H : Z.locale ?? P,
+						locales: A ? [...r] : (Z.translations ?? []).map((e) => e.locale),
+						allowedLocales: A ? void 0 : I.supportedLocales,
+						onSelect: A ? (e) => U(e) : (e) => {
 							let t = (Z.translations ?? []).find((t) => t.locale === e);
 							t && V(t.id);
 						},
@@ -313,28 +313,28 @@ function A({ id: A, isDummy: j, onOpenRelated: ne, onTitleResolved: re }) {
 		})
 	});
 }
-function te() {
-	return /* @__PURE__ */ E(s, {
+function k() {
+	return /* @__PURE__ */ w(l, {
 		className: "flex-1",
-		children: /* @__PURE__ */ D("div", {
+		children: /* @__PURE__ */ T("div", {
 			className: "flex flex-col",
 			"aria-busy": "true",
 			"aria-live": "polite",
-			children: [/* @__PURE__ */ E("div", {
+			children: [/* @__PURE__ */ w("div", {
 				className: "w-full animate-pulse bg-wx-bg-elevated",
 				style: { aspectRatio: "16 / 9" }
-			}), /* @__PURE__ */ D("div", {
+			}), /* @__PURE__ */ T("div", {
 				className: "px-5 pt-5 pb-12",
 				children: [
-					/* @__PURE__ */ D("div", {
+					/* @__PURE__ */ T("div", {
 						className: "animate-pulse space-y-2.5",
-						children: [/* @__PURE__ */ E("div", { className: "h-5 w-3/4 rounded-md bg-wx-bg-elevated" }), /* @__PURE__ */ E("div", { className: "h-5 w-1/2 rounded-md bg-wx-bg-elevated" })]
+						children: [/* @__PURE__ */ w("div", { className: "h-5 w-3/4 rounded-md bg-wx-bg-elevated" }), /* @__PURE__ */ w("div", { className: "h-5 w-1/2 rounded-md bg-wx-bg-elevated" })]
 					}),
-					/* @__PURE__ */ E("div", {
+					/* @__PURE__ */ w("div", {
 						className: "mt-4 flex items-center gap-2 animate-pulse",
-						children: /* @__PURE__ */ E("div", { className: "h-3 w-24 rounded-md bg-wx-bg-elevated" })
+						children: /* @__PURE__ */ w("div", { className: "h-3 w-24 rounded-md bg-wx-bg-elevated" })
 					}),
-					/* @__PURE__ */ E("div", {
+					/* @__PURE__ */ w("div", {
 						className: "mt-6 space-y-2.5 animate-pulse",
 						children: [
 							"w-full",
@@ -343,7 +343,7 @@ function te() {
 							"w-full",
 							"w-9/12",
 							"w-7/12"
-						].map((e, t) => /* @__PURE__ */ E("div", { className: l("h-3 rounded-md bg-wx-bg-elevated", e) }, t))
+						].map((e, t) => /* @__PURE__ */ w("div", { className: f("h-3 rounded-md bg-wx-bg-elevated", e) }, t))
 					})
 				]
 			})]
@@ -351,6 +351,6 @@ function te() {
 	});
 }
 //#endregion
-export { A as NewsArticleView };
+export { O as NewsArticleView };
 
-//# sourceMappingURL=widget-react-l5oryxYk.js.map
+//# sourceMappingURL=widget-react-Bop75Z1t.js.map

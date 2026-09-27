@@ -11,23 +11,23 @@ import "react";
 import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
-import { F as e, M as t, b as n, c as r, ht as i, it as a, k as o, l as ee, rt as te, u as s, y as c } from "./widget-react-Dtx_fW3V.js";
-import { i as l, n as u } from "./widget-react-krPPnv02.js";
-import { i as d } from "./widget-react-CN_FIvMD.js";
-import { o as f, p as ne, s as p, t as m } from "./widget-react-BZ-SHa2o.js";
-import { t as re } from "./widget-react-SI7deQTE.js";
-import { a as ie, c as ae, i as h, l as g, n as _, o as oe, r as v, s as y, t as b } from "./widget-react-vXfa9GKf.js";
-import { useEffect as x, useMemo as S, useRef as C, useState as se } from "react";
+import { F as e, I as t, M as n, N as r, b as i, c as a, ct as ee, k as te, l as o, st as s, u as c, y as l, yt as u, z as d } from "./widget-react-C6lzldez.js";
+import { i as f, n as p } from "./widget-react-krPPnv02.js";
+import { i as ne } from "./widget-react-CN_FIvMD.js";
+import { o as re, p as ie, s as m, t as h } from "./widget-react-bPokx9L5.js";
+import { t as ae } from "./widget-react-SI7deQTE.js";
+import { a as g, i as _, n as oe, o as v, r as y, s as b, t as x } from "./widget-react-BfO-uP4o.js";
+import { useEffect as S, useMemo as C, useRef as se, useState as ce } from "react";
 import { jsx as w, jsxs as T } from "react/jsx-runtime";
 //#region components/widget/help-article-view/helpers.ts
-function ce(e) {
+function le(e) {
 	let t = (e) => Array.isArray(e) ? e : [];
 	return {
 		id: String(e._id ?? ""),
 		title: typeof e.title == "string" ? e.title : "",
 		excerpt: typeof e.excerpt == "string" ? e.excerpt : "",
 		content: typeof e.content == "string" ? e.content : "",
-		contentFormat: e.contentFormat === y.HTML ? y.HTML : y.MARKDOWN,
+		contentFormat: e.contentFormat === g.HTML ? g.HTML : g.MARKDOWN,
 		authors: t(e.authors).filter((e) => !!e && typeof e == "object").map((e) => ({
 			_id: String(e._id ?? ""),
 			name: typeof e.name == "string" ? e.name : null,
@@ -42,38 +42,38 @@ function ce(e) {
 }
 //#endregion
 //#region components/widget/help-article-view/index.tsx
-function E({ slug: u, locale: E, isDummy: D, onHandoff: O, onOpenArticle: k, onOpenTranslation: A, onTitleResolved: j }) {
-	let M = l("help"), N = l("demo"), P = t(), { config: F } = o(), I = F.messenger?.showRelatedHelpArticles ?? !0, L = F.messenger?.showReactionCounts ?? !0, R = re(), [z, B] = se(E), V = ie(z, N), H = S(() => {
-		if (D) return null;
-		let e = P.previewData?.helpArticles;
-		return Array.isArray(e) ? e.find((e) => e && typeof e == "object" && e.slug === u) ?? null : null;
+function E({ slug: p, locale: E, isDummy: O, onHandoff: k, onOpenArticle: A, onOpenTranslation: j, onTitleResolved: M }) {
+	let N = f("help"), P = e(), F = n(), { config: I } = te(), L = I.messenger?.showRelatedHelpArticles ?? !0, R = I.messenger?.showReactionCounts ?? !0, z = ae(), [B, ue] = ce(E), V = t(B, P), H = C(() => {
+		if (O) return null;
+		let e = F.previewData?.helpArticles;
+		return Array.isArray(e) ? e.find((e) => e && typeof e == "object" && e.slug === p) ?? null : null;
 	}, [
-		P.previewData,
-		D,
-		u
-	]), U = !!H, { data: W, loading: ue } = p({
+		F.previewData,
+		O,
+		p
+	]), U = !!H, { data: W, loading: de } = m({
 		variables: { args: {
-			slug: u,
+			slug: p,
 			locale: E
 		} },
-		skip: D || U
-	}), G = te(), K = ee(G && !D && !U ? e.article(G, u, E) : null, W), [q] = f(), { trackLinkClick: J } = r(), Y = C(null), X = S(() => D ? i(V).find((e) => e.slug === u) : null, [
-		D,
-		u,
+		skip: O || U
+	}), G = s(), K = o(G && !O && !U ? d.article(G, p, E) : null, W), [q] = re(), { trackLinkClick: J } = a(), Y = se(null), X = C(() => O ? u(V).find((e) => e.slug === p) : null, [
+		O,
+		p,
 		V
-	]), Z = D ? X ? {
+	]), Z = O ? X ? {
 		id: X.id,
 		title: X.title,
 		excerpt: X.excerpt,
 		content: X.contentMarkdown,
-		contentFormat: y.MARKDOWN,
+		contentFormat: g.MARKDOWN,
 		authors: X.authors,
 		tags: X.tags,
 		reactionCounts: null,
-		locale: z,
+		locale: B,
 		translations: []
 	} : null : U && H ? {
-		...ce(H),
+		...le(H),
 		reactionCounts: H.reactionCounts ?? null,
 		locale: E,
 		translations: []
@@ -88,16 +88,16 @@ function E({ slug: u, locale: E, isDummy: D, onHandoff: O, onOpenArticle: k, onO
 		reactionCounts: K.visitorHelpArticle.reactionCounts ?? null,
 		locale: K.visitorHelpArticle.locale,
 		translations: K.visitorHelpArticle.translations
-	} : null, { data: de } = ne({
+	} : null, { data: fe } = ie({
 		variables: {
 			articleId: Z?.id ?? "",
 			limit: 5,
 			locale: E
 		},
-		skip: D || U || !Z?.id || !I
-	}), fe = S(() => {
+		skip: O || U || !Z?.id || !L
+	}), pe = C(() => {
 		if (!U || !Z?.id) return [];
-		let e = (P.previewData?.helpArticles ?? []).filter((e) => !!e && typeof e == "object"), t = new Set((Z.tags ?? []).map((e) => typeof e == "object" && e && "slug" in e ? String(e.slug) : null).filter((e) => !!e)), n = (() => {
+		let e = (F.previewData?.helpArticles ?? []).filter((e) => !!e && typeof e == "object"), t = new Set((Z.tags ?? []).map((e) => typeof e == "object" && e && "slug" in e ? String(e.slug) : null).filter((e) => !!e)), n = (() => {
 			let e = H;
 			if (!e) return null;
 			let t = e.folderId;
@@ -125,49 +125,49 @@ function E({ slug: u, locale: E, isDummy: D, onHandoff: O, onOpenArticle: k, onO
 		U,
 		Z,
 		H,
-		P.previewData
-	]), Q = U ? fe : de?.visitorHelpRelated ?? [], pe = D || U ? null : W?.visitorHelpArticle?.viewerReaction ?? null, me = !D && !U && W?.visitorHelpArticle ? [W.visitorHelpArticle._id, ...(W.visitorHelpArticle.translations ?? []).map((e) => e._id)] : Z?.id ? [Z.id] : [];
-	x(() => {
-		D || !Z?.id || !a() || q({ variables: { articleId: Z.id } }).catch(() => {});
+		F.previewData
+	]), Q = U ? pe : fe?.visitorHelpRelated ?? [], me = O || U ? null : W?.visitorHelpArticle?.viewerReaction ?? null, he = !O && !U && W?.visitorHelpArticle ? [W.visitorHelpArticle._id, ...(W.visitorHelpArticle.translations ?? []).map((e) => e._id)] : Z?.id ? [Z.id] : [];
+	S(() => {
+		O || !Z?.id || !ee() || q({ variables: { articleId: Z.id } }).catch(() => {});
 	}, [
 		Z?.id,
-		D,
+		O,
 		q
-	]), x(() => {
-		D || U || !Z?.id || Y.current !== Z.id && (Y.current = Z.id, J({
-			url: `/help/${u}`,
+	]), S(() => {
+		O || U || !Z?.id || Y.current !== Z.id && (Y.current = Z.id, J({
+			url: `/help/${p}`,
 			targetType: "HELP_ARTICLE",
 			targetRefId: Z.id
 		}));
 	}, [
 		Z?.id,
-		D,
+		O,
 		U,
-		u,
+		p,
 		J
-	]), oe(Z?.title, j);
-	let he = () => O();
-	if (!ue && !Z) return /* @__PURE__ */ w("div", {
+	]), _(Z?.title, M);
+	let ge = () => k();
+	if (!de && !Z) return /* @__PURE__ */ w("div", {
 		className: "flex flex-1 flex-col items-center justify-center px-6 py-12",
-		children: /* @__PURE__ */ w(c, { children: /* @__PURE__ */ w(n, {
+		children: /* @__PURE__ */ w(l, { children: /* @__PURE__ */ w(i, {
 			className: "py-8 text-center",
 			children: /* @__PURE__ */ w("p", {
 				className: "text-sm font-semibold text-wx-fg",
-				children: M("articleNotFound")
+				children: N("articleNotFound")
 			})
 		}) })
 	});
-	let ge = E.split("-")[0].toLowerCase(), $ = Z ? Z.locale.split("-")[0].toLowerCase() : null;
-	return !D && !U && !F.contentLocaleFallback && $ !== null && $ !== ge ? /* @__PURE__ */ w("div", {
+	let _e = E.split("-")[0].toLowerCase(), $ = Z ? Z.locale.split("-")[0].toLowerCase() : null;
+	return !O && !U && !I.contentLocaleFallback && $ !== null && $ !== _e ? /* @__PURE__ */ w("div", {
 		className: "flex flex-1 flex-col items-center justify-center px-6 py-12",
-		children: /* @__PURE__ */ w(c, { children: /* @__PURE__ */ w(n, {
+		children: /* @__PURE__ */ w(l, { children: /* @__PURE__ */ w(i, {
 			className: "py-8 text-center",
 			children: /* @__PURE__ */ w("p", {
 				className: "text-sm font-semibold text-wx-fg",
-				children: M("articleNotTranslated")
+				children: N("articleNotTranslated")
 			})
 		}) })
-	}) : Z ? /* @__PURE__ */ w(s, {
+	}) : Z ? /* @__PURE__ */ w(c, {
 		className: "flex-1",
 		children: /* @__PURE__ */ T("div", {
 			className: "flex flex-col px-5 pt-5 pb-12",
@@ -192,7 +192,7 @@ function E({ slug: u, locale: E, isDummy: D, onHandoff: O, onOpenArticle: k, onO
 								children: (e.name ?? "?").charAt(0)
 							})
 						}, e._id))
-					}), /* @__PURE__ */ w("span", { children: M("writtenBy", { names: Z.authors.map((e) => e.name ?? "").filter(Boolean).join(", ") }) })]
+					}), /* @__PURE__ */ w("span", { children: N("writtenBy", { names: Z.authors.map((e) => e.name ?? "").filter(Boolean).join(", ") }) })]
 				}),
 				Z.tags.length > 0 && /* @__PURE__ */ w("div", {
 					className: "mt-2 flex flex-wrap gap-1",
@@ -205,53 +205,53 @@ function E({ slug: u, locale: E, isDummy: D, onHandoff: O, onOpenArticle: k, onO
 					className: "mt-2 mb-5 text-sm text-wx-fg-muted",
 					children: Z.excerpt
 				}),
-				/* @__PURE__ */ w(v, {
+				/* @__PURE__ */ w(y, {
 					content: Z.content,
-					isHtml: Z.contentFormat === y.HTML || g(Z.content),
+					isHtml: Z.contentFormat === g.HTML || b(Z.content),
 					markdownMarginClass: "mt-3"
 				}),
-				/* @__PURE__ */ T(m, {
+				/* @__PURE__ */ T(h, {
 					type: "button",
 					variant: "solid",
 					size: "lg",
 					className: "mt-6 w-full shrink-0 min-h-12",
-					onClick: he,
-					...R.parentHandlers,
-					children: [/* @__PURE__ */ w(d, {
-						ref: R.iconRef,
+					onClick: ge,
+					...z.parentHandlers,
+					children: [/* @__PURE__ */ w(ne, {
+						ref: z.iconRef,
 						size: 16
-					}), /* @__PURE__ */ w("span", { children: M("unresolvedCta") })]
+					}), /* @__PURE__ */ w("span", { children: N("unresolvedCta") })]
 				}),
-				Z.id && /* @__PURE__ */ w(b, {
-					surface: ae.HELP,
+				Z.id && /* @__PURE__ */ w(x, {
+					surface: v.HELP,
 					itemId: Z.id,
 					reactionCounts: Z.reactionCounts,
-					viewerReaction: pe,
-					groupItemIds: me,
-					isDummy: D,
-					showCounts: L,
+					viewerReaction: me,
+					groupItemIds: he,
+					isDummy: O,
+					showCounts: R,
 					className: "mt-4"
 				}),
-				/* @__PURE__ */ w(_, {
-					currentLocale: D ? z : Z.locale,
-					locales: D ? [...h] : Z.translations.map((e) => e.locale),
-					allowedLocales: D ? void 0 : F.supportedLocales,
-					onSelect: D ? (e) => B(e) : (e) => {
+				/* @__PURE__ */ w(oe, {
+					currentLocale: O ? B : Z.locale,
+					locales: O ? [...r] : Z.translations.map((e) => e.locale),
+					allowedLocales: O ? void 0 : I.supportedLocales,
+					onSelect: O ? (e) => ue(e) : (e) => {
 						let t = Z.translations.find((t) => t.locale === e);
-						t && A?.(t.slug, t.locale);
+						t && j?.(t.slug, t.locale);
 					},
 					className: "mt-6"
 				}),
-				I && Q.length > 0 && /* @__PURE__ */ T("section", {
+				L && Q.length > 0 && /* @__PURE__ */ T("section", {
 					className: "mt-6",
 					children: [/* @__PURE__ */ w("p", {
 						className: "mb-2 text-xs font-semibold tracking-wide text-wx-fg-muted uppercase",
-						children: M("relatedTitle")
+						children: N("relatedTitle")
 					}), /* @__PURE__ */ w("ul", {
 						className: "flex flex-col gap-1.5",
 						children: Q.map((e) => /* @__PURE__ */ w("li", { children: /* @__PURE__ */ T("button", {
 							type: "button",
-							onClick: () => k?.(e.slug),
+							onClick: () => A?.(e.slug),
 							className: "flex w-full flex-col items-start gap-0.5 rounded-wx-lg bg-wx-bg-elevated px-3 py-2 text-left transition-colors hover:bg-wx-bg-elevated/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wx-primary",
 							children: [/* @__PURE__ */ w("span", {
 								className: "block truncate text-sm font-medium text-wx-fg",
@@ -265,10 +265,10 @@ function E({ slug: u, locale: E, isDummy: D, onHandoff: O, onOpenArticle: k, onO
 				})
 			]
 		})
-	}) : /* @__PURE__ */ w(le, {});
+	}) : /* @__PURE__ */ w(D, {});
 }
-function le() {
-	return /* @__PURE__ */ w(s, {
+function D() {
+	return /* @__PURE__ */ w(c, {
 		className: "flex-1",
 		children: /* @__PURE__ */ T("div", {
 			className: "flex flex-col px-5 pt-5 pb-12",
@@ -294,7 +294,7 @@ function le() {
 						"w-full",
 						"w-11/12",
 						"w-7/12"
-					].map((e, t) => /* @__PURE__ */ w("div", { className: u("h-3 rounded-md bg-wx-bg-elevated", e) }, t))
+					].map((e, t) => /* @__PURE__ */ w("div", { className: p("h-3 rounded-md bg-wx-bg-elevated", e) }, t))
 				})
 			]
 		})
@@ -303,4 +303,4 @@ function le() {
 //#endregion
 export { E as HelpArticleView };
 
-//# sourceMappingURL=widget-react-DWgRcZF7.js.map
+//# sourceMappingURL=widget-react-DRER1XF_.js.map
