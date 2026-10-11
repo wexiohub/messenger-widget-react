@@ -11,11 +11,11 @@ import "react";
 import "react-dom";
 import "react/jsx-runtime";
 import "react-dom/client";
-import { F as e, I as t, M as n, N as r, c as i, ht as a, k as o, l as s, st as c, u as l, z as u } from "./widget-react-C6lzldez.js";
+import { F as e, I as t, M as n, N as r, c as i, ht as a, k as o, l as s, st as c, u as l, z as u } from "./widget-react-Ck8JAYqT.js";
 import { i as d, n as f, o as p } from "./widget-react-krPPnv02.js";
-import { h as m, m as h, n as g, r as ee } from "./widget-react-MXOCL3Mg.js";
+import { h as m, m as h, n as g, r as ee } from "./widget-react-BgunakAG.js";
 import { t as _ } from "./widget-react-B7es3n1-.js";
-import { i as v, n as y, o as b, r as te, s as ne, t as re } from "./widget-react-BfO-uP4o.js";
+import { i as v, n as y, o as b, r as te, s as ne, t as re } from "./widget-react-CyAVDflZ.js";
 import { useEffect as x, useRef as S, useState as C } from "react";
 import { jsx as w, jsxs as T } from "react/jsx-runtime";
 //#region components/widget/news-article-view/helpers.ts
@@ -353,4 +353,4 @@ function k() {
 //#endregion
 export { O as NewsArticleView };
 
-//# sourceMappingURL=widget-react-Bop75Z1t.js.map
+//# sourceMappingURL=widget-react-Bvtklo8g.js.map
