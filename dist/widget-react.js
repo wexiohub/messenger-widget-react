@@ -23189,7 +23189,7 @@ function rx() {
 	}, pr = K(!1), mr = p || u !== "production" || !!P.token || !!P.error;
 	mr && (pr.current = !0);
 	let hr = pr.current || mr;
-	if (b === "publicKeyInvalid" || _ || !hr) return null;
+	if (b === "publicKeyInvalid" || _ || !hr || f.status !== "active") return null;
 	return /* @__PURE__ */ X(v, {
 		value: En ? kn : null,
 		children: [
