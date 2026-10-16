@@ -8,6 +8,7 @@ Native React component for the [Wexio](https://wexio.io) web messenger. Renders 
 
 🏠 [Website](https://wexio.io)
 📚 [Developer Docs](https://learn.wexio.io/docs/web-widget)
+🎮 [Playground](https://cdn.wexio.io/playground)
 
 ## Features
 
@@ -98,7 +99,7 @@ Pass a verified `user` to log a known visitor in (a known-user login / boot). Pr
 | `config`    | [`InjectableWidgetConfig`](#injectablewidgetconfig) | Pre-resolved widget config. Set this if you already have the config server-rendered or fetched app-wide — skips the bootstrap fetch.                                                   |
 | `onResize`  | `(size: { width: number; height: number }) => void` | Fired whenever the widget's intended dimensions change (open ↔ closed ↔ expanded). Use for host-side layout sync.                                                                      |
 | `onOpen`    | `() => void`                                        | Fired when the visitor opens the panel (taps the launcher, peek bubble, etc.).                                                                                                         |
-| `onClose`   | `() => void`                                        | Fired when the visitor taps the close chip.                                                                                                                                            |
+| `onClose`   | `() => void`                                        | Fires on every open to closed transition (header X, launcher, Escape).                                                                                                                                      |
 | `className` | `string`                                            | Pass-through class on the outer host `<div>`. Style this with normal layout CSS.                                                                                                       |
 | `style`     | `React.CSSProperties`                               | Pass-through inline styles for the outer host `<div>`.                                                                                                                                 |
 
