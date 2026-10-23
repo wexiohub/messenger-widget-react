@@ -97,6 +97,9 @@ Pass a verified `user` to log a known visitor in (a known-user login / boot). Pr
 | `publicKey` | `string`                                            | Wexio integration public key (`pk_live_...`). Omit to render in demo mode (bundled mock content for landing pages or Storybook).                                                       |
 | `user`      | [`VisitorIdentity`](#visitoridentity)               | Verified identity. See [Identifying users](#identifying-users).                                                                                                                        |
 | `config`    | [`InjectableWidgetConfig`](#injectablewidgetconfig) | Pre-resolved widget config. Set this if you already have the config server-rendered or fetched app-wide — skips the bootstrap fetch.                                                   |
+| `defaultOpen` | `boolean`                                         | Open the panel on mount (uncontrolled afterwards).                                                                                                                                     |
+| `open`      | `boolean`                                           | Controlled open state. Keep it in sync from `onOpen` / `onClose`. Omit for an uncontrolled widget.                                                                                     |
+| `previewTab` | `PreviewTabSignal`                                 | Navigate to a tab (`{ tab, nonce, article? }`) without a remount; opens the panel. A new `nonce` re-issues the request.                                                                |
 | `onResize`  | `(size: { width: number; height: number }) => void` | Fired whenever the widget's intended dimensions change (open ↔ closed ↔ expanded). Use for host-side layout sync.                                                                      |
 | `onOpen`    | `() => void`                                        | Fired when the visitor opens the panel (taps the launcher, peek bubble, etc.).                                                                                                         |
 | `onClose`   | `() => void`                                        | Fires on every open to closed transition (header X, launcher, Escape).                                                                                                                                      |
@@ -111,7 +114,18 @@ When the operator enables [Cloudflare Turnstile](https://developers.cloudflare.c
 
 ## Methods
 
-The component's open / close lifecycle is driven via the `onOpen` / `onClose` callbacks plus the visitor's tap on the launcher — no host-side imperative call is needed for normal use.
+The component's open / close lifecycle is reported via the `onOpen` / `onClose` callbacks. To drive it from your own state use `open` (keep it in sync from those callbacks) or `defaultOpen`; `previewTab` jumps to a tab or article.
+
+```tsx
+const [open, setOpen] = useState(false);
+<WexioWidget
+  publicKey="pk_live_..."
+  open={open}
+  onOpen={() => setOpen(true)}
+  onClose={() => setOpen(false)}
+  previewTab={{ tab: "help", nonce }} // bump `nonce` to navigate again
+/>;
+```
 
 An imperative `window.WexioWidget` surface (`show`, `hide`, `showSpace`, `setLocale`, `onUnreadCountChange`, …) is on the roadmap to mirror the script loader's API, but doesn't ship in the current React package. For deep-link / programmatic control today, mount the widget conditionally from your own host state.
 

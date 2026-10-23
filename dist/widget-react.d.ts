@@ -238,6 +238,16 @@ export interface VisitorIdentity {
   attributes?: Record<string, unknown>;
 }
 
+/**
+ * Navigation request: go to a tab (and optionally a help article / news post)
+ * without a remount and open the panel. A new `nonce` re-issues the request.
+ */
+export interface PreviewTabSignal {
+  tab: WidgetTab;
+  nonce: number;
+  article?: { kind: "help"; slug: string } | { kind: "news"; id: string };
+}
+
 export interface WexioWidgetProps {
   publicKey?: string;
   /**
@@ -261,6 +271,12 @@ export interface WexioWidgetProps {
    * skipped. Memoise this.
    */
   config?: InjectableWidgetConfig;
+  /** Open the panel on mount (uncontrolled afterwards). */
+  defaultOpen?: boolean;
+  /** Controlled open state; keep it in sync from `onOpen` / `onClose`. Omit to leave uncontrolled. */
+  open?: boolean;
+  /** Navigate to a tab / article without a remount (and open the panel). Same `nonce` = no-op. */
+  previewTab?: PreviewTabSignal;
   onResize?: (size: { width: number; height: number }) => void;
   /**
    * Fired when the visitor opens the panel. Pairs with `onClose`.
