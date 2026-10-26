@@ -1,5 +1,11 @@
 # @wexio/messenger-widget-react
 
+## 1.7.1
+
+### Patch Changes
+
+- f957399: Fix: the Messages thread list works again against a backend without `VisitorThread.title` (1.7.0 queried that field, and an older backend rejected the whole thread-list query). The title is no longer requested; the list headlines the last sender as before.
+
 ## 1.7.0
 
 ### Minor Changes
