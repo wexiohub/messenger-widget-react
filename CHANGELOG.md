@@ -1,5 +1,11 @@
 # @wexio/messenger-widget-react
 
+## 1.7.2
+
+### Patch Changes
+
+- 002e8e6: Messages configured through props or unsaved previews keep their welcome and conversation thread. A message slot the backend does not know (set through `config` / `configOverride`, an unsaved dashboard preview, or deleted meanwhile) now has its own regular conversation thread with the welcome as its header, and the AI answers there instead of the message moving to the main chat.
+
 ## 1.7.1
 
 ### Patch Changes
