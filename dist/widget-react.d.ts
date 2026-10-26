@@ -242,6 +242,15 @@ export interface VisitorIdentity {
  * Navigation request: go to a tab (and optionally a help article / news post)
  * without a remount and open the panel. A new `nonce` re-issues the request.
  */
+/** Payload of `onMessageAction` / the `wexio:message-action` event. */
+export interface MessageActionEvent {
+  slotId: string;
+  variantId: string;
+  buttonId: string;
+  actionType: "QUICK_REPLY";
+  source: "WELCOME";
+}
+
 export interface PreviewTabSignal {
   tab: WidgetTab;
   nonce: number;
@@ -283,6 +292,11 @@ export interface WexioWidgetProps {
    */
   onOpen?: () => void;
   onClose?: () => void;
+  /**
+   * Fired when a visitor clicks a quick-reply button on a welcome message (the
+   * click also sends the label as a visitor message).
+   */
+  onMessageAction?: (event: MessageActionEvent) => void;
   className?: string;
   style?: CSSProperties;
 }
