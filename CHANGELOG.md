@@ -1,5 +1,18 @@
 # @wexio/messenger-widget-react
 
+## 1.7.3
+
+### Patch Changes
+
+- af2f377: The media lightbox is no longer clipped by a host container (`overflow: hidden`, `contain: layout paint`, a transform or a top offset, as in the dashboard preview): in the React and web-component embeds it renders in its own layer on `document.body` (with the widget styles, theme and direction) and covers the viewport. It keeps its focus handling, Escape and scroll lock. The internal `lightboxViewport` option is gone.
+
+  The lightbox is also rendered in the browser top layer (a modal `<dialog>`), so a host element with a huge `z-index` added later, or a host `<dialog>` / `[popover]` that is open, can no longer cover it. Browsers without `showModal()` keep the fixed full-viewport overlay.
+
+- af2f377: Private preview props: `storageNamespace` prefixes every visitor-scoped storage key, and `session="persistent"` is now honoured together with `previewToken` (a token alone still forces an isolated memory-only session).
+- af2f377: Private preview prop `previewProfileFields`: the Profile tab lists the dashboard's draft custom fields empty and read-only in a preview.
+- af2f377: A visitor preview that hit the BE limit of new test visitors (`WEB_PREVIEW_VISITOR_LIMIT`, HTTP 429) stops handshaking for that mount and shows a clear message instead of retrying; a stored visitorId still resumes.
+- af2f377: Every visitor message carries the host page it was sent from (`page`: url, title, referrer, meta description), captured at the moment of the send; the iframe embed uses the values the loader forwards. An older BE that does not know `page` is retried once without it and remembered for the session.
+
 ## 1.7.2
 
 ### Patch Changes
