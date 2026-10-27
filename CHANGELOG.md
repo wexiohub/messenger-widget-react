@@ -1,5 +1,26 @@
 # @wexio/messenger-widget-react
 
+## 1.7.4
+
+### Patch Changes
+
+- 63d7e95: A blocked visitor no longer sees the launcher message bubble or quick replies. The block is read from the live contact event, the threads page, the `/session` answer (`blocked`, optional) and the handshake, and the last known value is remembered per integration so the bubble does not flash on a reload. Unblocking brings it back.
+
+  A message the visitor has already read no longer comes back as unread (launcher peek, badge, "Unread messages" divider) after a reload or a periodic resync when the backend's read-ack was rejected or is still queued: the widget keeps a local read mark per thread. A long message in the launcher peek now clamps on whole lines (no half-cut line under the ellipsis).
+
+  A silent visitor-token renewal no longer reopens the live streams or refetches the session content, and a preview session asks the host for a fresh preview token (`onPreviewTokenExpired("expiring")`) before the old one runs out instead of renewing faster and faster. A dropped stream now reconnects with a growing backoff.
+
+- 63d7e95: Entering the Messages tab through the round launcher (directly or Home -> Messages) now opens the visitor's last active thread: it never starts a new thread and never jumps to the page's slot thread (the launcher message bubble and its quick replies still open that slot's thread). A visitor with no thread yet sees the list with one row for the page's launcher message (its text as the preview); tapping it opens the slot thread, which is created on the first send.
+- 63d7e95: Message slots get one thread per variant when the BE declares the `variantThreads` capability (`message:<slotId>:<variantId>`; local slots `slot-<slotId>:<variantId>`; the header is pinned to the thread's variant and old 2-part threads still open). Without the capability nothing changes. A message or Home block may have no unconditional variant and then shows only where a variant matches.
+
+  Home greeting variants (capability `greetingVariants`): `greetingSlot` from `/config` and `/session` is picked per page like Home blocks and re-picked on navigation; no match means no greeting.
+
+  The pre-chat for an identified visitor (host identity, verified session, signed-in dashboard preview) only asks for the required fields still unknown, prefills what is known (read-only when it comes from a verified source), and no sign-in buttons are offered to a signed-in visitor. Reacts live to the private preview props.
+
+  The Home header glow follows the brand: theme `homeBackdrop` (hex, `#rrggbbaa` keeps its alpha), else the mode's `primary`, else indigo; `homeBackdropGlow: false` turns the glow off.
+
+  The playground theme editor gets a per-palette "Home header glow" colour (empty = Auto, from the primary colour) and a "Glow on Home header" switch; both are carried by Connect, Import and Export.
+
 ## 1.7.3
 
 ### Patch Changes
