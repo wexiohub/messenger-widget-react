@@ -1,5 +1,11 @@
 # @wexio/messenger-widget-react
 
+## 1.7.5
+
+### Patch Changes
+
+- 10ee9db: Back from a thread always returns to the thread list
+
 ## 1.7.4
 
 ### Patch Changes
