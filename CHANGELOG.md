@@ -1,5 +1,13 @@
 # @wexio/messenger-widget-react
 
+## 1.7.6
+
+### Patch Changes
+
+- f4adfa6: Greeting variables `page.title` and `page.path`: the widget sends the host page the session starts on (`pageTitle`, `pagePath`) so the backend can render them; the playground preview knows both
+- cba72e6: One long-lived SSE stream per tab: sound and notifications now come from the threads stream, and the per-chat stream opens only while a conversation is on screen
+- f89e688: The conversation shows the AI "thinking" bubble right after the visitor's send, before the first realtime frame (not when an operator is connected or the queue is pending, with the AI agent off, or for a send queued offline). A deleted last message (`lastMessageDeletedId` on the threads stream) refreshes the thread list, the launcher peek and the unread count. The thread list now queries `lastMessageId`, so this release needs a BE that serves `VisitorThread.lastMessageId` (BE 1.8.0 or later).
+
 ## 1.7.5
 
 ### Patch Changes
