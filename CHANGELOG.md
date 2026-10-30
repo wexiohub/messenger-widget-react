@@ -1,5 +1,17 @@
 # @wexio/messenger-widget-react
 
+## 1.7.8
+
+### Patch Changes
+
+- 2afc83c: Script-tag (iframe) embed fixes:
+
+  - The media lightbox covers the whole host page instead of the panel-sized frame. The widget sends `wexio:widget:overlay:v1`, and the loader stretches the frame over the viewport while the lightbox is open.
+  - The closed frame no longer swallows host-page clicks and text selection around the launcher peek. The widget reports its visible surfaces (`wexio:widget:hit-area:v1`), and the loader clips the frame to them with `clip-path`.
+  - Closing the panel no longer makes the launcher blink.
+  - The expand/collapse animation grows width and height together, like the web-component and React embeds. It is clamped to the host viewport.
+  - The loader's "Customer support by Wexio" backlink is no longer shown. It sits under the launcher button and is not a hover or click target. `data-hide-attribution` is ignored.
+
 ## 1.7.7
 
 ### Patch Changes
