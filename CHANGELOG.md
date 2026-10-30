@@ -1,5 +1,11 @@
 # @wexio/messenger-widget-react
 
+## 1.7.9
+
+### Patch Changes
+
+- bc46a69: The widget remembers where the visitor was across host page loads. Per browser tab (`sessionStorage`) and public key it saves whether the panel is open and the current route (tab, conversation, help article, news post) and restores it on the next load if it is less than 30 minutes old. On a phone the panel never auto-opens, but the next launcher tap lands where the visitor left. `open`, `defaultOpen`, `previewTab` and `Wexio('open' | 'close' | 'navigate')` override the saved state; preview and demo sessions never save.
+
 ## 1.7.8
 
 ### Patch Changes
