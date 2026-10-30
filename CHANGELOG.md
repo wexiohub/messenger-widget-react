@@ -1,5 +1,12 @@
 # @wexio/messenger-widget-react
 
+## 1.7.7
+
+### Patch Changes
+
+- 519cdc7: News and help previews (home featured card, news tab, help lists, article lead) show plain text: HTML and Markdown are stripped, the text is cut on a word boundary with an ellipsis (also when the BE already cut it), and the cards are line-clamped. A news card or article without a cover image renders no cover block, and a cover that fails to load is hidden. An article lead that only repeats the start of the body is dropped, and mixed text-then-HTML bodies render as HTML.
+- 340e1a5: Quick-action named icons: 8 more social brands (`youtube`, `x`, `threads`, `pinterest`, `snapchat`, `twitch`, `github`, `spotify`), 2 messengers (`signal`, `wechat`) and 7 action icons (`globe`, `calendar`, `map-pin`, `shopping-cart`, `download`, `gift`, `file-text`). Unknown names still fall back to the chat bubble.
+
 ## 1.7.6
 
 ### Patch Changes

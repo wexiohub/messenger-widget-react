@@ -101,11 +101,21 @@ export type HomeNamedIcon =
   | "discord"
   | "slack"
   | "line"
+  | "signal"
+  | "wechat"
   | "facebook"
   | "twitter"
   | "linkedin"
   | "reddit"
   | "tiktok"
+  | "youtube"
+  | "x"
+  | "threads"
+  | "pinterest"
+  | "snapchat"
+  | "twitch"
+  | "github"
+  | "spotify"
   | "chat"
   | "email"
   | "phone"
@@ -120,7 +130,14 @@ export type HomeNamedIcon =
   | "lock"
   | "shield"
   | "user"
-  | "users";
+  | "users"
+  | "globe"
+  | "calendar"
+  | "map-pin"
+  | "shopping-cart"
+  | "download"
+  | "gift"
+  | "file-text";
 
 export type HomeQuickActionIcon =
   | { kind: "named"; name: HomeNamedIcon; colored?: boolean }
