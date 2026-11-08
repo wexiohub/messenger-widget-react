@@ -303,6 +303,13 @@ export interface WexioWidgetProps {
   open?: boolean;
   /** Navigate to a tab / article without a remount (and open the panel). Same `nonce` = no-op. */
   previewTab?: PreviewTabSignal;
+  /**
+   * Where the widget runtime is loaded from. Default: the evergreen
+   * `https://cdn.wexio.io/widget/widget.js` (new widget features arrive without an npm upgrade).
+   * Pin a release (`https://cdn.wexio.io/widget/v1.8.0/widget.js`, 1.8.0 or later) or point at a
+   * self-hosted copy. Read once per page.
+   */
+  runtimeUrl?: string;
   onResize?: (size: { width: number; height: number }) => void;
   /**
    * Fired when the visitor opens the panel. Pairs with `onClose`.

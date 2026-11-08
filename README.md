@@ -27,6 +27,7 @@ The messenger is a full two-way support surface, not just a contact form:
 
 - [Features](#features)
 - [Installation](#installation)
+- [How updates reach you](#how-updates-reach-you)
 - [Quick start](#quick-start)
 - [Identifying users](#identifying-users)
 - [Props](#props)
@@ -52,7 +53,20 @@ or
 npm install @wexio/messenger-widget-react
 ```
 
-`react >= 18` and `react-dom >= 18` are peer dependencies — the widget uses the host's React tree.
+`react >= 18` and `react-dom >= 18` are peer dependencies. The package itself is a thin wrapper (a few KB): the widget
+runtime is loaded from the Wexio CDN at run time (see below).
+
+## How updates reach you
+
+Since 1.8.0 this package renders the `<wexio-widget>` web component and loads it from
+`https://cdn.wexio.io/widget/widget.js`, the current widget release. New widget features and fixes reach your site
+with each Wexio release, **without upgrading this package**. You upgrade the package only for new props or types.
+
+- **Content-Security-Policy.** If your site restricts scripts, allow `https://cdn.wexio.io` in `script-src` (and keep
+  the Wexio API origins in `connect-src`, as before).
+- **Pin or self-host.** Pass `runtimeUrl` to load a fixed release (`https://cdn.wexio.io/widget/v1.8.0/widget.js`,
+  1.8.0 or later) or your own copy of `widget.js`.
+- Versions before 1.8.0 bundle the whole widget and only change when you upgrade.
 
 ## Quick start
 
@@ -100,6 +114,7 @@ Pass a verified `user` to log a known visitor in (a known-user login / boot). Pr
 | `defaultOpen` | `boolean`                                         | Open the panel on mount (uncontrolled afterwards).                                                                                                                                     |
 | `open`      | `boolean`                                           | Controlled open state. Keep it in sync from `onOpen` / `onClose`. Omit for an uncontrolled widget.                                                                                     |
 | `previewTab` | `PreviewTabSignal`                                 | Navigate to a tab (`{ tab, nonce, article? }`) without a remount; opens the panel. A new `nonce` re-issues the request.                                                                |
+| `runtimeUrl` | `string`                                           | Where the widget runtime is loaded from. Default: `https://cdn.wexio.io/widget/widget.js` (always the current release). Pin a release (1.8.0 or later) or a self-hosted copy. Read once per page. |
 | `onResize`  | `(size: { width: number; height: number }) => void` | Fired whenever the widget's intended dimensions change (open ↔ closed ↔ expanded). Use for host-side layout sync.                                                                      |
 | `onOpen`    | `() => void`                                        | Fired when the visitor opens the panel (taps the launcher, peek bubble, etc.).                                                                                                         |
 | `onClose`   | `() => void`                                        | Fires on every open to closed transition (header X, launcher, Escape).                                                                                                                                      |
@@ -159,7 +174,7 @@ The integration's [Cloudflare Turnstile](https://developers.cloudflare.com/turns
 
 ## SSR
 
-The component renders `null` on the server. The Shadow-DOM portal target mounts on the first `useEffect`, so the widget is invisible during SSR/hydration and appears on first paint. Wrap in `<Suspense fallback={null}>` if you need to defer hydration in RSC-heavy apps.
+The server renders only the empty host `<div>`. The `<wexio-widget>` element is created on the first `useEffect` and the runtime loads asynchronously from the CDN, so the widget appears after hydration and never blocks it. The component uses hooks: render it from a client component (`"use client"`) in the Next.js App Router.
 
 ## Browser support
 
@@ -171,7 +186,9 @@ Modern evergreen browsers — anything that supports Shadow DOM and ES2020. Inte
 
 - Check that the correct `publicKey` is being passed.
 - Check the messenger is **active** for your integration on https://app.wexio.io.
-- Confirm the component renders on the client (not during SSR) — `<WexioWidget>` returns `null` until the first `useEffect`.
+- Confirm the component renders on the client (not during SSR): the widget element is created on the first `useEffect`.
+- Check the browser console for `[wexio] could not load the widget runtime`: your Content-Security-Policy or a blocker
+  stops `https://cdn.wexio.io/widget/widget.js`. Allow it in `script-src`, or set `runtimeUrl` to a copy you host.
 
 ### No user data attached
 
