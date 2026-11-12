@@ -1,5 +1,11 @@
 # @wexio/messenger-widget-react
 
+## 1.8.2
+
+### Patch Changes
+
+- 1af59fb: Script-tag (iframe) embed: the hidden attribution link stays under the launcher even when the host page overrides the widget frame's `z-index` (for example `iframe[src*="wexio"] { z-index: 99999 !important }`). Before, such a rule lowered the frame below the link, and the text "Customer support by Wexio" showed on top of the launcher button.
+
 ## 1.8.1
 
 ### Patch Changes
