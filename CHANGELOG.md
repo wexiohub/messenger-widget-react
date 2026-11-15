@@ -1,5 +1,11 @@
 # @wexio/messenger-widget-react
 
+## 1.8.3
+
+### Patch Changes
+
+- 20b0105: Language set to "follow the website": when the page's language (`<html lang>`) differed from the visitor's browser language, the widget switched back and forth between the two until Home and Help showed "Something went wrong". The widget now follows the page's language only once the integration's settings have loaded, and stays on it.
+
 ## 1.8.2
 
 ### Patch Changes
