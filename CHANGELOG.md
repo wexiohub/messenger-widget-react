@@ -1,5 +1,11 @@
 # @wexio/messenger-widget-react
 
+## 1.9.2
+
+### Patch Changes
+
+- ce2c8d0: Web component and the React / Vue / Ember / Angular wrappers: the same "Customer support by Wexio" link as the script-tag loader, under the launcher button. Visitors never see it or hit it; it is only there for search engines, and only while the widget is live (never in demo content or a preview).
+
 ## 1.9.1
 
 ### Patch Changes
