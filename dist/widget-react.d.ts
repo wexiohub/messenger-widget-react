@@ -272,10 +272,71 @@ export interface PreviewTabSignal {
   tab: WidgetTab;
   nonce: number;
   article?: { kind: "help"; slug: string } | { kind: "news"; id: string };
+  /**
+   * Open a booking over `tab`: a Home `book-time` block (`homeBlockId` = its id from the targets) or a
+   * message button. `step` jumps ahead (`details` picks the first free time). An unknown ref opens the tab.
+   */
+  booking?: {
+    ref: { homeBlockId: string } | { buttonId: string };
+    step?: "services" | "slots" | "details";
+  };
+}
+
+/** Something on the page the host can point an action at (see `onTargets`). */
+export interface HostBookingTarget {
+  id: string;
+  title: string;
+  place: "home" | "launcher";
+}
+
+/** One of the visitor's threads. `id` is the thread key; the main thread is `"main"`. */
+export interface HostThreadTarget {
+  id: string;
+  title: string | null;
+  lastMessage: string | null;
+  updatedAt: string | null;
+  unread: number;
+}
+
+export interface HostTargets {
+  bookings: HostBookingTarget[];
+  threads: HostThreadTarget[];
+}
+
+/**
+ * A host action. `send` without `threadId` starts a new thread; `draft: true` only fills the composer.
+ */
+export type HostAction =
+  | { type: "book"; id: string }
+  | { type: "open-thread"; id: string }
+  | { type: "send"; text: string; threadId?: string; draft?: boolean };
+
+export type HostActionResult =
+  | { ok: true; threadId?: string }
+  | {
+      ok: false;
+      reason: "unknown-id" | "unavailable" | "blocked" | "invalid" | "rate-limited" | "timeout";
+    };
+
+/** The ref handle: `ref.current.action({ type: "book", id })`. */
+export interface WexioWidgetHandle {
+  action(action: HostAction): Promise<HostActionResult>;
 }
 
 export interface WexioWidgetProps {
   publicKey?: string;
+  /** `demo` shows bundled demo content (no key needed); default: `production` with a key, else `demo`. */
+  mode?: "production" | "demo";
+  /** Force the light or dark theme; `auto` follows the visitor's system. */
+  theme?: "light" | "dark" | "auto";
+  /** Launcher offset in px from its corner. */
+  offset?: { x?: number; y?: number };
+  /** Narrow the booking services of the Home booking block to these service ids. Compared by content. */
+  booking?: { services?: string[] };
+  /** Presentation patch over the resolved config (status, branding and security are ignored). Memoise it. */
+  configOverride?: Partial<InjectableWidgetConfig>;
+  /** What the host can point actions at: the bookings and the visitor's threads. Fires when it changes. */
+  onTargets?: (targets: HostTargets) => void;
   /**
    * Log a known user into the widget (a known-user login / boot).
    * Provide ONE proof:
@@ -327,7 +388,9 @@ export interface WexioWidgetProps {
 
 export type WexioWidgetReactProps = WexioWidgetProps;
 
-export declare function WexioWidget(props: WexioWidgetProps): JSX.Element;
+export declare const WexioWidget: import("react").ForwardRefExoticComponent<
+  WexioWidgetProps & import("react").RefAttributes<WexioWidgetHandle>
+>;
 
 /**
  * Imperatively stamp the public-key onto the apollo singleton.

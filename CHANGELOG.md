@@ -1,5 +1,20 @@
 # @wexio/messenger-widget-react
 
+## 1.9.3
+
+### Patch Changes
+
+- 4300c5e: Host actions. A host page can now drive the widget from its own buttons:
+
+  - The widget publishes what the host can point at: `onTargets`, the `wexio:targets` event, `el.targets`, `Wexio("targets")`. That is the bookings (Home blocks and launcher buttons) and the visitor's threads.
+  - The host runs `book`, `open-thread` or `send` (into a thread, a new thread, or only the composer with `draft: true`) through `ref.current.action()`, `el.action()` or `Wexio("action")`, and gets `{ ok }` or `{ ok: false, reason }` back.
+  - An action waits for the widget to load, so a click right after the page loads no longer lands on Home.
+
+  Also fixed:
+
+  - Booking navigation (`previewTab.booking`) opens the calendar in demo content (`{ homeBlockId: "demo" }`) and when issued before the content has loaded.
+  - The npm types now include `booking`, `mode`, `theme`, `offset` and `configOverride`, plus `booking` in `previewTab`.
+
 ## 1.9.2
 
 ### Patch Changes
