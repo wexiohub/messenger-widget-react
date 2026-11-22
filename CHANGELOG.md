@@ -1,5 +1,14 @@
 # @wexio/messenger-widget-react
 
+## 1.9.4
+
+### Patch Changes
+
+- 46991c3: Maintenance and two fixes:
+  - A visitor with personalised (targeted) content no longer sees the public welcome for a moment in the Messages list while that content loads; the list shows its loading state instead.
+  - The hidden "Customer support by Wexio" link under the launcher now passes accessibility colour-contrast checks (axe / Lighthouse) on any host page. It stays covered by the launcher.
+  - Dependencies refreshed (all security advisories closed), including the build toolchain behind the npm packages.
+
 ## 1.9.3
 
 ### Patch Changes
